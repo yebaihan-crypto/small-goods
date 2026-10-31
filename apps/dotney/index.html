@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Dotney 官方网站 - 去待办的截图灵感收藏软件。轻点背面瞬移入库，告别清单焦虑与死线绑架，12大类标签扇形堆叠卡片，100% 本地离线隐私安全。">
+  <title>Dotney - 去待办的灵感收藏软件</title>
+  <link rel="stylesheet" href="styles.css">
+<script>(function(){try{var m=/[?&]lang=(zh|en)/.exec(location.search);var s=m?m[1]:localStorage.getItem("hub-lang");if(m){localStorage.setItem("hub-lang",m[1]);}var n=(navigator.language||"zh").toLowerCase();document.documentElement.setAttribute("data-lang",s||(n.indexOf("zh")===0?"zh":"en"));}catch(e){document.documentElement.setAttribute("data-lang","zh");}})();</script>
+<link rel="stylesheet" href="../../assets/css/shell.css">
+</head>
+<body>
+<div id="hub-bar"></div>
+<script>window.HUB_PAGE={"slug": "dotney", "nameZh": "Dotney", "nameEn": "Dotney", "links": [{"href": "support.html", "zh": "技术支持", "en": "Support"}, {"href": "privacy.html", "zh": "隐私政策", "en": "Privacy"}]};</script>
+
+<div class="lang-zh">
+
+
+  <!-- Navigation -->
+  <header>
+    <div class="nav-container">
+      <a href="index.html" class="logo">
+        <div class="logo-icon">✨</div>
+        <span>Dotney</span>
+      </a>
+      <nav>
+        <ul>
+          <li><a href="index.html" class="active">首页</a></li>
+          <li><a href="support.html">技术支持</a></li>
+          <li><a href="privacy.html">隐私政策</a></li>
+          <li><a class="lang-switch-legacy" href="index.html" style="opacity: 0.85; font-size: 0.85rem; padding: 0.2rem 0.5rem; border: 1px solid rgba(255,255,255,0.2); border-radius: 6px;">EN</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Showcase -->
+  <main>
+    <section class="hero">
+      <div class="hero-content">
+        <div class="badge">去待办 · 灵感收藏 · 纯本地运行</div>
+        <h1>不被待办绑架，随手收藏心动。</h1>
+        <p class="hero-subtitle">
+          打破传统清单制造的时间与死线焦虑。微信海报、小红书种草、精选金句与好物……轻按背面两下，截屏瞬间静默“瞬移”入库。AI 智能归纳 12 大灵感标签，扇形堆叠卡片优雅收纳，构筑您的私人灵感宇宙。
+        </p>
+        <div class="hero-actions">
+          <a href="#guide" class="btn btn-primary">📖 查看瞬移配置</a>
+          <a href="Dotney灵感卡片宣传视频_v7_886x1920.mp4" target="_blank" class="btn btn-secondary">🎬 观看动效宣传片</a>
+        </div>
+      </div>
+      
+      <!-- Kaori-Style Interactive Inspiration Burst Stage -->
+      <div class="hero-visual" id="heroVisualStage">
+        <div class="burst-stage">
+          <!-- Central iPhone Mockup -->
+          <div class="hero-phone-wrap">
+            <div class="hero-phone-chassis">
+              <i class="h-btn h-btn-action"></i>
+              <i class="h-btn h-btn-vol-up"></i>
+              <i class="h-btn h-btn-vol-dn"></i>
+              <i class="h-btn h-btn-pwr"></i>
+              <div class="hero-bezel">
+                <div class="hero-screen">
+                  <div class="hero-sb">
+                    <span class="h-time">9:41</span>
+                    <div class="h-icons">
+                      <svg width="15" height="10" viewBox="0 0 18 12"><rect x="0" y="8.5" width="3" height="3.5" rx="0.8" fill="#101014"/><rect x="4.5" y="6" width="3" height="6" rx="0.8" fill="#101014"/><rect x="9" y="3.5" width="3" height="8.5" rx="0.8" fill="#101014"/><rect x="13.5" y="0.5" width="3" height="11.5" rx="0.8" fill="#101014"/></svg>
+                      <svg width="13" height="10" viewBox="0 0 16 12"><path d="M8 9.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3zm-3.5-3a5 5 0 0 1 7 0 .8.8 0 0 1-1.1 1.1 3.5 3.5 0 0 0-4.8 0 .8.8 0 1 1-1.1-1.1zm-3-3a9.5 9.5 0 0 1 13 0 .8.8 0 0 1-1.1 1.1 8 8 0 0 0-10.8 0 .8.8 0 1 1-1.1-1.1z" fill="#101014"/></svg>
+                      <svg width="20" height="10" viewBox="0 0 25 12"><rect x="0.5" y="0.5" width="21" height="11" rx="3.5" fill="none" stroke="#101014" stroke-width="1.2" stroke-opacity="0.35"/><rect x="2.5" y="2.5" width="14" height="7" rx="2" fill="#101014"/><path d="M23 4.2v3.6c.7-.3 1.2-.9 1.2-1.8s-.5-1.5-1.2-1.8z" fill="#101014" fill-opacity="0.4"/></svg>
+                    </div>
+                  </div>
+                  <div class="hero-island"><span class="h-lens"></span></div>
+                  <div class="hero-screen-viewport">
+                    <img class="hero-screen-img" src="assets/screen_collections.png" alt="Dotney Collections UI">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Floating Orbiting Inspiration Cards (100% App-Authentic Capsule Cards) -->
+          <!-- Card 1: Top-Left 电影卡片 (WaterfallLargeLinkCardView) -->
+          <div class="burst-card b-card-1" data-depth="0.18" data-rot="-10.5">
+            <div class="app-card movie-banner-card">
+              <div class="movie-banner-wrap">
+                <img src="assets/severance_still.jpg" alt="Severance">
+                <div class="movie-rating-badge">★ 9.1</div>
+              </div>
+              <div class="movie-info-wrap">
+                <div class="movie-card-title">人生切割术 第二季 (Severance)</div>
+                <div class="movie-card-sub">tv.apple.com · Apple TV+</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2: Top-Right 行程卡片 (WaterfallScheduleCardView) -->
+          <div class="burst-card b-card-2" data-depth="0.22" data-rot="10.0">
+            <div class="app-card schedule-card">
+              <div class="card-top-row">
+                <span class="sched-tag">SCHEDULE</span>
+                <div class="circle-checkbox"></div>
+              </div>
+              <div class="sched-title">产品周会 · 体验设计复盘</div>
+              <div class="sched-location">
+                <span class="pin-icon">📍</span>
+                <span>会议室 A · 腾讯会议</span>
+              </div>
+              <div class="sched-date-row">
+                <div class="sched-date-bar"></div>
+                <span class="sched-date-text">9月10日 15:00</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3: Mid-Right 音乐卡片（小）(WaterfallMusicLinkCardView) -->
+          <div class="burst-card b-card-3" data-depth="0.25" data-rot="11.5">
+            <div class="app-card mini-music-card">
+              <img class="music-thumb" src="assets/viva.png" alt="Viva La Vida">
+              <div class="music-info">
+                <div class="music-title">Viva La Vida</div>
+                <div class="music-artist">Coldplay</div>
+                <div class="music-platform"> Music</div>
+              </div>
+              <div class="music-play-btn">
+                <svg width="7" height="7" viewBox="0 0 24 24" fill="#ffffff">
+                  <polygon points="6 3 20 12 6 21 6 3"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 4: Mid-Left 日常习惯卡片 (WaterfallRoutineCardView) -->
+          <div class="burst-card b-card-4" data-depth="0.14" data-rot="-6.5">
+            <div class="app-card routine-card">
+              <div class="routine-top-row">
+                <span class="routine-tag">ROUTINE · 习惯</span>
+                <span class="routine-emoji">☕️</span>
+              </div>
+              <div class="routine-title">早晨手冲咖啡</div>
+              <div class="routine-loc">
+                <span class="pin-icon">📍</span>
+                <span>Blue Bottle Coffee</span>
+              </div>
+              <div class="routine-summary">耶加雪菲日晒，水温 92°C 萃取</div>
+            </div>
+          </div>
+
+          <!-- Card 5: Bottom-Left 链接卡片 (WaterfallLinkCardView) -->
+          <div class="burst-card b-card-5" data-depth="0.16" data-rot="-8.0">
+            <div class="app-card compact-link-card">
+              <div class="link-text-col">
+                <div class="link-card-title">Steve Jobs 2005 斯坦福毕业演讲</div>
+                <div class="link-card-domain">youtube.com</div>
+              </div>
+              <img class="link-card-thumb" src="assets/jobs.png" alt="Steve Jobs">
+            </div>
+          </div>
+
+          <!-- Card 6: Bottom-Right 金句卡片 (WaterfallQuoteCardView) -->
+          <div class="burst-card b-card-6" data-depth="0.12" data-rot="6.5">
+            <div class="app-card quote-card">
+              <div class="quote-top-row">
+                <span class="quote-mark">“</span>
+                <div class="quote-source-badge">
+                  <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
+                  </svg>
+                </div>
+              </div>
+              <div class="quote-body">
+                “寻找不需要依靠运气就能致富的杠杆，让复利为你工作。”
+              </div>
+              <div class="quote-author">
+                纳瓦尔宝典 · Naval
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Key Features Grid -->
+    <section>
+      <h2>应用核心特色</h2>
+      <div class="features-grid">
+        <div class="glass-card feature-card">
+          <div class="feature-icon">✨</div>
+          <h3>瞬移截屏收藏</h3>
+          <p>微信海报、小红书种草、精选好物……直接截屏或【轻点背面两下】，屏幕内容瞬间“瞬移”进入盒子，静默入库，不漏掉任何心动瞬间。</p>
+        </div>
+        <div class="glass-card feature-card">
+          <div class="feature-icon">🍃</div>
+          <h3>“去待办”设计哲学</h3>
+          <p>告别传统清单催促与死线焦虑。不制造内疚感，不把生活变成机械的打勾任务，将每次截屏转化为灵感的从容沉淀。</p>
+        </div>
+        <div class="glass-card feature-card">
+          <div class="feature-icon">🎴</div>
+          <h3>12 大标签与扇形卡片</h3>
+          <p>AI 自动归类书影音、Quotes、Design、Places 等 12 大预设标签，以参考级斜切扇形卡片优雅堆叠，像翻阅实体画册一样赏心悦目。</p>
+        </div>
+        <div class="glass-card feature-card">
+          <div class="feature-icon">🔒</div>
+          <h3>100% 纯本地隐私安全</h3>
+          <p>调用苹果原生 Vision 与 Speech 框架，本地毫秒级解析。零云端服务器，零第三方行为追踪，全力守护您的私人灵感天地。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Setup Guide -->
+    <section id="guide" class="guide-section">
+      <h2 style="margin-bottom: 1.5rem;">快捷瞬移配置指引</h2>
+      <p style="text-align: center; color: var(--text-secondary); margin-bottom: 3rem; font-size: 1rem;">
+        配合 iOS 快捷指令与轻点背面，只需 2 分钟，即可拥有“双击背面瞬移截图收藏”的神器体验。
+      </p>
+
+      <div class="guide-step">
+        <div class="step-num">1</div>
+        <div class="step-content">
+          <h3>新建快捷指令</h3>
+          <p>打开系统自带的 <b>「快捷指令 (Shortcuts)」</b> 应用，点击右上角的 <b>「+」</b> 新建，命名为 <code>瞬移灵感收藏</code>。</p>
+        </div>
+      </div>
+
+      <div class="guide-step">
+        <div class="step-num">2</div>
+        <div class="step-content">
+          <h3>获取最新截图</h3>
+          <p>在快捷指令中添加操作：<b>「查找照片」</b>，并在过滤器中进行如下配置：</p>
+          <div class="guide-shortcut-code">■ 媒体类型 是 图像
+■ 相簿 是 截屏
+■ 排序方式 选择“创建日期”，顺序为“最新优先”
+■ 限制 开启，并设置仅获取 1 张照片</div>
+        </div>
+      </div>
+
+      <div class="guide-step">
+        <div class="step-num">3</div>
+        <div class="step-content">
+          <h3>调用Dotney瞬移入库</h3>
+          <p>添加下一个操作，搜索并添加本 App 的 <b>「静默处理屏幕内容」</b> 或 <b>「处理截图待办」</b> 操作：</p>
+          <p style="margin-top: 0.5rem;">将上一步「查找照片」所输出的 <code>照片</code> 传入作为输入参数，即可实现后台静默分析归类。</p>
+        </div>
+      </div>
+
+      <div class="guide-step">
+        <div class="step-num">4</div>
+        <div class="step-content">
+          <h3>绑定轻点背面</h3>
+          <p>前往「系统设置 > 辅助功能 > 触控 > 轻点背面」，在轻点两下中选择 <code>瞬移灵感收藏</code>。从此看到心动内容，只需轻扣两下手机后背！</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-info">
+        <div class="logo" style="margin-bottom: 0.5rem;">
+          <div class="logo-icon" style="width:28px; height:28px; font-size: 1rem;">✨</div>
+          <span style="font-size: 1.1rem;">Dotney</span>
+        </div>
+        <p>© 2026 Dotney. 保留所有权利。</p>
+        <p>去待办的灵感收藏软件 · 为个人心动与生活灵感打造。</p>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">首页</a>
+        <a href="support.html">技术支持</a>
+        <a href="privacy.html">隐私政策</a>
+      </div>
+    </div>
+  </footer>
+
+  
+
+</div>
+<div class="lang-en">
+
+
+  <!-- Navigation -->
+  <header>
+    <div class="nav-container">
+      <a href="index.html" class="logo">
+        <div class="logo-icon">✨</div>
+        <span>Dotney</span>
+      </a>
+      <nav>
+        <ul>
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="support.html">Support</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a class="lang-switch-legacy" href="index.html" style="opacity: 0.85; font-size: 0.85rem; padding: 0.2rem 0.5rem; border: 1px solid rgba(255,255,255,0.2); border-radius: 6px;">中文</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Showcase -->
+  <main>
+    <section class="hero">
+      <div class="hero-content">
+        <div class="badge">Anti-Todo · Inspiration Vault · 100% On-Device</div>
+        <h1>Break Free from To-Do Anxiety.</h1>
+        <p class="hero-subtitle">
+          Never feel pressured by overwhelming checklists or deadlines again. Double-tap the back of your iPhone to teleport screenshots silently into your inspiration vault. Auto-categorized into 12 tags with elegant fan-stacked cards.
+        </p>
+        <div class="hero-actions">
+          <a href="#guide" class="btn btn-primary">📖 Setup Guide</a>
+          <a href="support.html" class="btn btn-secondary">✉️ Support & Feedback</a>
+        </div>
+      </div>
+      
+      <!-- CSS Animated Mockup -->
+      <div class="hero-visual">
+        <div class="mockup-container">
+          <div class="phone-screen">
+            <div class="phone-island"></div>
+            <div class="phone-header">
+              <span>9:41</span>
+              <span>🔋 100%</span>
+            </div>
+            
+            <div class="mockup-screen-flow">
+              <!-- Screenshot Box -->
+              <div class="mockup-image-box">
+                <span style="font-size: 2rem;">🖼️</span>
+                <span style="font-size: 0.75rem; opacity: 0.8; font-weight: 500;">Screenshot Input</span>
+                <div style="background: rgba(0,0,0,0.4); padding: 0.35rem 0.65rem; border-radius: 6px; font-size: 0.65rem; font-family: monospace; text-align: left; margin-top: 0.25rem;">
+                  ☕️<br>Buy coffee after workout<br>Due tonight 9:28 PM
+                </div>
+                <div class="mockup-ocr-line"></div>
+              </div>
+              
+              <!-- Process Transition -->
+              <div style="text-align: center; color: var(--secondary); font-size: 1.2rem; margin: -0.25rem 0;">
+                ⚡️
+              </div>
+              
+              <!-- Parsed Capsule -->
+              <div class="mockup-capsule">
+                <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.08); padding-bottom: 0.35rem;">
+                  <span style="font-weight: 600; font-size: 0.85rem; color: #fff;">☕️ Coffee Task</span>
+                  <span style="background: #10b981; color: #fff; font-size: 0.6rem; padding: 0.1rem 0.35rem; border-radius: 9999px;">0/1 Done</span>
+                </div>
+                <div style="font-size: 0.75rem; color: var(--text-secondary); margin-top: 0.25rem;">
+                  🏃 Buy coffee after workout
+                </div>
+                <div style="font-size: 0.65rem; color: var(--accent); margin-top: 0.25rem; display: flex; align-items: center; gap: 0.25rem;">
+                  <span>⏰ Due:</span>
+                  <span style="font-weight: 500;">Today 9:28 PM</span>
+                </div>
+                <div style="font-size: 0.6rem; color: #64748b; margin-top: 0.25rem; text-align: right;">
+                  🔄 Synced to Apple Reminders
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Key Features Grid -->
+    <section>
+      <h2>Key Features</h2>
+      <div class="features-grid">
+        <div class="glass-card feature-card">
+          <div class="feature-icon">🚀</div>
+          <h3>Instant Shortcut Trigger</h3>
+          <p>Run silently via iOS "Back Tap" or "Action Button". Automatically fetches the latest screenshot and processes it in seconds.</p>
+        </div>
+        <div class="glass-card feature-card">
+          <div class="feature-icon">🧠</div>
+          <h3>On-Device OCR Intelligence</h3>
+          <p>Powered by Apple's Vision framework. Recognizes text and QR codes locally with 100% privacy and zero cloud server dependencies.</p>
+        </div>
+        <div class="glass-card feature-card">
+          <div class="feature-icon">🔔</div>
+          <h3>Apple Reminders Sync</h3>
+          <p>Deep EventKit integration. Tasks automatically save to your native Apple Reminders app and sync across all your devices via iCloud.</p>
+        </div>
+        <div class="glass-card feature-card">
+          <div class="feature-icon">📱</div>
+          <h3>Lock Screen Live Activity</h3>
+          <p>Track task progress right on your iOS Lock Screen & Dynamic Island with ActivityKit, complete with screenshot thumbnails.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Setup Guide -->
+    <section id="guide" class="guide-section">
+      <h2 style="margin-bottom: 1.5rem;">Shortcuts Setup Guide</h2>
+      <p style="text-align: center; color: var(--text-secondary); margin-bottom: 3rem; font-size: 1rem;">
+        Set up in just 3 minutes to turn screenshots into actionable tasks effortlessly.
+      </p>
+
+      <div class="guide-step">
+        <div class="step-num">1</div>
+        <div class="step-content">
+          <h3>Create a New Shortcut</h3>
+          <p>Open the native <b>Shortcuts</b> app on iOS, tap <b>"+"</b> to create a new shortcut, and name it <code>ScreenshotTodo</code>.</p>
+        </div>
+      </div>
+
+      <div class="guide-step">
+        <div class="step-num">2</div>
+        <div class="step-content">
+          <h3>Get Latest Screenshot</h3>
+          <p>Add action: <b>"Find Photos"</b>, and configure filters to retrieve the latest screenshot:</p>
+          <div class="guide-shortcut-code">■ Media Type is Image
+■ Album is Screenshots
+■ Sort by "Date Taken", Order "Latest First"
+■ Limit to 1 Photo</div>
+        </div>
+      </div>
+
+      <div class="guide-step">
+        <div class="step-num">3</div>
+        <div class="step-content">
+          <h3>Process Screenshot</h3>
+          <p>Add action: <b>"Process Screenshot Todo"</b> from this app, and pass the photo output from Step 2 as the <code>Screenshot</code> parameter.</p>
+        </div>
+      </div>
+
+      <div class="guide-step">
+        <div class="step-num">4</div>
+        <div class="step-content">
+          <h3>Bind Physical Trigger</h3>
+          <p>Assign the shortcut to a physical trigger for instant task creation:</p>
+          <ul style="margin-top: 0.75rem; padding-left: 1.25rem; color: var(--text-secondary); font-size: 0.9rem;">
+            <li style="margin-bottom: 0.35rem;"><b>Back Tap</b>: Settings > Accessibility > Touch > Back Tap, assign to <code>ScreenshotTodo</code>.</li>
+            <li><b>Action Button</b>: Settings > Action Button, select Shortcut > <code>ScreenshotTodo</code>.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-info">
+        <div class="logo" style="margin-bottom: 0.5rem;">
+          <div class="logo-icon" style="width:28px; height:28px; font-size: 1rem;">✨</div>
+          <span style="font-size: 1.1rem;">Dotney</span>
+        </div>
+        <p>© 2026 Dotney. All rights reserved.</p>
+        <p>Anti-Todo Inspiration Vault · 100% on-device privacy protection.</p>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="support.html">Support</a>
+        <a href="privacy.html">Privacy Policy</a>
+      </div>
+    </div>
+  </footer>
+
+  
+
+</div>
+
+<script src="app.js"></script>
+<div id="hub-foot"></div>
+<script src="../../assets/js/shell.js"></script>
+</body>
+</html>

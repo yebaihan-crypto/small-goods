@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SocialGraphy - 探索你的人际星系 | 伴侣共享日历与成长记录</title>
+    <meta name="description" content="SocialGraphy 是一款专为伴侣和个人打造的人际关系星图、时间胶囊与健康记录工具。通过私有 iCloud 无缝同步共享，绝不收集用户隐私。">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+<script>(function(){try{var m=/[?&]lang=(zh|en)/.exec(location.search);var s=m?m[1]:localStorage.getItem("hub-lang");if(m){localStorage.setItem("hub-lang",m[1]);}var n=(navigator.language||"zh").toLowerCase();document.documentElement.setAttribute("data-lang",s||(n.indexOf("zh")===0?"zh":"en"));}catch(e){document.documentElement.setAttribute("data-lang","zh");}})();</script>
+<link rel="stylesheet" href="../../assets/css/shell.css">
+</head>
+<body>
+<div id="hub-bar"></div>
+<script>window.HUB_PAGE={"slug": "socialgraphy", "nameZh": "记下小本本", "nameEn": "SocialGraphy", "links": [{"href": "privacy.html", "zh": "隐私政策", "en": "Privacy"}], "storeUrl": "https://apps.apple.com/cn/app/id6778294075"};</script>
+
+    <!-- Stars Background Canvas -->
+    <canvas id="stars-canvas"></canvas>
+
+    <!-- Header Navigation -->
+    <header class="header">
+        <div class="container header-container">
+            <a href="#" class="logo">
+                <span class="logo-icon">🪐</span>
+                <span class="logo-text">SocialGraphy</span>
+            </a>
+            <nav class="nav">
+                <a href="#features" class="nav-link">产品特色</a>
+                <a href="#faq" class="nav-link">常见问题</a>
+                <a href="#support" class="nav-link">技术支持</a>
+                <a href="privacy.html" class="nav-link">隐私政策</a>
+            </nav>
+            <a href="#support" class="btn-download">联系支持</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-container">
+            <div class="hero-content">
+                <span class="badge">iOS 17+ / iCloud 安全同步</span>
+                <h1>探索你的<br><span class="text-gradient">人际星系</span></h1>
+                <p class="hero-desc">
+                    把珍贵的关系编织进闪烁的宇宙。SocialGraphy 是一款专为伴侣及个人打造的人际网络管理与生活记录应用。让您以银河视角鸟瞰关系，守护家庭里程碑，封存未来的信件。
+                </p>
+                <div class="hero-actions">
+                    <a href="#support" class="btn btn-primary-glow">
+                        <span>✉️ 提交支持请求</span>
+                    </a>
+                    <a href="#features" class="btn btn-secondary">
+                        <span>了解产品特色</span>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="hero-visual">
+                <div class="phone-mockup-wrapper">
+                    <div class="phone-mockup">
+                        <div class="phone-screen">
+                            <div class="phone-notch"></div>
+                            <!-- App View UI Inside Screen -->
+                            <div class="app-ui">
+                                <div class="app-header">
+                                    <span class="app-title">人际星图</span>
+                                    <span class="app-subtitle">我的银河系</span>
+                                </div>
+                                <div class="galaxy-viewport">
+                                    <!-- Rotating orbital lines and nodes generated dynamically in CSS/JS -->
+                                    <div class="orbit orbit-1"></div>
+                                    <div class="orbit orbit-2"></div>
+                                    <div class="orbit orbit-3"></div>
+                                    <div class="galaxy-center">✨</div>
+                                    <!-- Stars/Persons -->
+                                    <div class="person-node p1" data-name="伴侣 (阿雅)" data-role="Family"></div>
+                                    <div class="person-node p2" data-name="母亲" data-role="Family"></div>
+                                    <div class="person-node p3" data-name="老王" data-role="Friend"></div>
+                                    <div class="person-node p4" data-name="Leader 李" data-role="Work"></div>
+                                    <div class="person-node p5" data-name="孩子 (小麦)" data-role="Family"></div>
+                                </div>
+                                <div class="app-card">
+                                    <div class="card-title">🪐 宇宙亲密度引力</div>
+                                    <p class="card-text">阿雅与您在 7 天内进行了 14 次互动，处于第一星轨核心圈。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Features</span>
+                <h2>精心打磨的核心功能</h2>
+                <p>SocialGraphy 致力于在保护隐私的前提下，为您呈现富有情感厚度的人际连结方式。</p>
+            </div>
+            
+            <div class="features-grid">
+                <!-- Card 1 -->
+                <div class="feature-card">
+                    <div class="feature-icon">🌌</div>
+                    <h3>银河人际星图</h3>
+                    <p>可视化人际关系网络，根据互动频率与情感引力，自动将联系人呈现为不同轨道上的星子。支持家庭、朋友、工作等分类星群一键切换。</p>
+                </div>
+                <!-- Card 2 -->
+                <div class="feature-card">
+                    <div class="feature-icon">💑</div>
+                    <h3>双端伴侣同步与共享日历</h3>
+                    <p>专为亲密关系设计的双端协作。通过 Apple 官方私有 CloudKit 安全共享数据库，无需额外注册账号，即可实时共享相册、随笔与家庭日历日程。</p>
+                </div>
+                <!-- Card 3 -->
+                <div class="feature-card">
+                    <div class="feature-icon">👶</div>
+                    <h3>疫苗接种提醒与成长记录</h3>
+                    <p>内置精准的疫苗接种周期提醒表与成长阶段里程碑。伴侣双方可同时接收推送通知，重要接种节点绝不遗漏，共同守护宝宝成长健康。</p>
+                </div>
+                <!-- Card 4 -->
+                <div class="feature-card">
+                    <div class="feature-icon">✉️</div>
+                    <h3>时空胶囊 (未来的信)</h3>
+                    <p>给未来的你们写一封信，封存当下的温情照片与感悟，设置特定解锁时间。让真挚的情感在时间的轨道中静静滑行，到期自动投递。</p>
+                </div>
+                <!-- Card 5 -->
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>社交词频与互动分析</h3>
+                    <p>本地运行的高级自然语言词频统计，分析您在备注和生活随笔中提及的高频词汇，智能勾勒你们的社交纽带关键词，感知心绪变化。</p>
+                </div>
+                <!-- Card 6 -->
+                <div class="feature-card">
+                    <div class="feature-icon">🔒</div>
+                    <h3>100% 隐私权守护</h3>
+                    <p>我们坚信隐私至上。SocialGraphy 没有第三方中央服务器，所有数据直接存储于您的私有 iCloud 容器中，数据传输与存储全由 Apple 加密保障。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">FAQ</span>
+                <h2>常见问题解答</h2>
+                <p>关于 SocialGraphy 隐私安全、同步机制及操作的使用解答</p>
+            </div>
+            
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>SocialGraphy 是如何保证我的人际隐私安全的？</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>SocialGraphy 不设任何第三方服务器。您的所有通讯录联系人关系、成长照片、随笔和健康记录全部保存在您本人的设备本地以及您专属的苹果 iCloud 个人私有数据库中。作为开发者，我们完全无法获取、读取或分析您的任何个人隐私数据，一切由 Apple 强大的加密机制全程保护。</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>如何启用伴侣双端同步与共享日程？</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>在 App 内部点击右上角的“设置”，选择“伴侣同步设置”。点击“发起同步邀请”，App 会生成一段安全的 iCloud 协作链接。通过 iMessage 或微信发送给您的伴侣，对方点击链接并接受协作后，双方设备将自动建立连接，日程与记录便会自动开启实时同步。</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>为什么新添加了联系人，但星图没有变化？</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>“人际星图”的距离和发光度是基于您与联系人的“互动深度”（如记事次数、关联日历日程数、时间距离等）进行智能计算的。随着您在应用中记录有关该联系人的日常点滴，对应的行星就会越亮、轨道越靠近中心。这是一个需要您日常记录逐渐养成的动态星图。</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>未来信件（时间胶囊）可以提前解锁吗？</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>不能。为了维持时间仪式的神秘感和厚重感，封存后的未来信件在设定的解锁时间到达之前是无法读取内容的。到期后，系统会向您和伴侣推送通知，信件将自动解锁呈现。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Support Section -->
+    <section id="support" class="support">
+        <div class="container">
+            <div class="support-wrapper">
+                <div class="support-info">
+                    <h2>技术支持与反馈中心</h2>
+                    <p>使用 SocialGraphy 时遇到了问题，或者有更好的功能建议？我们非常乐意倾听您的声音！</p>
+                    <p>您可以通过右侧的表单提交技术支持工单，我们的团队会在 24-48 小时内通过邮件联系您。您也可以直接向我们的官方支持邮箱发送邮件：</p>
+                    <div class="support-email">
+                        <span>📩</span> <a href="mailto:yebaihan@qq.com">yebaihan@qq.com</a>
+                    </div>
+                    <div class="support-appstore">
+                        <p>当前支持环境：</p>
+                        <ul>
+                            <li>系统版本：iOS 17.0 或更高版本</li>
+                            <li>要求：开启系统设置中的“iCloud”及“iCloud 云盘”</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="support-form-container">
+                    <form id="support-form" class="support-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">您的姓名 / 昵称</label>
+                                <input type="text" id="name" required placeholder="例如：王小明">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">联系邮箱</label>
+                                <input type="email" id="email" required placeholder="例如：xiaoming@example.com">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="category">问题类别</label>
+                            <select id="category" required>
+                                <option value="" disabled selected>请选择问题类型...</option>
+                                <option value="bug">Bug 汇报 (程序闪退/异常)</option>
+                                <option value="sync">同步问题 (iCloud / 伴侣同步失败)</option>
+                                <option value="feature">功能建议 (希望增加新功能)</option>
+                                <option value="refund">退款或账单咨询</option>
+                                <option value="other">其他问题</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">主题摘要</label>
+                            <input type="text" id="subject" required placeholder="一句话概括您遇到的问题">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">详细描述</label>
+                            <textarea id="message" rows="6" required placeholder="请详细描述您的问题，包含操作步骤，如涉及同步，请说明伴侣设备是否已开启 iCloud。"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary-glow btn-block" id="btn-submit-support">
+                            <span>🚀 提交支持请求</span>
+                        </button>
+                    </form>
+                    
+                    <!-- Form Success Message -->
+                    <div id="form-success" class="form-success-card hidden">
+                        <div class="success-icon">✨</div>
+                        <h3>提交成功！</h3>
+                        <p>您的支持请求已被记录。系统已分配工单，我们将会在 24 小时内发送邮件回复至您填写的联系邮箱。</p>
+                        <button class="btn btn-secondary btn-sm" id="btn-reset-form">填写新工单</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-brand">
+                <span class="logo-icon">🪐</span>
+                <span class="logo-text">SocialGraphy</span>
+                <p>将珍贵的情感与轨道，定格在银河星空中。</p>
+            </div>
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h4>法律合规</h4>
+                    <a href="privacy.html">隐私政策</a>
+                    <a href="#">使用条款</a>
+                </div>
+                <div class="footer-column">
+                    <h4>联系我们</h4>
+                    <a href="mailto:yebaihan@qq.com">yebaihan@qq.com</a>
+                    <a href="#support">常见反馈</a>
+                </div>
+            </div>
+        </div>
+        <div class="container footer-bottom">
+            <p>&copy; 2026 SocialGraphy Team. All rights reserved. 保护您的隐私是我们的首要责任。</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+<div id="hub-foot"></div>
+<script src="../../assets/js/shell.js"></script>
+</body>
+</html>

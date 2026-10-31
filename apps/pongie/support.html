@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pongie (乒球人) - 技术支持与帮助中心 (Support & Help)</title>
+    <style>
+        :root {
+            --bg-color: #FAF7F2;
+            --card-bg: #FFFFFF;
+            --primary-color: #FF6B4A;
+            --text-dark: #2D3142;
+            --text-muted: #6C757D;
+            --accent-green: #4E9F3D;
+            --border-color: #EAE6DF;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-dark);
+            line-height: 1.7;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 48px;
+            border-radius: 24px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            border: 1px solid var(--border-color);
+        }
+
+        .lang-switch {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            gap: 8px;
+            font-size: 13px;
+            margin-bottom: 20px;
+        }
+
+        .lang-switch a {
+            color: var(--text-muted);
+            text-decoration: none;
+            padding: 4px 10px;
+            border-radius: 6px;
+            transition: all 0.2s ease;
+        }
+
+        .lang-switch a:hover {
+            color: var(--primary-color);
+            background-color: #FFF5F2;
+        }
+
+        .lang-switch span.active {
+            font-weight: 600;
+            color: var(--primary-color);
+            background: #FFF5F2;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+
+        .lang-switch .sep {
+            color: var(--border-color);
+        }
+
+        .header {
+            text-align: center;
+            padding-bottom: 32px;
+            border-bottom: 2px dashed var(--border-color);
+            margin-bottom: 32px;
+        }
+
+        .header h1 {
+            font-size: 32px;
+            color: var(--primary-color);
+            margin-bottom: 8px;
+        }
+
+        .header p {
+            color: var(--text-muted);
+            font-size: 15px;
+        }
+
+        .faq-section {
+            margin-bottom: 32px;
+        }
+
+        .faq-item {
+            margin-bottom: 24px;
+            background-color: #FAF9F6;
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+        }
+
+        .faq-item h3 {
+            font-size: 17px;
+            color: var(--primary-color);
+            margin-bottom: 8px;
+        }
+
+        .faq-item p {
+            font-size: 14px;
+            color: #4A4E5E;
+            margin-bottom: 0;
+        }
+
+        .contact-box {
+            background: linear-gradient(135deg, #FF6B4A 0%, #FF8E72 100%);
+            color: #FFFFFF;
+            padding: 32px;
+            border-radius: 16px;
+            text-align: center;
+        }
+
+        .contact-box h2 {
+            font-size: 22px;
+            margin-bottom: 12px;
+            border: none;
+            padding: 0;
+            color: #FFFFFF;
+        }
+
+        .contact-box p {
+            color: #FFF0ED;
+            margin-bottom: 20px;
+        }
+
+        .btn-email {
+            display: inline-block;
+            background: #FFFFFF;
+            color: var(--primary-color);
+            padding: 12px 28px;
+            border-radius: 30px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: transform 0.2s;
+        }
+
+        .btn-email:hover {
+            transform: scale(1.05);
+        }
+
+        .footer {
+            margin-top: 40px;
+            padding-top: 24px;
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+    </style>
+<script>(function(){try{var m=/[?&]lang=(zh|en)/.exec(location.search);var s=m?m[1]:localStorage.getItem("hub-lang");if(m){localStorage.setItem("hub-lang",m[1]);}var n=(navigator.language||"zh").toLowerCase();document.documentElement.setAttribute("data-lang",s||(n.indexOf("zh")===0?"zh":"en"));}catch(e){document.documentElement.setAttribute("data-lang","zh");}})();</script>
+<link rel="stylesheet" href="../../assets/css/shell.css">
+</head>
+<body>
+<div id="hub-bar"></div>
+<script>window.HUB_PAGE={"slug": "pongie", "nameZh": "乒球人", "nameEn": "Pongie", "links": [{"href": "index.html", "zh": "产品主页", "en": "Overview"}, {"href": "privacy.html", "zh": "隐私政策", "en": "Privacy"}], "storeUrl": "https://apps.apple.com/cn/app/id6802175450"};</script>
+
+<div class="lang-zh">
+
+    <div class="container">
+        <div class="lang-switch">
+            <span class="active">🇨🇳 中文</span>
+            <span class="sep">|</span>
+            <a class="lang-switch-legacy" href="support.html">🇺🇸 English</a>
+        </div>
+
+        <div class="header">
+            <h1>🏓 Pongie (乒球人) 帮助与技术支持</h1>
+            <p>遇到问题？我们随时为您解答！</p>
+        </div>
+
+        <div class="faq-section">
+            <h2 style="border-left: 4px solid var(--primary-color); padding-left: 12px; margin-bottom: 20px;">常见问题 (FAQ)</h2>
+
+            <div class="faq-item">
+                <h3>Q1: 物理情绪球池中的球体大小代表什么？</h3>
+                <p>答：大号球代表“🏆大胜比赛”，中号球代表“🏸常规对局/对练”，小号球代表“💦短时间高强度特训”。球体会根据 SpriteKit 物理引擎在球池中发生碰撞与沉降，带给您极富情趣的涂鸦打卡体验。</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>Q2: 装备日志（底板与胶皮）磨损提醒是如何计算的？</h3>
+                <p>答：乒球人根据您每次记录的使用小时数自动累计，结合胶皮类型（如正手反胶、粘性胶皮、外套等）的平均使用寿命推荐提醒阈值。当磨损度过高时，软件会自动提示您检查胶皮粘性或考虑更换。</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>Q3: 如何添加 iOS 桌面小组件 (Widget)？</h3>
+                <p>答：长按 iOS 桌面任意空白处 -> 点击左上角“+”加号 -> 搜索“Pongie”或“乒球人” -> 选择适合您桌面的小组件尺寸（中号或小号）并添加即可。</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>Q4: 我的打卡记录如果换手机了怎么办？</h3>
+                <p>答：乒球人使用系统内置的 SwiftData 存储，只要您的系统开启了 iCloud 自动同步与备份，在更换新 iPhone 时登录同一个 Apple ID 即可自动恢复所有数据。</p>
+            </div>
+        </div>
+
+        <div class="contact-box">
+            <h2>需要更多帮助或反馈功能建议？</h2>
+            <p>如果您在使用过程中遇到任何 Bug 或有好的设计建议，欢迎随时联系我们的开发团队！</p>
+            <a href="mailto:support@pongie-app.com?subject=Pongie%20App%20Feedback" class="btn-email">发送邮件反馈 (support@pongie-app.com)</a>
+        </div>
+
+        <div class="footer">
+            <p>&copy; 2026 乒球人 (Pongie) Team. All Rights Reserved. | <a href="privacy.html" style="color: var(--text-muted);">隐私政策</a></p>
+        </div>
+    </div>
+
+</div>
+<div class="lang-en">
+
+    <div class="container">
+        <div class="lang-switch">
+            <a class="lang-switch-legacy" href="support.html">🇨🇳 中文</a>
+            <span class="sep">|</span>
+            <span class="active">🇺🇸 English</span>
+        </div>
+
+        <div class="header">
+            <h1>🏓 Pongie Support & Help Center</h1>
+            <p>Have questions or feedback? We are here to help!</p>
+        </div>
+
+        <div class="faq-section">
+            <h2 style="border-left: 4px solid var(--primary-color); padding-left: 12px; margin-bottom: 20px;">Frequently Asked Questions (FAQ)</h2>
+
+            <div class="faq-item">
+                <h3>Q1: What do the different ball sizes in the Physics Mood Pool represent?</h3>
+                <p>Answer: Ball sizes dynamically represent match intensity — 🏆 Large Balls indicate "Decisive Victories / Major Matches", 🏸 Medium Balls indicate "Regular Matches & Friendly Rallies", and 💦 Small Balls indicate "Intense Drills & Practice Routines". Driven by Apple's SpriteKit physics engine, balls clash and settle realistically in the pool.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>Q2: How does the Gear Log calculate rubber and blade wear?</h3>
+                <p>Answer: Pongie automatically accumulates active hours logged from your match sessions. Combined with recommended durability thresholds for inverted, tacky, and tensor rubbers, it calculates remaining life percentages. When wear approaches critical levels, Pongie alerts you to inspect tackiness or plan a replacement.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>Q3: How do I add Pongie iOS Home Screen Widgets?</h3>
+                <p>Answer: Long press any empty space on your iOS Home Screen until the apps jiggle -> Tap the "+" icon in the top left corner -> Search for "Pongie" -> Choose your preferred widget size (Small or Medium) and tap "Add Widget".</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>Q4: How do I restore my match history when switching to a new iPhone?</h3>
+                <p>Answer: Pongie utilizes Apple's native SwiftData framework. As long as your iOS device has iCloud Backup enabled under your Apple ID, your data automatically restores when you set up your new iPhone.</p>
+            </div>
+        </div>
+
+        <div class="contact-box">
+            <h2>Need More Assistance or Have Feature Ideas?</h2>
+            <p>If you encounter any bugs, have questions, or wish to suggest new features, our development team is always happy to hear from you!</p>
+            <a href="mailto:support@pongie-app.com?subject=Pongie%20App%20Feedback" class="btn-email">Email Us (support@pongie-app.com)</a>
+        </div>
+
+        <div class="footer">
+            <p>&copy; 2026 Pongie Team. All Rights Reserved. | <a href="privacy.html" style="color: var(--text-muted);">Privacy Policy</a></p>
+        </div>
+    </div>
+
+</div>
+
+<div id="hub-foot"></div>
+<script src="../../assets/js/shell.js"></script>
+</body>
+</html>

@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Dotney 官方隐私政策。我们尊重并保护您的隐私。我们的应用完全在本地处理所有数据，无外部服务器收集，确保您的个人数据安全。">
+  <title>隐私政策 - Dotney</title>
+  <link rel="stylesheet" href="styles.css">
+<script>(function(){try{var m=/[?&]lang=(zh|en)/.exec(location.search);var s=m?m[1]:localStorage.getItem("hub-lang");if(m){localStorage.setItem("hub-lang",m[1]);}var n=(navigator.language||"zh").toLowerCase();document.documentElement.setAttribute("data-lang",s||(n.indexOf("zh")===0?"zh":"en"));}catch(e){document.documentElement.setAttribute("data-lang","zh");}})();</script>
+<link rel="stylesheet" href="../../assets/css/shell.css">
+</head>
+<body>
+<div id="hub-bar"></div>
+<script>window.HUB_PAGE={"slug": "dotney", "nameZh": "Dotney", "nameEn": "Dotney", "links": [{"href": "index.html", "zh": "产品主页", "en": "Overview"}, {"href": "support.html", "zh": "技术支持", "en": "Support"}]};</script>
+
+<div class="lang-zh">
+
+
+  <!-- Navigation -->
+  <header>
+    <div class="nav-container">
+      <a href="index.html" class="logo">
+        <div class="logo-icon">✨</div>
+        <span>Dotney</span>
+      </a>
+      <nav>
+        <ul>
+          <li><a href="index.html">首页</a></li>
+          <li><a href="support.html">技术支持</a></li>
+          <li><a href="privacy.html" class="active">隐私政策</a></li>
+          <li><a class="lang-switch-legacy" href="privacy.html" style="opacity: 0.85; font-size: 0.85rem; padding: 0.2rem 0.5rem; border: 1px solid rgba(255,255,255,0.2); border-radius: 6px;">EN</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Privacy Policy Content -->
+  <main>
+    <div class="privacy-container">
+      <h2 style="margin-bottom: 1rem;">隐私政策</h2>
+      <p style="text-align: center; color: var(--text-secondary); margin-bottom: 3rem; font-size: 0.95rem;">
+        生效日期：2026年9月8日
+      </p>
+
+      <div class="glass-card privacy-card">
+        <p>「Dotney」应用（以下简称“本应用”或“我们”）极其重视用户的隐私和个人信息安全。本隐私政策旨在向您说明本应用如何处理您的数据。我们做出的核心承诺是：<b>您的数据完全属于您自己，我们不收集、不存储、也不向任何第三方传输您的任何隐私信息。</b></p>
+        
+        <h3>1. 零服务器架构与本地运行</h3>
+        <p>本应用采用纯本地离线的技术方案，<b>没有架设任何外部云端服务器</b>。
+          <ul>
+            <li>本应用在运行快捷指令、解析屏幕截图时，所有的图片文字识别 (OCR) 和二维码扫描都是通过 iOS 系统内置的 <code>Vision</code> 框架在您的设备上本地实时完成的。</li>
+            <li>在解析任务的截止时间（如“今晚 8 点”、“明天 09:30”）时，也完全依靠本地的文本匹配与时间计算引擎完成，不依赖任何云端大模型或云端 AI 服务。</li>
+            <li>我们无法、也不会收集您的屏幕截图内容、解析出的文本或生成的任何待办任务。</li>
+          </ul>
+        </p>
+
+        <h3>2. 深度同步系统「提醒事项」 (EventKit)</h3>
+        <p>本应用需要您授予系统「提醒事项」的访问权限，以便在您触发截图待办时，将识别出的任务项写入您的系统日程管理中：
+          <ul>
+            <li>本应用通过 iOS 官方 <code>EventKit</code> 接口，将任务以原生格式保存至您设备自带的「提醒事项」应用中。</li>
+            <li>所有的跨设备多端数据同步（如有）均通过 Apple 官方提供的 <b>iCloud</b> 服务安全进行，完全遵循 Apple 自身的隐私保护条款。</li>
+            <li>开发者不拥有也无法读取您 iCloud 中的任何数据。</li>
+          </ul>
+        </p>
+
+        <h3>3. 敏感权限获取说明</h3>
+        <p>为了给您提供完整的功能体验，本应用会在必要时向您请求以下系统权限，所有处理均在设备本地完成：
+          <ul>
+            <li><b>提醒事项 (EventKit) 权限</b>：用于将截图识别出的任务自动同步至系统原生“提醒事项”，实现跨设备 iCloud 同步与系统日程提醒。</li>
+            <li><b>照片/相册访问权限 (Photo Library)</b>：用于读取您选中的最新截图，以供本地 Vision 框架识别图片中的文字和时间。我们绝不会在后台扫描您的相册或读取未授权的照片。</li>
+            <li><b>麦克风与语音识别权限 (Microphone & Speech Recognition)</b>：用于通过语音快速录入待办任务。语音数据仅通过 iOS 系统内置的 Speech Recognition 框架在本地转录为文本，绝不上传到任何第三方语音服务器。</li>
+            <li><b>位置权限 (Location When In Use)</b>：仅在您使用待办地点打卡功能时，用于在设备本地实时计算当前位置与目标地点的距离，不记录您的行踪轨迹，亦不上传位置信息。</li>
+            <li><b>手记建议权限 (Journaling Suggestions)</b>：用于读取您主动选中的手记活动建议（如播客、运动、音乐等），在本地生成精致的 Day 待办胶囊卡片。</li>
+            <li><b>锁屏实时活动 (Live Activities)</b>：用于在锁定屏幕和灵动岛实时展示当前待办进度，所有展示数据仅保存在设备内存与本地 App Group 中。</li>
+          </ul>
+          您可以随时在 iOS 系统的“设置 - 隐私与安全性”中查阅或撤销上述任何权限。撤销后，对应功能将受到限制，但应用内其余本地功能仍可正常运行，且绝不收集您的任何数据。
+        </p>
+
+        <h3>4. 第三方 SDK 与追踪器声明</h3>
+        <p>为了保障极致纯净的效率体验，<b>本应用不包含任何第三方广告 SDK、用户统计分析工具（如 Firebase, Google Analytics 等）或行为追踪器</b>。我们不会追踪您的软件使用习惯，也不会收集任何设备标识符（如 IDFA 或 UUID）。</p>
+
+        <h3>5. 隐私政策的更新</h3>
+        <p>我们可能会根据应用版本的更新和苹果开发者政策的调整，适时修改本隐私政策。任何政策修改都会在此页面上发布。我们建议您定期查看此页面以获取最新信息。</p>
+
+        <h3>6. 联系我们</h3>
+        <p>如果您对本隐私政策或本应用的数据处理有任何疑问、建议或意见，欢迎通过以下电子邮箱与我们取得联系：<br>
+          <a href="mailto:yebaihan@qq.com" style="color: var(--secondary); text-decoration: none; font-weight: 500;">yebaihan@qq.com</a>
+        </p>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-info">
+        <div class="logo" style="margin-bottom: 0.5rem;">
+          <div class="logo-icon" style="width:28px; height:28px; font-size: 1rem;">✨</div>
+          <span style="font-size: 1.1rem;">Dotney</span>
+        </div>
+        <p>© 2026 Dotney. 保留所有权利。</p>
+        <p>去待办的灵感收藏软件 · 100% 本地离线运行保障隐私安全。</p>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">首页</a>
+        <a href="support.html">技术支持</a>
+        <a href="privacy.html">隐私政策</a>
+      </div>
+    </div>
+  </footer>
+
+  
+
+</div>
+<div class="lang-en">
+
+
+  <!-- Navigation -->
+  <header>
+    <div class="nav-container">
+      <a href="index.html" class="logo">
+        <div class="logo-icon">✨</div>
+        <span>Dotney</span>
+      </a>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="support.html">Support</a></li>
+          <li><a href="privacy.html" class="active">Privacy Policy</a></li>
+          <li><a class="lang-switch-legacy" href="privacy.html" style="opacity: 0.85; font-size: 0.85rem; padding: 0.2rem 0.5rem; border: 1px solid rgba(255,255,255,0.2); border-radius: 6px;">中文</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Privacy Policy Content -->
+  <main>
+    <div class="privacy-container">
+      <h2 style="margin-bottom: 1rem;">Privacy Policy</h2>
+      <p style="text-align: center; color: var(--text-secondary); margin-bottom: 3rem; font-size: 0.95rem;">
+        Effective Date: September 8, 2026
+      </p>
+
+      <div class="glass-card privacy-card">
+        <p>The "Dotney" application ("the App" or "We") values your privacy and personal data security. This Privacy Policy explains how data is processed by the App. Our core commitment is: <b>Your data belongs entirely to you. We do not collect, store, or transmit any of your private information to third-party servers.</b></p>
+        
+        <h3>1. Zero-Server Architecture & On-Device Processing</h3>
+        <p>The App operates entirely offline and <b>maintains no cloud servers</b>.
+          <ul>
+            <li>Text recognition (OCR) and QR code scanning from screenshots are executed in real-time on your device using iOS's native <code>Vision</code> framework.</li>
+            <li>Due date parsing is performed locally via on-device regex and date parsing logic without using external AI API servers.</li>
+            <li>We cannot and do not collect your screenshots, recognized text, or generated task items.</li>
+          </ul>
+        </p>
+
+        <h3>2. Apple Reminders Sync (EventKit)</h3>
+        <p>The App requests access to Apple Reminders to sync tasks created from screenshots:
+          <ul>
+            <li>Tasks are written to your native Apple Reminders app using iOS's official <code>EventKit</code> API.</li>
+            <li>Any multi-device synchronization is managed securely via Apple's official <b>iCloud</b> infrastructure under Apple's privacy policy.</li>
+            <li>Developers have no access to your iCloud data.</li>
+          </ul>
+        </p>
+
+        <h3>3. Permissions & System Access</h3>
+        <p>The App requests only the permissions necessary to provide core features, and all processing is handled strictly on-device:
+          <ul>
+            <li><b>Reminders (EventKit)</b>: To save and sync generated tasks to native Apple Reminders, enabling seamless iCloud sync across your Apple devices.</li>
+            <li><b>Photos Access (Photo Library)</b>: When executing Shortcuts with screenshots, the App reads only the screenshot you selected to perform local on-device Vision OCR. We never scan your library in the background.</li>
+            <li><b>Microphone & Speech Recognition</b>: Used for voice-based quick task entry. Voice audio is transcribed locally using iOS's built-in Speech framework and is never sent to external servers.</li>
+            <li><b>Location (When In Use)</b>: Used exclusively to calculate real-time distance to task locations for check-ins locally. We do not track or store your location history.</li>
+            <li><b>Journaling Suggestions</b>: Used to read suggestions you explicitly select (podcasts, workouts, music) to generate daily capsule cards locally.</li>
+            <li><b>Live Activities</b>: Used to display real-time task progress on your Lock Screen and Dynamic Island. Data remains solely within device memory and local App Group storage.</li>
+          </ul>
+          You can inspect or revoke any of these permissions at any time in iOS Settings > Privacy & Security.
+        </p>
+
+        <h3>4. Third-Party Analytics & Tracking</h3>
+        <p><b>ScreenshotTodo contains zero third-party advertising SDKs, analytics frameworks (such as Firebase or Google Analytics), or behavioral trackers.</b> We do not collect device identifiers (IDFA/UUID) or track user usage.</p>
+
+        <h3>5. Policy Updates</h3>
+        <p>We may update this Privacy Policy to align with new app features or Apple Developer Policy updates. Any changes will be posted on this page.</p>
+
+        <h3>6. Contact Us</h3>
+        <p>If you have any questions or feedback regarding this Privacy Policy, feel free to contact us via email:<br>
+          <a href="mailto:yebaihan@qq.com" style="color: var(--secondary); text-decoration: none; font-weight: 500;">yebaihan@qq.com</a>
+        </p>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-info">
+        <div class="logo" style="margin-bottom: 0.5rem;">
+          <div class="logo-icon" style="width:28px; height:28px; font-size: 1rem;">✨</div>
+          <span style="font-size: 1.1rem;">Dotney</span>
+        </div>
+        <p>© 2026 Dotney. All rights reserved.</p>
+        <p>Anti-Todo Inspiration Vault · 100% on-device privacy protection.</p>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="support.html">Support</a>
+        <a href="privacy.html">Privacy Policy</a>
+      </div>
+    </div>
+  </footer>
+
+  
+
+</div>
+
+<script src="app.js"></script>
+<div id="hub-foot"></div>
+<script src="../../assets/js/shell.js"></script>
+</body>
+</html>

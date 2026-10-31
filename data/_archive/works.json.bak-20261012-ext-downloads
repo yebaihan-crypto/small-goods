@@ -1,0 +1,1139 @@
+{
+  "site": {
+    "nameZh": "独立小品",
+    "nameEn": "SMALL GOODS",
+    "introZh": "一个人做的应用、插件、网站和影像。每件都不大，每件都解决一件具体的小事。",
+    "introEn": "Apps, extensions, sites and films by one person. None of them big — each one solving something concrete.",
+    "footerNoteZh": "所有作品的数据默认留在你的设备上。",
+    "footerNoteEn": "Your data stays on your device by default."
+  },
+  "categories": [
+    {
+      "id": "app",
+      "zh": "应用",
+      "en": "Apps",
+      "emoji": "📱",
+      "kind": "app",
+      "hintZh": "上架 App Store 的完整产品",
+      "hintEn": "Finished products on the App Store",
+      "emptyZh": "还没有收录应用。",
+      "emptyEn": "No apps yet."
+    },
+    {
+      "id": "extension",
+      "zh": "浏览器插件",
+      "en": "Extensions",
+      "emoji": "🧩",
+      "kind": "extension",
+      "hintZh": "装在浏览器里的小工具",
+      "hintEn": "Small tools that live in your browser",
+      "emptyZh": "这一类还没放内容。",
+      "emptyEn": "Nothing here yet."
+    },
+    {
+      "id": "site",
+      "zh": "网站",
+      "en": "Websites",
+      "emoji": "🌐",
+      "kind": "site",
+      "hintZh": "独立站点与 Web 应用",
+      "hintEn": "Standalone sites and web apps",
+      "emptyZh": "这一类还没放内容。",
+      "emptyEn": "Nothing here yet."
+    },
+    {
+      "id": "video",
+      "zh": "影像",
+      "en": "Video",
+      "emoji": "🎬",
+      "kind": "video",
+      "hintZh": "宣传片、演示与剪辑",
+      "hintEn": "Promos, demos and edits",
+      "emptyZh": "这一类还没放内容。",
+      "emptyEn": "Nothing here yet."
+    },
+    {
+      "id": "skill",
+      "zh": "技能",
+      "en": "Skills",
+      "emoji": "⚙️",
+      "kind": "skill",
+      "hintZh": "给 AI 助手写的可复用能力包",
+      "hintEn": "Reusable capability packs written for my AI assistant",
+      "emptyZh": "这一类还没放内容。",
+      "emptyEn": "Nothing here yet."
+    },
+    {
+      "id": "shortcut",
+      "zh": "快捷指令",
+      "en": "Shortcuts",
+      "emoji": "⚡",
+      "kind": "shortcut",
+      "hintZh": "iPhone 与 Mac 上的一键自动化",
+      "hintEn": "One-tap automations on iPhone and Mac",
+      "emptyZh": "这一类还没放内容。",
+      "emptyEn": "Nothing here yet."
+    }
+  ],
+  "works": [
+    {
+      "slug": "pongie",
+      "nameZh": "乒球人",
+      "nameEn": "Pongie",
+      "subZh": "乒乓球打卡与装备日志",
+      "subEn": "Table Tennis Tracker",
+      "taglineZh": "专注乒乓球日常打卡、装备日志与物理情绪球池的轻量 iOS 应用。",
+      "taglineEn": "A hand-drawn ping pong tracker and gear companion, with a physics mood pool.",
+      "descZh": "拒绝冰冷单调的数字表格。「乒球人」把每一次练习、战术碰撞与对局大胜，化为沉降在物理球池里的一颗颗手绘乒乓球。胶皮什么时候该换、这个月的胜率怎么走，都能一眼看到。",
+      "descEn": "No cold spreadsheets. Pongie turns every practice session and every hard-won match into hand-drawn ping pong balls settling into a living physics pool — built on SpriteKit with real gravity, collision and haptics.",
+      "featuresZh": [
+        "手绘物理「情绪球池」打卡",
+        "胶皮寿命与磨损提醒",
+        "胜率、打法分析与月度热力网格",
+        "6 款桌面与锁屏小组件"
+      ],
+      "featuresEn": [
+        "Hand-drawn physics mood pool",
+        "Rubber wear and lifespan tracking",
+        "Win-rate, play-style and monthly heatmap",
+        "Six home and lock screen widgets"
+      ],
+      "platform": [
+        "iOS",
+        "iPadOS"
+      ],
+      "bundleId": "com.antigravity.pongie",
+      "status": "live",
+      "accent": "#E2703A",
+      "icon": "assets/icons/pongie.png",
+      "page": "apps/pongie/index.html",
+      "siteUrl": "apps/pongie/",
+      "appStoreUrl": "https://apps.apple.com/cn/app/id6802175450",
+      "appStoreNote": "占位链接（由 ASC 记录 ID 拼出，待替换为真实商店地址）",
+      "supportUrl": "apps/pongie/support.html",
+      "privacyUrl": "apps/pongie/privacy.html",
+      "shots": [
+        "assets/shots/pongie/hero.jpg"
+      ],
+      "appStoreId": "6802175450",
+      "storeName": "乒球人",
+      "category": "app"
+    },
+    {
+      "slug": "dotney",
+      "nameZh": "Dotney",
+      "nameEn": "Dotney",
+      "subZh": "去待办的灵感收藏",
+      "subEn": "Anti-Todo Inspiration Vault",
+      "taglineZh": "不被待办绑架，随手收藏心动。轻点手机背面两下，截屏瞬间静默入库。",
+      "taglineEn": "Break free from to-do anxiety — double-tap the back and screenshots slip silently into your vault.",
+      "descZh": "每次看到好东西，第一反应是截图。然后截图躺进相册，再也没打开过。Dotney 想做的是第三件事：AI 本地把截图归类成书影音、金句、设计、地点等 12 大类，变成扇形堆叠的卡片，像翻一本实体画册。没有红点，没有死线，没有「你已逾期 3 天」。100% 本地运行，一张截图都不上传。",
+      "descEn": "You screenshot something good, and it dies in your camera roll. Dotney does the third thing: on-device AI files it into one of 12 tags, and your collection becomes fan-stacked cards you actually flip through. No badges, no deadlines, no \"overdue by 3 days\". Vision OCR and speech run entirely on device — not one screenshot leaves your phone.",
+      "featuresZh": [
+        "瞬移截屏收藏（轻点背面即可）",
+        "12 大标签与扇形卡片堆叠",
+        "「去待办」设计哲学：不催你",
+        "100% 纯本地，Vision OCR + Speech"
+      ],
+      "featuresEn": [
+        "Back-tap instant vaulting",
+        "12 auto tags with fan-stacked cards",
+        "Anti-Todo philosophy — nothing nags you",
+        "100% on-device: Vision OCR + Speech"
+      ],
+      "platform": [
+        "iOS"
+      ],
+      "bundleId": "com.arcade.screennotodo",
+      "status": "soon",
+      "accent": "#4C6EF5",
+      "icon": "assets/icons/dotney.png",
+      "page": "apps/dotney/index.html",
+      "siteUrl": "apps/dotney/",
+      "appStoreUrl": null,
+      "supportUrl": "apps/dotney/support.html",
+      "privacyUrl": "apps/dotney/privacy.html",
+      "shots": [],
+      "lineageZh": "前身沿革：ScreenshotTodo → 心光手记 → 小布 Journey → Dotney",
+      "lineageEn": "Lineage: ScreenshotTodo → MindLight → Xiaobu Journey → Dotney",
+      "category": "app"
+    },
+    {
+      "slug": "screenshot-todo",
+      "nameZh": "截屏即待办",
+      "nameEn": "ScreenshotTodo",
+      "subZh": "本地识图，锁屏同步",
+      "subEn": "Screenshot to To-Do",
+      "taglineZh": "截屏，即是待办。本地智能识图，锁屏即刻同步。",
+      "taglineEn": "Screenshot it — it's already a to-do. On-device OCR, synced straight to your Lock Screen.",
+      "descZh": "看到该做的事，先截个图。App 在本地解析截图里的文字与来源应用，直接生成待办并同步到系统提醒事项，锁屏实时活动一直挂在眼前。全程本地识别，图片不上传。",
+      "descEn": "Spot something you need to do? Just screenshot it. The app reads the text and source app on device, turns it into a to-do, and syncs it to Reminders. A Live Activity keeps it on your Lock Screen.",
+      "featuresZh": [
+        "极速截图触发",
+        "本地智能 OCR 解析",
+        "系统级原生同步（提醒事项）",
+        "锁屏实时活动"
+      ],
+      "featuresEn": [
+        "Instant screenshot trigger",
+        "On-device OCR parsing",
+        "Native Reminders sync",
+        "Lock Screen Live Activity"
+      ],
+      "platform": [
+        "iOS"
+      ],
+      "bundleId": "com.arcade.screenshottodo",
+      "status": "live",
+      "accent": "#FF6B5B",
+      "icon": "assets/icons/screenshot-todo.png",
+      "page": "apps/screenshot-todo/index.html",
+      "siteUrl": "apps/screenshot-todo/",
+      "appStoreUrl": "https://apps.apple.com/cn/app/id6780206676",
+      "supportUrl": "apps/screenshot-todo/support.html",
+      "privacyUrl": "apps/screenshot-todo/privacy.html",
+      "shots": [],
+      "appStoreId": "6780206676",
+      "storeName": "截屏即待办",
+      "category": "app"
+    },
+    {
+      "slug": "cookbook",
+      "nameZh": "菜谱与点餐助手",
+      "nameEn": "Cookbook",
+      "subZh": "家常菜谱与点餐记录",
+      "subEn": "Smart Meal Planner",
+      "taglineZh": "家里那几道菜的步骤、用量和买菜清单，一处记清。",
+      "taglineEn": "The recipes your family actually cooks — steps, amounts and a shopping list in one place.",
+      "descZh": "把常做的菜记成一份自己的菜谱：用量、步骤、准备时间都写清楚。要买菜时说一声「点菜」，清单自动汇总；做完还能回头翻时间轴，看看这个月都吃了什么。手表上也能看下一步该做什么。",
+      "descEn": "Turn the dishes you cook often into your own cookbook — amounts, steps and prep time, all written down. Order what you want to eat and the shopping list builds itself. A timeline keeps a record of what you've actually made.",
+      "featuresZh": [
+        "点菜式下单与买菜清单",
+        "分步引导，做菜时不慌",
+        "时间轴回顾做过的菜",
+        "watchOS 表上查看步骤"
+      ],
+      "featuresEn": [
+        "Order-style picking and shopping list",
+        "Step-by-step cooking guidance",
+        "Timeline of everything you've cooked",
+        "Steps on your Apple Watch"
+      ],
+      "platform": [
+        "iOS",
+        "watchOS"
+      ],
+      "bundleId": "com.arcade.familycookbook",
+      "status": "live",
+      "accent": "#E8A33D",
+      "icon": "assets/icons/cookbook.png",
+      "page": "apps/cookbook/index.html",
+      "siteUrl": "apps/cookbook/",
+      "appStoreUrl": "https://apps.apple.com/cn/app/id6802607429",
+      "supportUrl": "apps/cookbook/support.html",
+      "privacyUrl": "apps/cookbook/privacy.html",
+      "shots": [
+        "assets/shots/cookbook/hero.jpg"
+      ],
+      "appStoreId": "6802607429",
+      "storeName": "CookbookApp",
+      "category": "app"
+    },
+    {
+      "slug": "indebox",
+      "nameZh": "间隙日记",
+      "nameEn": "Indebox",
+      "subZh": "在碎片中，整理思绪",
+      "subEn": "Notes for Fleeting Thoughts",
+      "taglineZh": "在碎片中，整理思绪 —— 一款为碎片化灵感而生的极简笔记工具。",
+      "taglineEn": "Capture ideas — a minimalist note tool built for fleeting thoughts.",
+      "descZh": "打开应用，直接在底部的无限草稿纸上写。写完点一下上方的分类方块，一键归档，没有多余操作。预设 36 个思维维度，覆盖心理、商业、艺术等方向，随时可以重命名。极致黑白美学，配一张方块轨迹图，看你在各个领域想得有多活跃。",
+      "descEn": "Open the app and write straight onto the infinite draft paper at the bottom. Tap a category block to file it instantly — zero friction. 36 preset dimensions cover psychology, business, art and more, all renameable. A stark black-and-white aesthetic with a block-trail chart showing where your thinking is most alive.",
+      "featuresZh": [
+        "先写后归，一触即达",
+        "36 个可重命名的思维维度",
+        "极简黑白美学",
+        "方块轨迹图，看清思考活跃度"
+      ],
+      "featuresEn": [
+        "Write first, file instantly",
+        "36 renameable thinking dimensions",
+        "Stark black-and-white aesthetic",
+        "Block-trail chart of your thinking"
+      ],
+      "platform": [
+        "iOS",
+        "iPadOS"
+      ],
+      "bundleId": "com.arcade.Indebox",
+      "status": "live",
+      "accent": "#1F1F1F",
+      "icon": "assets/icons/indebox.png",
+      "page": "apps/indebox/index.html",
+      "siteUrl": "apps/indebox/",
+      "appStoreUrl": "https://apps.apple.com/cn/app/id6782109821",
+      "supportUrl": "apps/indebox/support.html",
+      "privacyUrl": "apps/indebox/privacy.html",
+      "shots": [],
+      "appStoreId": "6782109821",
+      "storeName": "Indebox",
+      "category": "app"
+    },
+    {
+      "slug": "socialgraphy",
+      "nameZh": "记下小本本",
+      "nameEn": "SocialGraphy",
+      "subZh": "探索你的人际星系",
+      "subEn": "Your Social Galaxy",
+      "taglineZh": "探索你的人际星系 —— 伴侣共享日历与成长记录。",
+      "taglineEn": "Explore your social galaxy — a shared calendar and growth log for two.",
+      "descZh": "把认识的人、一起做过的事和攒下的谈资，画成一张银河人际星图。双端伴侣同步与共享日历、疫苗接种提醒与成长记录、给未来写一封信的时空胶囊，还有社交词频与互动分析。全部数据留在你自己的 iCloud 里。",
+      "descEn": "Everyone you know, everything you've done together and every topic you've banked — mapped into a galaxy. Two-device partner sync, a shared calendar, vaccination reminders and growth records, time capsules to your future selves, plus word-frequency and interaction analysis.",
+      "featuresZh": [
+        "银河人际星图",
+        "双端伴侣同步与共享日历",
+        "疫苗接种提醒与成长记录",
+        "时空胶囊（给未来的信）",
+        "社交词频与互动分析"
+      ],
+      "featuresEn": [
+        "A galaxy map of your relationships",
+        "Two-device partner sync and shared calendar",
+        "Vaccination reminders and growth records",
+        "Time capsules — letters to the future",
+        "Word frequency and interaction analysis"
+      ],
+      "platform": [
+        "iOS"
+      ],
+      "bundleId": "com.test.socialgraphy",
+      "status": "live",
+      "accent": "#7C5CFF",
+      "icon": "assets/icons/socialgraphy.png",
+      "page": "apps/socialgraphy/index.html",
+      "siteUrl": "apps/socialgraphy/",
+      "appStoreUrl": "https://apps.apple.com/cn/app/id6778294075",
+      "privacyUrl": "apps/socialgraphy/privacy.html",
+      "shots": [],
+      "appStoreId": "6778294075",
+      "storeName": "记下小本本",
+      "category": "app"
+    },
+    {
+      "slug": "rolling-week",
+      "nameZh": "滚动周清单",
+      "nameEn": "Rolling Week",
+      "subZh": "子弹笔记式周清单",
+      "subEn": "Bullet Journal Running List",
+      "taglineZh": "一页跑完一周，没做完的自动滚到下一周。",
+      "taglineEn": "One page per week — whatever isn't done rolls into the next one.",
+      "descZh": "照子弹笔记里那条「Running List」的做法做的：一周一页，做完的打勾，没做完的留下来继续。纸张主题和背景网格都能换，写起来更像真的手帐。",
+      "descEn": "Built the way a bullet journal running list works: one page per week, check things off, and carry the rest forward. Swap paper themes and background grids so it feels like a real notebook.",
+      "featuresZh": [
+        "滚动周清单，未完成自动顺延",
+        "手帐纸张主题",
+        "背景网格可选",
+        "状态标记：完成 / 迁移 / 放弃"
+      ],
+      "featuresEn": [
+        "Rolling weekly list with auto carry-over",
+        "Journal paper themes",
+        "Optional background grids",
+        "Status marks: done / migrated / dropped"
+      ],
+      "platform": [
+        "iOS"
+      ],
+      "bundleId": "com.arcade.RollingWeek",
+      "status": "soon",
+      "accent": "#A88B5C",
+      "icon": "assets/icons/rolling-week.png",
+      "page": "apps/rolling-week/index.html",
+      "siteUrl": "apps/rolling-week/",
+      "appStoreUrl": null,
+      "shots": [],
+      "category": "app"
+    },
+    {
+      "slug": "brainfood",
+      "nameZh": "食物大脑复健",
+      "nameEn": "BrainFood",
+      "subZh": "食物大脑复健计划",
+      "subEn": "Eat for Your Brain",
+      "taglineZh": "用吃、心情和器官养护，把大脑一点点练回来。",
+      "taglineEn": "Rehab your brain with food, mood and organ care — one check-in at a time.",
+      "descZh": "每天记下吃了什么、心情如何，配一个陪着你的脑精灵。补给、共享餐、器官养护几个视图把吃进去的东西和状态连起来看。",
+      "descEn": "Log what you ate and how you felt, with a little brain sprite along for the ride. Supply, shared meals and organ-care views connect what you eat to how you're doing.",
+      "featuresZh": [
+        "今日补给打卡",
+        "脑精灵陪伴",
+        "共享餐记录",
+        "器官养护视图"
+      ],
+      "featuresEn": [
+        "Daily supply check-in",
+        "A brain sprite companion",
+        "Shared meal logging",
+        "Organ care views"
+      ],
+      "platform": [
+        "iOS"
+      ],
+      "bundleId": "com.arcade.BrainFood",
+      "status": "lab",
+      "accent": "#7BC47F",
+      "icon": "assets/icons/brainfood.png",
+      "page": "apps/brainfood/index.html",
+      "siteUrl": "apps/brainfood/",
+      "appStoreUrl": null,
+      "shots": [],
+      "category": "app"
+    },
+    {
+      "slug": "posocamera",
+      "nameZh": "POSO 相机",
+      "nameEn": "POSOCamera",
+      "subZh": "照着参考线拍",
+      "subEn": "Shoot with Guides",
+      "taglineZh": "现场照着参考线拍，拍出你收藏的那种构图。",
+      "taglineEn": "Shoot on site with overlay guides and match the composition you saved.",
+      "descZh": "AI 分析构图并匹配推荐焦段，在取景框上画出手绘姿势骨架和参考线。也可以直接丢一条笔记链接进来，它会把构图、姿势线稿和情绪金句拆出来。",
+      "descEn": "AI reads the composition, picks a recommended focal length, and draws hand-sketched pose skeletons and alignment guides over your viewfinder. Paste in a saved post and it pulls out the composition, the pose linework and the mood line.",
+      "featuresZh": [
+        "AI 构图分析与推荐焦段",
+        "手绘姿势骨架线稿叠加",
+        "解析笔记链接提取参考线",
+        "情绪金句叠字"
+      ],
+      "featuresEn": [
+        "AI composition analysis and focal length",
+        "Hand-drawn pose skeleton overlay",
+        "Parses saved posts into guides",
+        "Mood caption overlays"
+      ],
+      "platform": [
+        "iOS"
+      ],
+      "bundleId": "com.arcade.posocamera",
+      "status": "lab",
+      "accent": "#FF4D8D",
+      "icon": "assets/icons/posocamera.png",
+      "page": "apps/posocamera/index.html",
+      "siteUrl": "apps/posocamera/",
+      "appStoreUrl": null,
+      "shots": [],
+      "category": "app"
+    },
+    {
+      "slug": "pregnancy-log",
+      "nameZh": "孕记",
+      "nameEn": "PregnancyLogAI",
+      "subZh": "产检记录与 AI 医嘱提炼",
+      "subEn": "Prenatal Log with AI",
+      "taglineZh": "记下历次产检医嘱，AI 帮你提炼成看得懂的重点。",
+      "taglineEn": "Log every prenatal checkup; AI distills it into what actually matters.",
+      "descZh": "专为孕妈妈设计：记录历次产检医嘱与体征指标，自动整理成结构化总结、用药指南、饮食建议和跨产检期的趋势分析。另有 1–40 周产检路线图和胎动计数。数据完全保存在本地。",
+      "descEn": "Built for expectant mothers: log each checkup's advice and vitals, and get a structured summary, medication guide, diet notes and cross-visit trend analysis in return. Includes a week 1–40 checkup roadmap and kick counting. Data stays on device.",
+      "featuresZh": [
+        "产检医嘱记录与结构化总结",
+        "1–40 周产检路线图",
+        "胎动计数",
+        "跨产检期趋势分析",
+        "数据本地保存"
+      ],
+      "featuresEn": [
+        "Checkup logging and structured summaries",
+        "A week 1–40 checkup roadmap",
+        "Kick counting",
+        "Cross-visit trend analysis",
+        "On-device data storage"
+      ],
+      "platform": [
+        "iOS",
+        "macOS"
+      ],
+      "bundleId": "com.antigravity.PregnancyLogAI",
+      "status": "lab",
+      "accent": "#E88D94",
+      "icon": "assets/icons/pregnancy-log.png",
+      "page": "apps/pregnancy-log/index.html",
+      "siteUrl": "apps/pregnancy-log/",
+      "appStoreUrl": null,
+      "shots": [],
+      "category": "app"
+    },
+    {
+      "slug": "screenlog",
+      "nameZh": "屏幕记录",
+      "nameEn": "ScreenLog",
+      "subZh": "把每次打开记成时间轴",
+      "subEn": "Sessions on a Timeline",
+      "taglineZh": "把「每次打开重点 App 用了多久」记成一条锁屏时间轴。",
+      "taglineEn": "Every session on the apps you care about, drawn as a Lock Screen timeline.",
+      "descZh": "时间轴上的每个节点是一次打开，两个节点之间的线长就是这一次持续了多久，颜色跟着那个 App 的主题色走。常驻锁屏实时活动，不用打开应用也能看见今天怎么过的。",
+      "descEn": "Each node on the timeline is one launch; the length of the line between two nodes is how long that session lasted, coloured by that app's own theme. A permanent Live Activity means you can see how the day went without opening anything.",
+      "featuresZh": [
+        "行为时间轴（线长 ＝ 时长）",
+        "锁屏实时活动常驻",
+        "会话闭合算法",
+        "按 App 主题色区分"
+      ],
+      "featuresEn": [
+        "Behaviour timeline (line length = duration)",
+        "Permanent Lock Screen Live Activity",
+        "Session-closing algorithm",
+        "Coloured by each app's theme"
+      ],
+      "platform": [
+        "iOS",
+        "iPadOS"
+      ],
+      "bundleId": "com.screenlog.ios",
+      "status": "lab",
+      "accent": "#2F80ED",
+      "icon": "assets/icons/screenlog.png",
+      "page": "apps/screenlog/index.html",
+      "siteUrl": "apps/screenlog/",
+      "appStoreUrl": null,
+      "shots": [],
+      "category": "app"
+    },
+    {
+      "slug": "bodyclock",
+      "nameZh": "养生时辰",
+      "nameEn": "BodyClock",
+      "subZh": "子午流注时辰养生",
+      "subEn": "Meridian Clock",
+      "taglineZh": "按当前时辰，看对应的脏腑与养生建议。",
+      "taglineEn": "A watch-only clock that shows the organ and the advice for this hour.",
+      "descZh": "中医「子午流注」做成一块手表表盘：按当前时辰展示对应脏腑器官、养生建议与进度环。",
+      "descEn": "Traditional Chinese medicine's meridian clock, rebuilt as a watch face: the organ for the current shichen, its advice, and a progress ring.",
+      "featuresZh": [
+        "时辰脏腑表盘",
+        "时辰养生建议",
+        "进度环"
+      ],
+      "featuresEn": [
+        "Shichen organ dial",
+        "Hourly wellness advice",
+        "Progress ring"
+      ],
+      "platform": [
+        "watchOS"
+      ],
+      "bundleId": "com.arcade.bodyclock",
+      "status": "lab",
+      "accent": "#B58B5A",
+      "icon": null,
+      "page": "apps/bodyclock/index.html",
+      "siteUrl": "apps/bodyclock/",
+      "appStoreUrl": null,
+      "shots": [],
+      "hidden": true,
+      "category": "app"
+    },
+    {
+      "slug": "airwatch",
+      "nameZh": "AirWatch 动感能手",
+      "nameEn": "AirWatch Motion",
+      "subZh": "抬腕就玩的体感小游戏",
+      "subEn": "Wrist Motion Games",
+      "taglineZh": "抬腕就玩 —— 用 Apple Watch 手势投篮、打乒乓、射击。",
+      "taglineEn": "Flick your wrist to shoot hoops, play ping pong or fire.",
+      "descZh": "用陀螺仪识别手势波峰，配空间音效与震动反馈。实时采样 AirPods 的九轴姿态角，动作幅度也能算进去。",
+      "descEn": "Gyroscope peak detection drives the action, with spatial audio and haptics. AirPods nine-axis headphone motion is sampled live so head movement counts too.",
+      "featuresZh": [
+        "随时投篮 / 打乒乓 / 射击 / 自由击拳",
+        "AirPods 九轴姿态联动",
+        "空间音效与震动反馈"
+      ],
+      "featuresEn": [
+        "Hoops, ping pong, shooting, free boxing",
+        "AirPods nine-axis motion linkage",
+        "Spatial audio and haptics"
+      ],
+      "platform": [
+        "watchOS",
+        "iOS"
+      ],
+      "bundleId": "com.antigravity.AirWatchMotion",
+      "status": "lab",
+      "accent": "#4CC9F0",
+      "icon": null,
+      "page": "apps/airwatch/index.html",
+      "siteUrl": "apps/airwatch/",
+      "appStoreUrl": null,
+      "shots": [],
+      "hidden": true,
+      "category": "app"
+    },
+    {
+      "slug": "todayilearned",
+      "nameZh": "今天学到了",
+      "nameEn": "TodayILearned",
+      "subZh": "把每日所学沉淀成复利",
+      "subEn": "Daily Learning, Compounded",
+      "taglineZh": "记录每日所学，沉淀成看得见的复利。",
+      "taglineEn": "Log what you learn each day and watch it compound.",
+      "descZh": "从「记录 → 沉淀 → 显化 → 回顾」走一圈。顶部三个数告诉你连续了多少天、累计多少条、覆盖了哪些领域。断签了也不清零，只把「最长 41 天」摆在那里当参照。",
+      "descEn": "Record, settle, surface, review. Three numbers up top: current streak, total entries, and the fields you've covered. Miss a few days and nothing resets — it just shows your longest run, 41 days, as a reference.",
+      "featuresZh": [
+        "一句话快捷记录",
+        "连续天数 / 累计条数 / 覆盖领域",
+        "断签不清零",
+        "沉淀与回顾视图"
+      ],
+      "featuresEn": [
+        "One-line quick capture",
+        "Streak / total / fields covered",
+        "No reset when you miss a day",
+        "Settle and review views"
+      ],
+      "platform": [
+        "iOS",
+        "iPadOS"
+      ],
+      "bundleId": "com.arcade.todayilearned",
+      "status": "lab",
+      "accent": "#F4A261",
+      "icon": null,
+      "page": "apps/todayilearned/index.html",
+      "siteUrl": "apps/todayilearned/",
+      "appStoreUrl": null,
+      "shots": [],
+      "category": "app"
+    },
+    {
+      "slug": "screenshotcollector",
+      "nameZh": "截图收藏夹",
+      "nameEn": "ScreenshotCollector",
+      "subZh": "自动分类的截图收藏 Demo",
+      "subEn": "Auto-Filed Screenshots",
+      "taglineZh": "按 OCR 文本与 #标签 自动分类的截图收藏 Demo。",
+      "taglineEn": "A screenshot collection demo that auto-files by OCR text and #tags.",
+      "descZh": "早期的一个技术验证：识别截图里的文字与 #标签，自动归类，并提供堆叠与网格两种浏览方式。",
+      "descEn": "An early technical prototype: detect the text and #tags inside a screenshot, file it automatically, and browse either stacked or in a grid.",
+      "featuresZh": [
+        "OCR 文本与 #标签 自动分类",
+        "堆叠 / 网格两种浏览"
+      ],
+      "featuresEn": [
+        "Auto-filing by OCR text and #tags",
+        "Stacked and tiled browsing"
+      ],
+      "platform": [
+        "iOS"
+      ],
+      "bundleId": "com.example.ScreenshotCollector",
+      "status": "lab",
+      "accent": "#9AA0A6",
+      "icon": null,
+      "page": "apps/screenshotcollector/index.html",
+      "siteUrl": "apps/screenshotcollector/",
+      "appStoreUrl": null,
+      "shots": [],
+      "category": "app"
+    },
+    {
+      "slug": "bili-collector",
+      "category": "extension",
+      "nameZh": "B站 Collector",
+      "nameEn": "Bilibili Collector",
+      "taglineZh": "智能分类 B 站的历史记录、收藏夹与点赞内容，配一个 Collector 仪表盘。",
+      "taglineEn": "Smart-classifies your Bilibili history, favourites and likes — with a Collector dashboard.",
+      "status": "lab",
+      "chips": [
+        "Chrome",
+        "Manifest V3"
+      ],
+      "icon": "assets/icons/ext-bili-collector.svg",
+      "cover": null,
+      "meta": "v2.0.0"
+    },
+    {
+      "slug": "summarizer",
+      "category": "extension",
+      "nameZh": "一键提炼与工作流助手",
+      "nameEn": "Hover Summarizer",
+      "taglineZh": "鼠标悬停在文章、YouTube 或 B 站链接上，直接用大模型提炼精华、流程与用到的工具。",
+      "taglineEn": "Hover any article or video link and let an LLM pull out the gist, the workflow and the tools used.",
+      "status": "lab",
+      "chips": [
+        "Chrome",
+        "Manifest V3"
+      ],
+      "icon": "assets/icons/ext-summarizer.png",
+      "cover": null,
+      "meta": "v1.0.0"
+    },
+    {
+      "slug": "clip-collage",
+      "category": "extension",
+      "nameZh": "赛博小剪刀",
+      "nameEn": "ClipCollage",
+      "taglineZh": "随手截取网页上的图片和文字，以拼贴画的方式管理，一键复制到剪贴板。",
+      "taglineEn": "Snip images and text off any page, keep them as collages, copy them all in one click.",
+      "status": "lab",
+      "chips": [
+        "Chrome",
+        "Manifest V3"
+      ],
+      "icon": "assets/icons/ext-clip-collage.png",
+      "cover": null,
+      "meta": "v1.0.0"
+    },
+    {
+      "slug": "kankan-import",
+      "category": "extension",
+      "nameZh": "看看收藏 · 单条导入",
+      "nameEn": "Kankan Importer",
+      "taglineZh": "只读你正打开的那篇小红书笔记，交给本地的「看看收藏」。全程不出这台机器。",
+      "taglineEn": "Reads only the note you have open and hands it to the local Kankan app. Nothing leaves your Mac.",
+      "status": "lab",
+      "chips": [
+        "Chrome",
+        "本地通信"
+      ],
+      "icon": null,
+      "cover": null,
+      "meta": "v0.3.0"
+    },
+    {
+      "slug": "ai-mouse",
+      "category": "extension",
+      "nameZh": "超级 AI 鼠标",
+      "nameEn": "AI Mouse",
+      "taglineZh": "指向 B 站、抖音、小红书或 YouTube 的视频，秒级认出它用了哪些剪辑、3D、编程与设计软件，并给出时间轴。",
+      "taglineEn": "Point at a video and it names the editing, 3D, coding and design tools used — with a timeline.",
+      "status": "lab",
+      "chips": [
+        "Chrome",
+        "Gemini API"
+      ],
+      "icon": "assets/icons/ext-ai-mouse.png",
+      "cover": null,
+      "meta": "v2.0.0"
+    },
+    {
+      "slug": "xhs-collector",
+      "category": "extension",
+      "nameZh": "小红书收藏助手",
+      "nameEn": "XHS Collector",
+      "taglineZh": "把小红书的收藏和点赞整理成真正能带走的数据。已有打包好的安装包和说明书。",
+      "taglineEn": "Turns your Xiaohongshu saves and likes into data you can keep. Packaged build and manual included.",
+      "status": "live",
+      "chips": [
+        "Chrome",
+        "Manifest V3"
+      ],
+      "icon": "assets/icons/ext-xhs-collector.png",
+      "cover": null,
+      "meta": "v1.0.0"
+    },
+    {
+      "slug": "screenshot-studio",
+      "category": "site",
+      "nameZh": "截图工坊",
+      "nameEn": "Screenshot Studio",
+      "taglineZh": "把 App 截图做成 App Store 首图风格。纯前端、零依赖、不联网，打开就能用。",
+      "taglineEn": "Turns app screenshots into App Store hero images. Pure front-end, zero dependencies, offline.",
+      "status": "live",
+      "chips": [
+        "纯静态",
+        "零依赖"
+      ],
+      "icon": "assets/icons/screenshot-studio.png",
+      "cover": null,
+      "meta": null,
+      "cta": {
+        "url": "https://yebaihan-crypto.github.io/appstore-screenshot-studio/",
+        "zh": "打开网站",
+        "en": "Open site"
+      }
+    },
+    {
+      "slug": "desktop-portfolio",
+      "category": "site",
+      "nameZh": "桌面作品集",
+      "nameEn": "Desktop Portfolio",
+      "taglineZh": "用 macOS 桌面当隐喻的个人站 —— 菜单栏、Dock、专辑封面和 iPod 滚轮都在。",
+      "taglineEn": "A personal site shaped like a macOS desktop — menu bar, Dock, album art and an iPod click wheel.",
+      "status": "lab",
+      "chips": [
+        "Next.js",
+        "静态导出"
+      ],
+      "icon": null,
+      "cover": null,
+      "meta": null
+    },
+    {
+      "slug": "arcade-labs",
+      "category": "site",
+      "nameZh": "ARCADE LABS",
+      "nameEn": "ARCADE LABS",
+      "taglineZh": "Creative Technologist & Motion Portfolio，2026 年版。",
+      "taglineEn": "Creative Technologist & Motion Portfolio, 2026 edition.",
+      "status": "lab",
+      "chips": [
+        "作品集站"
+      ],
+      "icon": null,
+      "cover": null,
+      "meta": null
+    },
+    {
+      "slug": "rewrite-wheel",
+      "category": "site",
+      "nameZh": "无敌仿写轮",
+      "nameEn": "Rewrite Wheel",
+      "taglineZh": "把好文章拆开、看清骨架、再重写一遍的创作工作台。",
+      "taglineEn": "A studio that takes good writing apart, shows you the frame, then helps you rewrite it.",
+      "status": "lab",
+      "chips": [
+        "Next.js"
+      ],
+      "icon": null,
+      "cover": null,
+      "meta": null
+    },
+    {
+      "slug": "mood-cellar",
+      "category": "site",
+      "nameZh": "情绪鸡尾酒",
+      "nameEn": "Mood Cellar",
+      "taglineZh": "把当天的心情，调成一杯能存下来的酒。",
+      "taglineEn": "Mixes the mood of the day into a cocktail you can keep.",
+      "status": "lab",
+      "chips": [
+        "React",
+        "Vite"
+      ],
+      "icon": null,
+      "cover": null,
+      "meta": null
+    },
+    {
+      "slug": "reading-stack",
+      "category": "site",
+      "nameZh": "阅读堆栈",
+      "nameEn": "Reading Stack",
+      "taglineZh": "把读过的书摞成一摞看得见的进度。",
+      "taglineEn": "Stacks what you've read into progress you can see.",
+      "status": "lab",
+      "chips": [
+        "纯静态"
+      ],
+      "icon": null,
+      "cover": null,
+      "meta": null
+    },
+    {
+      "slug": "xiaoshizhe-xiaoxiao",
+      "category": "video",
+      "nameZh": "小使者笑笑",
+      "nameEn": "Xiaoxiao the Little Envoy",
+      "taglineZh": "手绘儿童动画：宇宙来的小使者笑笑，奉命与地球星人建交，在花园里学会友善与分享。入围「爱德说」幼儿德育作品征集活动（幼儿动画片组）。",
+      "taglineEn": "A hand-drawn children's short: Xiaoxiao, a little envoy from outer space, is sent to make contact with Earthlings and learns kindness and sharing in a garden. Shortlisted in the \"Aide Shuo\" early-childhood moral-education works programme (animated-film category).",
+      "status": "live",
+      "chips": [
+        "手绘动画",
+        "幼儿德育",
+        "入围 · 爱德说"
+      ],
+      "icon": null,
+      "cover": "assets/covers/xiaoshizhe-xiaoxiao.jpg",
+      "meta": "2:09",
+      "page": "videos/xiaoshizhe-xiaoxiao/index.html"
+    },
+    {
+      "slug": "atong-gym-award",
+      "category": "video",
+      "nameZh": "阿童的健身房经验",
+      "nameEn": "Atong's Gym Diary",
+      "taglineZh": "手绘动画短片：第一次走进健身房，从办卡到面对满屋子器械的手足无措。获「花样塑颜视频大赏」二等奖。",
+      "taglineEn": "A hand-drawn short about a first-timer at the gym — from signing up to facing a room full of machines. Second prize at the Huayang Shaping Video Awards.",
+      "status": "live",
+      "chips": [
+        "手绘动画",
+        "花样塑颜 · 二等奖"
+      ],
+      "icon": null,
+      "cover": "assets/covers/atong-gym.jpg",
+      "meta": "2:18",
+      "page": "videos/atong-gym/index.html"
+    },
+    {
+      "slug": "dotney-promo",
+      "category": "video",
+      "nameZh": "Dotney 灵感卡片宣传片",
+      "nameEn": "Dotney Promo",
+      "taglineZh": "用 HTML 逐帧渲染再合成音频做出来的 App Store 预览片，886×1920，中英双语各一版。",
+      "taglineEn": "An App Store preview built by rendering HTML frame by frame, then synthesising the audio. 886×1920, bilingual.",
+      "status": "soon",
+      "chips": [
+        "代码生成",
+        "886×1920"
+      ],
+      "icon": null,
+      "cover": null,
+      "meta": "0:04",
+      "hidden": true
+    },
+    {
+      "slug": "shishen-opencut",
+      "category": "video",
+      "nameZh": "食神 · 二创短片",
+      "nameEn": "God of Cookery — Short Edit",
+      "taglineZh": "实拍加字幕的短片剪辑，1920×1080，24 秒。",
+      "taglineEn": "A shot-and-subtitled short edit. 1920×1080, 24 seconds.",
+      "status": "soon",
+      "chips": [
+        "真人剪辑",
+        "1920×1080"
+      ],
+      "icon": null,
+      "cover": "assets/covers/shishen-opencut.jpg",
+      "meta": "0:25",
+      "hidden": true
+    },
+    {
+      "slug": "clip-collage-demo",
+      "category": "video",
+      "nameZh": "赛博小剪刀 · 演示",
+      "nameEn": "ClipCollage Demo",
+      "taglineZh": "从截取、拼贴到复制，走一遍插件的完整流程。",
+      "taglineEn": "The full loop of the extension: snip, collage, copy.",
+      "status": "soon",
+      "chips": [
+        "产品演示"
+      ],
+      "icon": null,
+      "cover": null,
+      "meta": null,
+      "hidden": true
+    },
+    {
+      "slug": "site-walkthrough",
+      "category": "video",
+      "nameZh": "个人网站 · 录屏",
+      "nameEn": "Personal Site Walkthrough",
+      "taglineZh": "用四分半钟走完整个作品集站点。",
+      "taglineEn": "Four and a half minutes through the whole portfolio.",
+      "status": "soon",
+      "chips": [
+        "录屏"
+      ],
+      "icon": null,
+      "cover": null,
+      "meta": "4:32",
+      "hidden": true
+    },
+    {
+      "slug": "melo-style",
+      "category": "video",
+      "nameZh": "Melo 风格样片",
+      "nameEn": "Melo Style Sample",
+      "taglineZh": "用 Swift 逐帧渲染加语音合成做的 14 秒样片，1080×1440。",
+      "taglineEn": "A 14-second sample rendered frame by frame in Swift, with synthesised narration. 1080×1440.",
+      "status": "soon",
+      "chips": [
+        "Swift 渲染",
+        "TTS"
+      ],
+      "icon": null,
+      "cover": null,
+      "meta": "0:15",
+      "hidden": true
+    },
+    {
+      "slug": "bili-autosort-demo",
+      "category": "video",
+      "nameZh": "自动分类自己的收藏",
+      "nameEn": "Auto-sorting Demo",
+      "taglineZh": "B 站 Collector 的功能演示：收藏一多，怎么自动归位。",
+      "taglineEn": "A demo of Bilibili Collector — what happens once your saves pile up.",
+      "status": "soon",
+      "chips": [
+        "产品演示"
+      ],
+      "icon": null,
+      "cover": null,
+      "meta": null,
+      "hidden": true
+    },
+    {
+      "slug": "appstore-preview-video",
+      "category": "skill",
+      "nameZh": "App Store 预览视频",
+      "nameEn": "App Preview Video",
+      "taglineZh": "把「上传被拒」的红字报错，定位到具体是哪一条规格没过，并修好。",
+      "taglineEn": "Turns a rejected App Preview upload into the exact spec that failed — then fixes it.",
+      "status": "live",
+      "chips": [
+        "iOS 上架"
+      ],
+      "icon": null,
+      "cover": null,
+      "meta": null
+    },
+    {
+      "slug": "appstore-screenshot-studio",
+      "category": "skill",
+      "nameZh": "商店截图工坊",
+      "nameEn": "Screenshot Studio Skill",
+      "taglineZh": "批量产出 App Store 风格的产品首图和卖点图。",
+      "taglineEn": "Produces App Store style hero and feature images at scale.",
+      "status": "live",
+      "chips": [
+        "iOS 上架"
+      ],
+      "icon": null,
+      "cover": null,
+      "meta": null
+    },
+    {
+      "slug": "asc-iap-setup",
+      "category": "skill",
+      "nameZh": "内购配置自动化",
+      "nameEn": "In-App Purchase Setup",
+      "taglineZh": "用浏览器自动化把 App Store Connect 的内购项目创建并配好。",
+      "taglineEn": "Creates and configures App Store Connect in-app purchases through browser automation.",
+      "status": "live",
+      "chips": [
+        "iOS 上架"
+      ],
+      "icon": null,
+      "cover": null,
+      "meta": null
+    },
+    {
+      "slug": "subscription-compliance",
+      "category": "skill",
+      "nameZh": "付费页合规审查",
+      "nameEn": "Paywall Compliance",
+      "taglineZh": "按 Apple 的规则审订阅页和买断页，把违规点逐条挑出来。",
+      "taglineEn": "Audits subscription and one-time paywalls against Apple rules, line by line.",
+      "status": "live",
+      "chips": [
+        "iOS 上架"
+      ],
+      "icon": null,
+      "cover": null,
+      "meta": null
+    },
+    {
+      "slug": "ios-layout-verify",
+      "category": "skill",
+      "nameZh": "iOS 布局实证",
+      "nameEn": "iOS Layout Verify",
+      "taglineZh": "编译并跑出真实截图来验证 SwiftUI 布局，不靠肉眼猜。",
+      "taglineEn": "Compiles and captures real screenshots to verify SwiftUI layout instead of guessing.",
+      "status": "live",
+      "chips": [
+        "iOS 开发"
+      ],
+      "icon": null,
+      "cover": null,
+      "meta": null
+    },
+    {
+      "slug": "wuding-kinetic-video",
+      "category": "skill",
+      "nameZh": "五鼎动画工厂",
+      "nameEn": "Kinetic Video Factory",
+      "taglineZh": "HTML + GSAP 写分镜，无头浏览器逐帧渲染，直接出 H.264 成片。",
+      "taglineEn": "Storyboard in HTML and GSAP, render frame by frame in a headless browser, get an H.264 film.",
+      "status": "live",
+      "chips": [
+        "视频生成"
+      ],
+      "icon": null,
+      "cover": null,
+      "meta": null
+    },
+    {
+      "slug": "video-to-web-replica",
+      "category": "skill",
+      "nameZh": "录屏还站",
+      "nameEn": "Video to Web Replica",
+      "taglineZh": "从一段录屏里认出网站，还原界面，复刻成能跑的前端。",
+      "taglineEn": "Identifies a site from a screen recording, rebuilds the UI, ships runnable front-end code.",
+      "status": "live",
+      "chips": [
+        "视频生成",
+        "前端"
+      ],
+      "icon": null,
+      "cover": null,
+      "meta": null
+    },
+    {
+      "slug": "spa-site-teardown",
+      "category": "skill",
+      "nameZh": "网站拆解",
+      "nameEn": "Site Teardown",
+      "taglineZh": "把任意网站的真实文案、路由结构、隐私条款和设计令牌摊开来看。",
+      "taglineEn": "Lays out a site’s real copy, routing, privacy terms and design tokens for inspection.",
+      "status": "live",
+      "chips": [
+        "前端"
+      ],
+      "icon": null,
+      "cover": null,
+      "meta": null
+    },
+    {
+      "slug": "macos-disk-audit",
+      "category": "skill",
+      "nameZh": "磁盘空间体检",
+      "nameEn": "Disk Space Audit",
+      "taglineZh": "分清「文件有多大」和「删了能省多少」—— macOS 上这两件事常常不是一回事。",
+      "taglineEn": "Separates \"how big is it\" from \"how much would deleting it actually free\" — rarely the same on macOS.",
+      "status": "live",
+      "chips": [
+        "macOS 工具"
+      ],
+      "icon": null,
+      "cover": null,
+      "meta": null
+    },
+    {
+      "slug": "atoll-notch-progress",
+      "category": "skill",
+      "nameZh": "灵动岛进度",
+      "nameEn": "Notch Progress",
+      "taglineZh": "把任务进度实时投到 MacBook 的刘海里。",
+      "taglineEn": "Pushes task progress onto the MacBook notch in real time.",
+      "status": "live",
+      "chips": [
+        "macOS 工具"
+      ],
+      "icon": null,
+      "cover": null,
+      "meta": null
+    },
+    {
+      "slug": "siri-intelligence",
+      "category": "shortcut",
+      "nameZh": "自制 Siri 智能",
+      "nameEn": "SiriIntelligence",
+      "taglineZh": "自制 Siri intelligence —— 在 Mac 上截个图，直接问 Gemini，不用切窗口、不用复制粘贴。",
+      "taglineEn": "Home-made Siri intelligence for the Mac: screenshot, then ask Gemini — no window switching, no copy-paste.",
+      "status": "live",
+      "chips": [
+        "Mac",
+        "Gemini",
+        "截图问答"
+      ],
+      "icon": "assets/icons/siri-intelligence.png",
+      "cover": null,
+      "meta": null,
+      "cta": {
+        "url": "https://www.icloud.com/shortcuts/d737e7f567324e95be27ef77c282fbe6",
+        "zh": "获取快捷指令",
+        "en": "Get shortcut"
+      }
+    }
+  ]
+}

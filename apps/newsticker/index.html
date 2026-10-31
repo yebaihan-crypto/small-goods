@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>桌面资讯条 · NewsTicker</title>
+<meta name="description" content="桌面下沿一条不停的字幕：微信截图拖进去，系统 OCR 当场认字，按当年第几天每天挑十张轮播，一个月不重样。">
+<script>(function(){try{var m=/[?&]lang=(zh|en)\b/.exec(location.search);var s=m?m[1]:localStorage.getItem("hub-lang");if(m){localStorage.setItem("hub-lang",m[1]);}var n=(navigator.language||"zh").toLowerCase();document.documentElement.setAttribute("data-lang",s||(n.indexOf("zh")===0?"zh":"en"));}catch(e){document.documentElement.setAttribute("data-lang","zh");}})();</script>
+<link rel="stylesheet" href="../../assets/css/shell.css">
+</head>
+<body class="hub-body" style="--accent:#9B4DCA">
+<div id="hub-bar"></div>
+<script>window.HUB_PAGE={"slug": "newsticker", "nameZh": "桌面资讯条", "nameEn": "NewsTicker", "links": [{"href": "index.html", "zh": "产品主页", "en": "Overview"}, {"href": "https://github.com/yebaihan-crypto/NewsTicker", "zh": "源码", "en": "Source"}]};</script>
+<main class="hub-wrap">
+
+  <section class="pg-hero">
+    <div class="pg-top">
+      <img class="pg-icon" src="../../assets/icons/newsticker.png" alt="桌面资讯条">
+      <div>
+        <h1><span class="lang-zh">桌面资讯条</span><span class="lang-en">NewsTicker</span></h1>
+        <p class="pg-sub"><span class="lang-zh">把截图读成一条滚动播报</span><span class="lang-en">Screenshots, Read Into a Ticker</span></p>
+      </div>
+    </div>
+    <p class="pg-tagline"><span class="lang-zh">桌面下沿一条不停的字幕：微信截图拖进去，系统 OCR 当场认字，按当年第几天每天挑十张轮播，一个月不重样。</span><span class="lang-en">A subtitle that never stops along the bottom of the desktop: drop a screenshot in, on-device OCR reads it, ten a day picked by the day of the year — no repeats for a month.</span></p>
+    <div class="pg-badges"><span class="chip"><span class="lang-zh">本地构建</span><span class="lang-en">Local build</span></span><span class="chip">macOS 12+</span><span class="chip"><span class="lang-zh">OCR 只在本机跑</span><span class="lang-en">On-device OCR</span></span></div>
+    <div class="pg-cta"><a class="btn btn-solid" href="https://github.com/yebaihan-crypto/NewsTicker" target="_blank" rel="noopener"><span class="lang-zh">去 GitHub 看源码</span><span class="lang-en">View source on GitHub</span></a></div>
+  </section>
+
+  <section class="pg-body">
+    <h2><span class="lang-zh">关于这个插件</span><span class="lang-en">About</span></h2>
+    <p class="pg-desc"><span class="lang-zh">不想专门打开阅读软件的时候，就让它挂在桌面下沿。图片往滚动条上一拖，Vision 当场认出文字、追加进当天的播报列表；启动时它自己去「文稿 / 微信记录截图」里按当年第几天挑十张，十张轮完再来一轮，一个月不重样。滚动条没有边框，按住背景就能挪到屏幕任意位置；右键能暂停、隐藏内容、退出。控制面板里调滚动速度（px/s）、看识别进度、点开任一条改文字、删掉不想要的。识别只在本机跑，图片不出门。</span><span class="lang-en">For the days you cannot be bothered to open a read-later app, park this along the bottom of the desktop. Drop an image on the ticker and Vision reads it on the spot, appending the text to today's list; at launch it picks ten screenshots from Documents/微信记录截图 by the day of the year, cycling through and starting over — a month before anything repeats. The bar is borderless: hold the background and drag it anywhere. Right-click to pause, hide the content or quit. The panel adjusts scroll speed in px/s, shows OCR progress, and lets you edit or delete any single item. Recognition runs on device; the images never leave.</span></p>
+
+    <h2><span class="lang-zh">主要功能</span><span class="lang-en">Highlights</span></h2>
+    <ul class="pg-feats"><li><span class="lang-zh">拖图片即识别，走系统 Vision OCR</span><span class="lang-en">Drop-in OCR via the system Vision framework</span></li><li><span class="lang-zh">按当年第几天每天轮播 10 张</span><span class="lang-en">Ten screenshots a day, chosen by day of year</span></li><li><span class="lang-zh">无边框悬浮，按住背景随意拖</span><span class="lang-en">Borderless overlay, draggable from the background</span></li><li><span class="lang-zh">右键暂停 / 隐藏内容 / 退出</span><span class="lang-en">Right-click to pause, hide or quit</span></li><li><span class="lang-zh">面板可调滚动速度、改文字、删条目</span><span class="lang-en">Panel for scroll speed, text edits and deletions</span></li><li><span class="lang-zh">package.sh 一键出 .app、图标与 zip</span><span class="lang-en">package.sh builds the .app, icon and zip in one go</span></li></ul>
+
+    <p class="pg-note"><span class="lang-zh">一开始是为了把「微信记录截图」翻出来重读，后来发现拿来滚新闻、滚笔记、滚知识卡片都顺手 —— 只要能截成图，就能被它念一遍。源码在 GitHub 上，Swift Package 加一份打包脚本，自己 clone 下来就能跑。</span><span class="lang-en">It started as a way to re-read a folder of WeChat screenshots, and turned out to work just as well for news, notes or knowledge cards — if it can be screenshotted, this can read it back to you. The source is on GitHub: a Swift Package plus one packaging script, clone and run.</span></p>
+    <div class="pg-legal"><a href="../../index.html"><span class="lang-zh">← 回到全部应用</span><span class="lang-en">← All apps</span></a></div>
+  </section>
+
+</main>
+<div id="hub-foot"></div>
+<script src="../../assets/js/shell.js"></script>
+</body>
+</html>

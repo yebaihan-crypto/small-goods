@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title data-zh="独立小品 · 一个人的作品集" data-en="Small Goods · Works by one person">独立小品 · 一个人的作品集</title>
+<meta name="description" content="应用、浏览器插件、网站、影像与技能 —— 一个人做的作品，收进同一个门牌号。">
+<script>(function(){try{var m=/[?&]lang=(zh|en)\b/.exec(location.search);var s=m?m[1]:localStorage.getItem('hub-lang');if(m){localStorage.setItem('hub-lang',m[1]);}var n=(navigator.language||'zh').toLowerCase();document.documentElement.setAttribute('data-lang',s||(n.indexOf('zh')===0?'zh':'en'));}catch(e){document.documentElement.setAttribute('data-lang','zh');}})();</script>
+<link rel="stylesheet" href="assets/css/shell.css?v=202610101510">
+</head>
+<body class="hub-body">
+
+<header class="hub-topbar">
+  <div class="hub-topbar-inner">
+    <a class="hub-brand" href="index.html">
+      <span data-site-name>独立小品</span><span class="dot">·</span><small>Works</small>
+    </a>
+    <span class="spacer"></span>
+    <div class="hub-seg" id="hub-filters" role="group" aria-label="类别筛选"></div>
+    <div class="hub-seg" role="group" aria-label="语言">
+      <button type="button" data-lang-btn="zh" aria-pressed="true">中</button>
+      <button type="button" data-lang-btn="en" aria-pressed="false">EN</button>
+    </div>
+  </div>
+</header>
+
+<main class="hub-wrap">
+
+  <section class="hub-hero">
+    <p class="eyebrow">
+      <span lang="zh">作品索引 · 2026</span>
+      <span lang="en">Index · 2026</span>
+    </p>
+    <h1>
+      <span lang="zh">把散落在各处的作品，<em>收进同一个门牌号</em>。</span>
+      <span lang="en">Apps, extensions, sites and films — <em>under one address</em>.</span>
+    </h1>
+    <p class="lede" data-site-intro>一个人做的 iOS 小应用。每个都不大，每个都解决一件具体的小事。</p>
+    <div class="hub-stats" id="hub-stats" aria-label="统计"></div>
+  </section>
+
+  <div id="hub-grid-host" data-src="data/works.json"></div>
+
+</main>
+
+<footer class="hub-footer">
+  <div class="hub-wrap">
+    <div class="hub-footer-inner">
+      <div class="col">
+        <h4><span lang="zh">关于数据</span><span lang="en">About your data</span></h4>
+        <p data-site-note>所有应用的数据默认留在你的设备上。</p>
+      </div>
+      <div class="col">
+        <h4><span lang="zh">联系与反馈</span><span lang="en">Contact</span></h4>
+        <ul>
+          <li><a href="mailto:yebaihan_support@163.com">yebaihan_support@163.com</a></li>
+          <!-- 社交入口待补：把下面几行的 href 换成真实主页后取消注释即可
+          <li><a href="">小红书</a></li>
+          <li><a href="">哔哩哔哩</a></li>
+          <li><a href="">微信公众号</a></li>
+          -->
+        </ul>
+      </div>
+    </div>
+    <div class="copyright">
+      <span>© 2026</span>
+      <span data-site-name>独立小品</span>
+      <span>·</span>
+      <a href="https://3x3.super.site/" target="_blank" rel="noopener" style="color:inherit"><span lang="zh">排版参考 3x3</span><span lang="en">Layout inspired by 3x3</span></a>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/shell.js?v=202610101510"></script>
+</body>
+</html>

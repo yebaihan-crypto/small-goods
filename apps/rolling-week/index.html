@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rolling Week - Bullet Journal Running List</title>
+  <!-- Google Fonts: Plus Jakarta Sans for UI, Playpen Sans for handwritten journal feel -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Playpen+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/jpeg" href="icon.jpg">
+  <link rel="stylesheet" href="style.css">
+<script>(function(){try{var m=/[?&]lang=(zh|en)/.exec(location.search);var s=m?m[1]:localStorage.getItem("hub-lang");if(m){localStorage.setItem("hub-lang",m[1]);}var n=(navigator.language||"zh").toLowerCase();document.documentElement.setAttribute("data-lang",s||(n.indexOf("zh")===0?"zh":"en"));}catch(e){document.documentElement.setAttribute("data-lang","zh");}})();</script>
+<link rel="stylesheet" href="../../assets/css/shell.css">
+</head>
+<body class="theme-cream">
+<div id="hub-bar"></div>
+<script>window.HUB_PAGE={"slug": "rolling-week", "nameZh": "滚动周清单", "nameEn": "Rolling Week", "links": []};</script>
+
+  <!-- SVG filters for hand-drawn sketch effects -->
+  <svg class="svg-filters" style="position: absolute; width: 0; height: 0;" aria-hidden="true">
+    <defs>
+      <!-- Hand-drawn rough border filter -->
+      <filter id="hand-drawn-rough" x="-5%" y="-5%" width="110%" height="110%">
+        <feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="3" result="noise" />
+        <feDisplacementMap in="SourceGraphic" in2="noise" scale="2.5" xChannelSelector="R" yChannelSelector="G" />
+      </filter>
+      
+      <!-- Hatching patterns for day cells -->
+      <pattern id="hatch-complete" width="10" height="10" patternTransform="rotate(45 0 0)" patternUnits="userSpaceOnUse">
+        <line x1="0" y1="0" x2="0" y2="10" stroke="currentColor" stroke-width="1.5" />
+        <line x1="0" y1="0" x2="10" y2="0" stroke="currentColor" stroke-width="1.5" />
+      </pattern>
+      
+      <pattern id="hatch-partial" width="10" height="10" patternTransform="rotate(45 0 0)" patternUnits="userSpaceOnUse">
+        <line x1="0" y1="0" x2="0" y2="10" stroke="currentColor" stroke-width="1" />
+      </pattern>
+    </defs>
+  </svg>
+
+  <div class="app-container">
+    <!-- Sidebar Settings Panel -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <h2>手帐设置</h2>
+        <button class="icon-btn close-sidebar-btn" id="closeSidebarBtn" title="关闭">×</button>
+      </div>
+      
+      <div class="sidebar-section">
+        <h3>纸张主题</h3>
+        <div class="theme-options">
+          <button class="theme-opt active" data-theme="cream" style="--bg: #faf7f0; --color: #433e3f;">
+            <span class="color-dot" style="background: #faf7f0; border: 1px solid #dcd3c1;"></span>复古奶油
+          </button>
+          <button class="theme-opt" data-theme="dark" style="--bg: #1c1c1e; --color: #e5e5e7;">
+            <span class="color-dot" style="background: #1c1c1e; border: 1px solid #3a3a3c;"></span>深夜墨水
+          </button>
+          <button class="theme-opt" data-theme="sage" style="--bg: #f2f5f1; --color: #2e3d30;">
+            <span class="color-dot" style="background: #e3ebd9; border: 1px solid #c8d8b8;"></span>静谧鼠尾草
+          </button>
+          <button class="theme-opt" data-theme="lavender" style="--bg: #f8f6fc; --color: #3b334a;">
+            <span class="color-dot" style="background: #efe9f7; border: 1px solid #d4c5e8;"></span>薰衣草之雾
+          </button>
+        </div>
+      </div>
+
+      <div class="sidebar-section">
+        <h3>背景网格</h3>
+        <div class="grid-options">
+          <button class="grid-opt active" data-grid="dots">圆点 (Dot Grid)</button>
+          <button class="grid-opt" data-grid="lines">横线 (Lined)</button>
+          <button class="grid-opt" data-grid="none">空白 (Blank)</button>
+        </div>
+        <div class="grid-density-control">
+          <label for="gridDensity">网格大小: <span id="gridDensityVal">24px</span></label>
+          <input type="range" id="gridDensity" min="18" max="36" value="24">
+        </div>
+      </div>
+
+      <div class="sidebar-section">
+        <h3>状态说明</h3>
+        <ul class="legend-list">
+          <li><span class="legend-cell mark-done"></span> 已完成 (Completed)</li>
+          <li><span class="legend-cell mark-partial"></span> 部分完成 (Partial)</li>
+          <li><span class="legend-cell mark-migrated">→</span> 已推迟/迁移 (Migrated)</li>
+          <li><span class="legend-cell mark-cancelled">×</span> 已取消 (Cancelled)</li>
+          <li><span class="legend-cell mark-none"></span> 未开始 (Planned)</li>
+        </ul>
+      </div>
+
+      <div class="sidebar-section footer-actions">
+        <button class="btn secondary-btn" id="clearAllBtn">清空所有数据</button>
+        <button class="btn secondary-btn" id="loadDemoBtn">导入示例模版</button>
+      </div>
+    </aside>
+
+    <!-- Overlay when sidebar is open -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- Main Workspace -->
+    <main class="main-content">
+      <!-- App Header -->
+      <header class="app-header">
+        <div class="header-left">
+          <button class="icon-btn menu-btn" id="menuBtn" title="设置">
+            <svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2" fill="none"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+          </button>
+          <div class="title-group">
+            <h1 class="logo-title">ROLLING WEEK</h1>
+            <p class="subtitle">Running List Journal</p>
+          </div>
+        </div>
+
+        <div class="header-right">
+          <div class="progress-container">
+            <span class="progress-label">本周完成度 <span id="progressText">0%</span></span>
+            <div class="progress-bar-outer">
+              <div class="progress-bar-inner" id="progressBar" style="width: 0%"></div>
+            </div>
+          </div>
+          
+          <button class="btn primary-btn" id="addCategoryBtn">
+            <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.5" fill="none" style="margin-right: 4px;"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+            新建项目
+          </button>
+          
+          <button class="btn grid-toggle-btn" id="gridToggleBtn" title="显示/隐藏一周标记 (快捷键: G)">
+            <span class="icon">📅</span> <span class="label">显示周标记</span>
+          </button>
+        </div>
+      </header>
+
+      <!-- Weekly Detail Boxes (Mon - Sun Highlights) -->
+      <section class="weekly-highlights-section">
+        <div class="section-title-bar">
+          <span class="handwritten-title">Weekly Focus & Daily Highlights</span>
+          <div class="week-selector">
+            <button class="nav-week-btn" id="prevWeekBtn" title="上周">←</button>
+            <span id="currentWeekRange" class="current-week-label">2026年6月 第2周</span>
+            <button class="nav-week-btn" id="nextWeekBtn" title="下周">→</button>
+          </div>
+        </div>
+        <div class="weekly-cards-container" id="weeklyCardsContainer">
+          <!-- Cards generated dynamically by JavaScript -->
+        </div>
+      </section>
+
+      <!-- Main Running List Board -->
+      <section class="board-section">
+        <div class="board-outer-container">
+          
+          <!-- Sliding Board Layout -->
+          <div class="board-sliding-wrapper" id="boardSlidingWrapper">
+            
+            <!-- Week Matrix (Left Column, slidable) -->
+            <div class="week-matrix-column" id="weekMatrixColumn">
+              <div class="week-matrix-header">
+                <div class="matrix-cell-header" data-day="0">一<span class="sub-day">M</span></div>
+                <div class="matrix-cell-header" data-day="1">二<span class="sub-day">T</span></div>
+                <div class="matrix-cell-header" data-day="2">三<span class="sub-day">W</span></div>
+                <div class="matrix-cell-header" data-day="3">四<span class="sub-day">T</span></div>
+                <div class="matrix-cell-header" data-day="4">五<span class="sub-day">F</span></div>
+                <div class="matrix-cell-header" data-day="5" class="weekend">六<span class="sub-day">S</span></div>
+                <div class="matrix-cell-header" data-day="6" class="weekend">日<span class="sub-day">S</span></div>
+              </div>
+              <div class="week-matrix-body" id="weekMatrixBody">
+                <!-- Row cells matching each task, generated dynamically by JS -->
+              </div>
+            </div>
+
+            <!-- Gesture / Drag Handle Divider -->
+            <div class="board-divider-handle" id="boardDividerHandle" title="按住拖拽或双击切换周标记">
+              <div class="handle-dots"></div>
+              <div class="handle-arrow-indicator"></div>
+            </div>
+
+            <!-- Task List Column (Right Column) -->
+            <div class="task-list-column" id="taskListColumn">
+              <div class="task-list-header">
+                <div class="header-task-title">任务清单 / 纵向无限罗列</div>
+                <div class="header-task-actions">
+                  <span class="drag-info-tip">拖拽可排序</span>
+                </div>
+              </div>
+              <div class="task-list-body" id="taskListBody">
+                <!-- Categories and tasks rendered here -->
+              </div>
+            </div>
+            
+          </div>
+        </div>
+
+        <!-- Gesture Hint Overlay (appears on first use) -->
+        <div class="gesture-hint-overlay" id="gestureHintOverlay">
+          <div class="gesture-hint-box">
+            <div class="swipe-hand-animation">👈 Swipe 👉</div>
+            <p>左滑或拖拽边缘可隐藏/显示周标记</p>
+            <button class="btn primary-btn small-btn" id="closeHintBtn">我知道了</button>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- Cell Context menu (radial-like or quick drop select for day cells) -->
+  <div class="cell-action-menu" id="cellActionMenu">
+    <button class="menu-item" data-status="done"><span class="cell-preview mark-done"></span>已完成</button>
+    <button class="menu-item" data-status="partial"><span class="cell-preview mark-partial"></span>部分完成</button>
+    <button class="menu-item" data-status="migrated"><span class="cell-preview mark-migrated">→</span>移至下周</button>
+    <button class="menu-item" data-status="cancelled"><span class="cell-preview mark-cancelled">×</span>取消任务</button>
+    <button class="menu-item" data-status="none"><span class="cell-preview mark-none"></span>清除标记</button>
+  </div>
+
+  <!-- Prompt modal for creating categories/renaming/notes -->
+  <div class="modal" id="inputModal">
+    <div class="modal-content">
+      <h3 id="modalTitle">添加项目</h3>
+      <div class="input-group">
+        <label for="modalInput" id="modalInputLabel">名称</label>
+        <input type="text" id="modalInput" placeholder="请输入..." autocomplete="off">
+      </div>
+      <div class="input-group color-select-group" id="colorSelectGroup" style="display: none;">
+        <label>分类色彩</label>
+        <div class="color-options">
+          <span class="color-dot-opt active" data-color="#ff7b72" style="background: #ff7b72;"></span>
+          <span class="color-dot-opt" data-color="#f2c94c" style="background: #f2c94c;"></span>
+          <span class="color-dot-opt" data-color="#27ae60" style="background: #27ae60;"></span>
+          <span class="color-dot-opt" data-color="#2f80ed" style="background: #2f80ed;"></span>
+          <span class="color-dot-opt" data-color="#9b51e0" style="background: #9b51e0;"></span>
+          <span class="color-dot-opt" data-color="#e28743" style="background: #e28743;"></span>
+          <span class="color-dot-opt" data-color="#808080" style="background: #808080;"></span>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn secondary-btn" id="modalCancelBtn">取消</button>
+        <button class="btn primary-btn" id="modalSaveBtn">保存</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+<div id="hub-foot"></div>
+<script src="../../assets/js/shell.js"></script>
+</body>
+</html>

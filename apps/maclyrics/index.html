@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>桌面歌词 · MacLyrics</title>
+<meta name="description" content="Apple Music 唱到哪，桌面就滚到哪：半秒读一次播放位置，同步歌词从网上取回来，当前那句放大加粗、留在屏幕中间。">
+<script>(function(){try{var m=/[?&]lang=(zh|en)\b/.exec(location.search);var s=m?m[1]:localStorage.getItem("hub-lang");if(m){localStorage.setItem("hub-lang",m[1]);}var n=(navigator.language||"zh").toLowerCase();document.documentElement.setAttribute("data-lang",s||(n.indexOf("zh")===0?"zh":"en"));}catch(e){document.documentElement.setAttribute("data-lang","zh");}})();</script>
+<link rel="stylesheet" href="../../assets/css/shell.css">
+</head>
+<body class="hub-body" style="--accent:#2E9E8F">
+<div id="hub-bar"></div>
+<script>window.HUB_PAGE={"slug": "maclyrics", "nameZh": "桌面歌词", "nameEn": "MacLyrics", "links": [{"href": "index.html", "zh": "产品主页", "en": "Overview"}]};</script>
+<main class="hub-wrap">
+
+  <section class="pg-hero">
+    <div class="pg-top">
+      <img class="pg-icon" src="../../assets/icons/maclyrics.png" alt="桌面歌词">
+      <div>
+        <h1><span class="lang-zh">桌面歌词</span><span class="lang-en">MacLyrics</span></h1>
+        <p class="pg-sub"><span class="lang-zh">跟着 Apple Music 滚动的歌词</span><span class="lang-en">Lyrics That Follow Apple Music</span></p>
+      </div>
+    </div>
+    <p class="pg-tagline"><span class="lang-zh">Apple Music 唱到哪，桌面就滚到哪：半秒读一次播放位置，同步歌词从网上取回来，当前那句放大加粗、留在屏幕中间。</span><span class="lang-en">Whatever Apple Music is playing, the desktop scrolls along: the player position is read twice a second, synced lyrics fetched online, the current line enlarged and held mid-screen.</span></p>
+    <div class="pg-badges"><span class="chip"><span class="lang-zh">本地构建</span><span class="lang-en">Local build</span></span><span class="chip">macOS 11+</span></div>
+    <div class="pg-cta"><span class="btn btn-solid" aria-disabled="true"><span class="lang-zh">未公开发布 · v1.0</span><span class="lang-en">Not published · v1.0</span></span></div>
+  </section>
+
+  <section class="pg-body">
+    <h2><span class="lang-zh">关于这个应用</span><span class="lang-en">About</span></h2>
+    <p class="pg-desc"><span class="lang-zh">桌面上浮着一块没有边框的歌词板：上一句压暗、当前句白得发亮、下一句在前面等着，滚到中间就停住。播放状态来自 Apple Music 的 AppleScript 接口，每 0.5 秒问一次歌名、歌手和播放位置；歌词先按「歌名 + 歌手」去 lrclib.net 精确匹配，匹配不上再退一步只按歌名模糊搜，拿到带时间轴的 LRC 后按秒数对齐，唱到哪句就亮哪句。字号、非当前句字号、歌词框高度都在设置里，摆哪儿、放多大由你。只认 Apple Music，也只做一件事：把正在放的那首歌，摊开在桌面上。</span><span class="lang-en">A borderless lyric board floating on the desktop: the previous line dimmed, the current one bright white, the next waiting ahead, and it scrolls to hold the middle. Playback state comes from Apple Music's AppleScript interface — track, artist and position asked for every half second. Lyrics are matched exactly by title and artist against lrclib.net, falling back to a looser title-only search; once a timed LRC comes back, lines are aligned by the second and lit as they are sung. Font sizes and the height of the lyric box live in Settings, so you decide where it sits and how big it gets. Apple Music only, and one job only: laying the song that is playing out on the desktop.</span></p>
+
+    <h2><span class="lang-zh">主要功能</span><span class="lang-en">Highlights</span></h2>
+    <ul class="pg-feats"><li><span class="lang-zh">0.5 秒轮询 Apple Music 播放状态</span><span class="lang-en">Playback polled from Apple Music every 0.5s</span></li><li><span class="lang-zh">按歌名 + 歌手取同步歌词，失败转模糊搜</span><span class="lang-en">Synced lyrics by title and artist, then a looser search</span></li><li><span class="lang-zh">LRC 时间轴对齐，当前句高亮居中</span><span class="lang-en">LRC timeline alignment, current line lit and centred</span></li><li><span class="lang-zh">上一句 / 下一句压暗，视线不乱</span><span class="lang-en">Neighbouring lines dimmed to keep the eye still</span></li><li><span class="lang-zh">字号、非当前句字号、歌词框高度可调</span><span class="lang-en">Font size, inactive size and box height adjustable</span></li><li><span class="lang-zh">无边框悬浮，菜单栏常驻、不占 Dock</span><span class="lang-en">Borderless overlay, menu bar resident, no Dock icon</span></li></ul>
+
+    <p class="pg-note"><span class="lang-zh">只跟 Apple Music。歌词取自 lrclib.net 的公共库，华语歌覆盖不全，查不到的时候就只剩一句「歌词加载中」。这是给自己用的原生 macOS 小工具：Swift Package 直接构建成 .app，没上架，也没做公证与分发。</span><span class="lang-en">Apple Music only. Lyrics come from the public lrclib.net library, which is thin on Chinese-language songs — when nothing matches, all you get is “loading lyrics”. A native macOS tool built for my own desk: a Swift Package compiled straight into a .app, neither notarised nor distributed.</span></p>
+    <div class="pg-legal"><a href="../../index.html"><span class="lang-zh">← 回到全部应用</span><span class="lang-en">← All apps</span></a></div>
+  </section>
+
+</main>
+<div id="hub-foot"></div>
+<script src="../../assets/js/shell.js"></script>
+</body>
+</html>

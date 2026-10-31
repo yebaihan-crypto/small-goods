@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="截屏即待办 (ScreenshotTodo) 官方隐私政策。我们尊重并保护您的隐私。我们的应用完全在本地处理所有数据，无外部服务器收集，确保您的个人数据安全。">
+  <title>隐私政策 - 截屏即待办</title>
+  <link rel="stylesheet" href="styles.css">
+<script>(function(){try{var m=/[?&]lang=(zh|en)/.exec(location.search);var s=m?m[1]:localStorage.getItem("hub-lang");if(m){localStorage.setItem("hub-lang",m[1]);}var n=(navigator.language||"zh").toLowerCase();document.documentElement.setAttribute("data-lang",s||(n.indexOf("zh")===0?"zh":"en"));}catch(e){document.documentElement.setAttribute("data-lang","zh");}})();</script>
+<link rel="stylesheet" href="../../assets/css/shell.css">
+</head>
+<body>
+<div id="hub-bar"></div>
+<script>window.HUB_PAGE={"slug": "screenshot-todo", "nameZh": "截屏即待办", "nameEn": "ScreenshotTodo", "links": [{"href": "index.html", "zh": "产品主页", "en": "Overview"}, {"href": "support.html", "zh": "技术支持", "en": "Support"}], "storeUrl": "https://apps.apple.com/cn/app/id6780206676"};</script>
+
+<div class="lang-zh">
+
+
+  <!-- Navigation -->
+  <header>
+    <div class="nav-container">
+      <a href="index.html" class="logo">
+        <div class="logo-icon">📸</div>
+        <span>截屏即待办</span>
+      </a>
+      <nav>
+        <ul>
+          <li><a href="index.html">首页</a></li>
+          <li><a href="support.html">技术支持</a></li>
+          <li><a href="privacy.html" class="active">隐私政策</a></li>
+          <li><a class="lang-switch-legacy" href="privacy.html" style="opacity: 0.85; font-size: 0.85rem; padding: 0.2rem 0.5rem; border: 1px solid rgba(255,255,255,0.2); border-radius: 6px;">EN</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Privacy Policy Content -->
+  <main>
+    <div class="privacy-container">
+      <h2 style="margin-bottom: 1rem;">隐私政策</h2>
+      <p style="text-align: center; color: var(--text-secondary); margin-bottom: 3rem; font-size: 0.95rem;">
+        生效日期：2026年6月13日
+      </p>
+
+      <div class="glass-card privacy-card">
+        <p>「截屏即待办」应用（以下简称“本应用”或“我们”）极其重视用户的隐私和个人信息安全。本隐私政策旨在向您说明本应用如何处理您的数据。我们做出的核心承诺是：<b>您的数据完全属于您自己，我们不收集、不存储、也不向任何第三方传输您的任何隐私信息。</b></p>
+        
+        <h3>1. 零服务器架构与本地运行</h3>
+        <p>本应用采用纯本地离线的技术方案，<b>没有架设任何外部云端服务器</b>。
+          <ul>
+            <li>本应用在运行快捷指令、解析屏幕截图时，所有的图片文字识别 (OCR) 和二维码扫描都是通过 iOS 系统内置的 <code>Vision</code> 框架在您的设备上本地实时完成的。</li>
+            <li>在解析任务的截止时间（如“今晚 8 点”、“明天 09:30”）时，也完全依靠本地的文本匹配与时间计算引擎完成，不依赖任何云端大模型或云端 AI 服务。</li>
+            <li>我们无法、也不会收集您的屏幕截图内容、解析出的文本或生成的任何待办任务。</li>
+          </ul>
+        </p>
+
+        <h3>2. 深度同步系统「提醒事项」 (EventKit)</h3>
+        <p>本应用需要您授予系统「提醒事项」的访问权限，以便在您触发截图待办时，将识别出的任务项写入您的系统日程管理中：
+          <ul>
+            <li>本应用通过 iOS 官方 <code>EventKit</code> 接口，将任务以原生格式保存至您设备自带的「提醒事项」应用中。</li>
+            <li>所有的跨设备多端数据同步（如有）均通过 Apple 官方提供的 <b>iCloud</b> 服务安全进行，完全遵循 Apple 自身的隐私保护条款。</li>
+            <li>开发者不拥有也无法读取您 iCloud 中的任何数据。</li>
+          </ul>
+        </p>
+
+        <h3>3. 敏感权限获取说明</h3>
+        <p>为了给您提供核心功能，本应用可能会在运行过程中向您请求以下系统权限：
+          <ul>
+            <li><b>提醒事项 (EventKit) 权限</b>：仅用于同步本地待办任务，便于您在系统日历或提醒事项中查看和管理任务。</li>
+            <li><b>照片/相册访问权限</b>：当您运行快捷指令并传入最新屏幕截图时，应用仅会读取并解析您指定的该张屏幕截图。我们不会在后台扫描您的相册或收集其他照片。</li>
+          </ul>
+          您可以随时在 iOS 系统的“设置 - 隐私与安全性”中撤销这些权限。撤销后，核心功能可能无法正常使用，但我们仍不会以任何形式收集您的其他数据。
+        </p>
+
+        <h3>4. 第三方 SDK 与追踪器声明</h3>
+        <p>为了保障极致纯净的效率体验，<b>本应用不包含任何第三方广告 SDK、用户统计分析工具（如 Firebase, Google Analytics 等）或行为追踪器</b>。我们不会追踪您的软件使用习惯，也不会收集任何设备标识符（如 IDFA 或 UUID）。</p>
+
+        <h3>5. 隐私政策的更新</h3>
+        <p>我们可能会根据应用版本的更新和苹果开发者政策的调整，适时修改本隐私政策。任何政策修改都会在此页面上发布。我们建议您定期查看此页面以获取最新信息。</p>
+
+        <h3>6. 联系我们</h3>
+        <p>如果您对本隐私政策或本应用的数据处理有任何疑问、建议或意见，欢迎通过以下电子邮箱与我们取得联系：<br>
+          <a href="mailto:yebaihan@qq.com" style="color: var(--secondary); text-decoration: none; font-weight: 500;">yebaihan@qq.com</a>
+        </p>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-info">
+        <div class="logo" style="margin-bottom: 0.5rem;">
+          <div class="logo-icon" style="width:28px; height:28px; font-size: 1rem;">📸</div>
+          <span style="font-size: 1.1rem;">截屏即待办</span>
+        </div>
+        <p>© 2026 截屏即待办 App. 保留所有权利。</p>
+        <p>专为个人效率与数据绝对隐私安全打造。</p>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">首页</a>
+        <a href="support.html">技术支持</a>
+        <a href="privacy.html">隐私政策</a>
+      </div>
+    </div>
+  </footer>
+
+  
+
+</div>
+<div class="lang-en">
+
+
+  <!-- Navigation -->
+  <header>
+    <div class="nav-container">
+      <a href="index.html" class="logo">
+        <div class="logo-icon">📸</div>
+        <span>ScreenshotTodo</span>
+      </a>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="support.html">Support</a></li>
+          <li><a href="privacy.html" class="active">Privacy Policy</a></li>
+          <li><a class="lang-switch-legacy" href="privacy.html" style="opacity: 0.85; font-size: 0.85rem; padding: 0.2rem 0.5rem; border: 1px solid rgba(255,255,255,0.2); border-radius: 6px;">中文</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Privacy Policy Content -->
+  <main>
+    <div class="privacy-container">
+      <h2 style="margin-bottom: 1rem;">Privacy Policy</h2>
+      <p style="text-align: center; color: var(--text-secondary); margin-bottom: 3rem; font-size: 0.95rem;">
+        Effective Date: June 13, 2026
+      </p>
+
+      <div class="glass-card privacy-card">
+        <p>The "ScreenshotTodo" application ("the App" or "We") values your privacy and personal data security. This Privacy Policy explains how data is processed by the App. Our core commitment is: <b>Your data belongs entirely to you. We do not collect, store, or transmit any of your private information to third-party servers.</b></p>
+        
+        <h3>1. Zero-Server Architecture & On-Device Processing</h3>
+        <p>The App operates entirely offline and <b>maintains no cloud servers</b>.
+          <ul>
+            <li>Text recognition (OCR) and QR code scanning from screenshots are executed in real-time on your device using iOS's native <code>Vision</code> framework.</li>
+            <li>Due date parsing is performed locally via on-device regex and date parsing logic without using external AI API servers.</li>
+            <li>We cannot and do not collect your screenshots, recognized text, or generated task items.</li>
+          </ul>
+        </p>
+
+        <h3>2. Apple Reminders Sync (EventKit)</h3>
+        <p>The App requests access to Apple Reminders to sync tasks created from screenshots:
+          <ul>
+            <li>Tasks are written to your native Apple Reminders app using iOS's official <code>EventKit</code> API.</li>
+            <li>Any multi-device synchronization is managed securely via Apple's official <b>iCloud</b> infrastructure under Apple's privacy policy.</li>
+            <li>Developers have no access to your iCloud data.</li>
+          </ul>
+        </p>
+
+        <h3>3. Permissions</h3>
+        <p>The App may request the following permissions for core functionality:
+          <ul>
+            <li><b>Reminders (EventKit)</b>: To save and sync generated tasks to native Apple Reminders.</li>
+            <li><b>Photos Access</b>: When executing Shortcuts with recent screenshots, the App reads only the specified screenshot. We do not scan your photo library in the background.</li>
+          </ul>
+          You can revoke permissions anytime in iOS Settings > Privacy & Security.
+        </p>
+
+        <h3>4. Third-Party Analytics & Tracking</h3>
+        <p><b>ScreenshotTodo contains zero third-party advertising SDKs, analytics frameworks (such as Firebase or Google Analytics), or behavioral trackers.</b> We do not collect device identifiers (IDFA/UUID) or track user usage.</p>
+
+        <h3>5. Policy Updates</h3>
+        <p>We may update this Privacy Policy to align with new app features or Apple Developer Policy updates. Any changes will be posted on this page.</p>
+
+        <h3>6. Contact Us</h3>
+        <p>If you have any questions or feedback regarding this Privacy Policy, feel free to contact us via email:<br>
+          <a href="mailto:yebaihan@qq.com" style="color: var(--secondary); text-decoration: none; font-weight: 500;">yebaihan@qq.com</a>
+        </p>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-info">
+        <div class="logo" style="margin-bottom: 0.5rem;">
+          <div class="logo-icon" style="width:28px; height:28px; font-size: 1rem;">📸</div>
+          <span style="font-size: 1.1rem;">ScreenshotTodo</span>
+        </div>
+        <p>© 2026 ScreenshotTodo App. All rights reserved.</p>
+        <p>Built for personal productivity and ultimate privacy.</p>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="support.html">Support</a>
+        <a href="privacy.html">Privacy Policy</a>
+      </div>
+    </div>
+  </footer>
+
+  
+
+</div>
+
+<script src="app.js"></script>
+<div id="hub-foot"></div>
+<script src="../../assets/js/shell.js"></script>
+</body>
+</html>
