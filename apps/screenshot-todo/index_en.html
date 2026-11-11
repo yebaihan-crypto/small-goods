@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#000000">
+  <title>Privacy Policy — Dotney</title>
+  <meta name="description" content="Dotney Official Privacy Policy. Modeled on Pool.day compliance standards: How Dotney handles screenshots, thoughts, and AI inferences with on-device sandbox storage, no model training, and zero tracking.">
+  <link rel="icon" href="assets/app-icon.png">
+  <link rel="stylesheet" href="pool.css">
+</head>
+<body>
+
+<div class="dotted-bg">
+  <div class="page">
+
+    <!-- Header & Language Switch -->
+    <div class="header-row">
+      <p class="crumb"><a href="privacy_en.html">DOTNEY</a><span class="sep">/</span>PRIVACY POLICY</p>
+      <div class="lang-switch">
+        <a href="privacy.html">中文</a>
+      </div>
+    </div>
+
+    <!-- Title & Effective Date -->
+    <div class="section">
+      <h1 class="page-title">Privacy Policy</h1>
+      <p class="note">Effective Date: September 30, 2026</p>
+      <p>The "Dotney" application ("Dotney," "the App," "we," "our," or "us") is crafted to help users capture, understand, organize, and collect screenshots, spontaneous thoughts, and clipboard items freely without task deadline anxiety ("Anti-Todo Inspiration Vault").</p>
+      <p>Because screenshot and personal note content can be deeply personal, this Policy is written to describe in <b>direct, transparent, and rigorous terms</b> what information we process, how artificial intelligence assists in understanding, how data is stored, and your complete rights and choices.</p>
+    </div>
+
+    <hr class="rule">
+
+    <!-- Section 1 -->
+    <div class="section">
+      <h2>1. Information We Process</h2>
+      <p><b>Content You Provide &amp; Import</b>:</p>
+      <ul>
+        <li>Screenshots and photos you explicitly import or send into the vault via Shortcuts "Teleport".</li>
+        <li>Spontaneous thoughts, notes, and clipboard texts or URLs you create or paste.</li>
+      </ul>
+
+      <p><b>Permissions &amp; Device Sources</b>:</p>
+      <ul>
+        <li><b>Photo Library Access</b>: Used exclusively to access screenshots you select or pass via Shortcuts. We never scan your photo library in the background.</li>
+        <li><b>Microphone &amp; Speech Recognition</b>: Used only when you hold the microphone button to dictate a thought locally using iOS's native Speech framework. Audio is transcribed on-device and never uploaded.</li>
+        <li><b>Apple Reminders (EventKit)</b>: Invoked only when you explicitly export an inspiration card to native Apple Reminders.</li>
+        <li><b>Location (When In Use)</b>: Used strictly on-device to compute real-time distance to place cards; we do not track routes or upload location data.</li>
+      </ul>
+
+      <p><b>Derived Data &amp; AI Inferences</b>:</p>
+      <ul>
+        <li>Text extracted from screenshots via Apple's native <code>Vision</code> OCR framework.</li>
+        <li>Inferred structured tags: 12 inspiration categories (Schedule, Movie, Book, Music, Routine, Place, PromoCode, Wishlist, Profile, Video, Action, Photo).</li>
+        <li>Concise titles, emojis, key takeaways, and action steps (Todos) derived via AI.</li>
+      </ul>
+
+      <p><b>Zero-Account Architecture</b>: Dotney requires no sign-up or login credentials. We do not collect phone numbers, email addresses, or social accounts, and we do not link activity to personal real-world identities.</p>
+    </div>
+
+    <!-- Section 2 -->
+    <div class="section">
+      <h2>2. How We Use Information &amp; AI Processing</h2>
+      <p>We process information solely to deliver Dotney's core product experience:</p>
+      <ul>
+        <li>To synthesize screenshot takeaways into fan-stacked inspiration cards.</li>
+        <li>To automatically categorize items across 12 distinct inspiration vaults.</li>
+        <li>To power lightweight Lock Screen and Dynamic Island companions via Live Activities.</li>
+      </ul>
+
+      <!-- Pool-style Callout -->
+      <div class="callout-box">
+        <h4>🔒 No Training on Your Content</h4>
+        <p><b>We do not use your screenshots, notes, extracted text, or any derived data to train or fine-tune artificial intelligence or machine-learning models.</b><br>
+        Your content is processed solely to deliver real-time card synthesis to you. Third-party AI providers handle requests under strict developer agreements prohibiting the retention of user content in public training pools.</p>
+      </div>
+    </div>
+
+    <!-- Section 3 -->
+    <div class="section">
+      <h2>3. Third-Party AI Model Providers</h2>
+      <p>To provide high-accuracy natural language understanding and 12-tag categorization, the App integrates compliant large language model APIs (such as DeepSeek API):</p>
+      <ul>
+        <li><b>Text-Only Processing</b>: Only extracted plain text snippets are transmitted to infer titles and categories. <b>Raw image pixels are never uploaded.</b></li>
+        <li><b>Stateless Processing</b>: API calls are stateless and ephemeral, containing no personal identity tokens. Upon returning structured JSON, data is not stored in ongoing user profiles.</li>
+        <li><b>Public Metadata Retrieval</b>: For open-source projects or public articles, the App may query public search indices (such as DuckDuckGo snippet summaries or GitHub open APIs) for official URLs. No private user data is involved.</li>
+      </ul>
+    </div>
+
+    <!-- Section 4 -->
+    <div class="section">
+      <h2>4. On-Device Local Sandbox &amp; User Control</h2>
+      <ul>
+        <li><b>On-Device Local Sandbox Storage</b>: All original screenshots, inspiration cards, category tags, and thoughts are stored 100% locally within your device's App Sandbox and local shared container (App Group: <code>group.com.arcade.screenshottodo</code>).</li>
+        <li><b>Zero Developer Databases</b>: The developer has never deployed, rented, or operated any centralized user database servers. The developer cannot view, access, or hold your private cards.</li>
+        <li><b>Full User Control &amp; Deletion</b>: You can edit or delete any card at any time. When you uninstall Dotney from your device, all data within the local sandbox is completely and irreversibly erased by iOS.</li>
+        <li><b>iCloud Sync (Optional)</b>: If multi-device sync is enabled, all transmission and storage are managed directly via Apple's official end-to-end encrypted iCloud private containers. The developer has no access to your iCloud data.</li>
+      </ul>
+    </div>
+
+    <!-- Section 5 -->
+    <div class="section">
+      <h2>5. Zero Third-Party Advertising &amp; Zero Trackers</h2>
+      <ul>
+        <li><b>No Advertising SDKs</b>: The App contains zero commercial advertising SDKs (such as AdMob, Pangle, or Tencent Ads).</li>
+        <li><b>No Tracking Frameworks</b>: The App contains zero user analytics frameworks (such as Firebase, Google Analytics, or Flurry).</li>
+        <li><b>No Sale of Data</b>: We do not collect Advertising Identifiers (IDFA), unique device identifiers (UUID), or device fingerprints. We never sell or share user data for cross-context behavioral advertising.</li>
+      </ul>
+    </div>
+
+    <!-- Section 6 -->
+    <div class="section">
+      <h2>6. Automated Processing &amp; Limitations</h2>
+      <p>Dotney utilizes automated algorithms and large language models to generate tags, summaries, and action steps. Outputs may occasionally be incomplete or misclassified. Dotney is designed for personal inspiration and note management; please do not rely on it for critical legal, financial, or medical decisions.</p>
+    </div>
+
+    <!-- Section 7 -->
+    <div class="section">
+      <h2>7. Policy Updates</h2>
+      <p>We may update this Privacy Policy to reflect product improvements or Apple Developer Policy guidelines. Any changes will be posted on this page with an updated effective date.</p>
+    </div>
+
+    <!-- Section 8 -->
+    <div class="section">
+      <h2>8. Contact Developer</h2>
+      <p>If you have any questions, feedback, or requests regarding this Privacy Policy or your data security, please contact the developer directly at:</p>
+      <p><a href="mailto:yebaihan@qq.com">yebaihan@qq.com</a></p>
+    </div>
+
+    <!-- Footer Nav -->
+    <div class="footer-nav">
+      <div class="footer-copy">© 2026 Dotney. All rights reserved.</div>
+      <div class="footer-links">
+        <a href="privacy_en.html" aria-current="page">PRIVACY POLICY</a>
+        <a href="terms_en.html">TERMS OF USE (EULA)</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>

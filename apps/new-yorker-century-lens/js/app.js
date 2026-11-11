@@ -7,12 +7,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Toast notification helper
   const toast = document.getElementById('toast');
-  function showToast(msg) {
+  let toastTimer = null;
+  function showToast(msg, duration = 1000) {
+    if (toastTimer) clearTimeout(toastTimer);
     toast.textContent = msg;
+    const isIconOnly = msg === '🔒' || msg === '🔓' || msg === '❤️' || msg === '🤍';
+    toast.classList.toggle('toast-icon-only', isIconOnly);
     toast.classList.add('active');
-    setTimeout(() => {
+    toastTimer = setTimeout(() => {
       toast.classList.remove('active');
-    }, 2400);
+    }, duration);
   }
 
   // 1. Initialize Favorites Manager
@@ -23,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
     (cover) => {
       const isFav = favoritesManager.toggle(cover.id);
       hudCard.updateFavoriteUI(isFav);
-      showToast(isFav ? `❤️ 已加入喜爱收藏：${cover.title}` : `已取消喜爱：${cover.title}`);
+      showToast(isFav ? '❤️' : '🤍');
       return isFav;
     },
     (id) => favoritesManager.has(id)
@@ -45,7 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
     },
     (cover) => {
       const isFav = favoritesManager.toggle(cover.id);
-      showToast(isFav ? `❤️ 已加入喜爱收藏：${cover.title}` : `已取消喜爱：${cover.title}`);
+      showToast(isFav ? '❤️' : '🤍');
       return isFav;
     },
     (id) => favoritesManager.has(id)
@@ -71,14 +75,14 @@ document.addEventListener('DOMContentLoaded', () => {
           btnLock.classList.add('active');
           btnLock.style.color = '#eab308';
           btnLock.style.borderColor = '#eab308';
-          btnLock.title = "已定格锁定 (点击或空格键解锁)";
-          showToast(`🔒 已定格锁定：${lockedCover.title}（点击画布或按空格解锁）`);
+          btnLock.title = "已锁定 (点击或空格键解锁)";
+          showToast('🔒');
         } else {
           btnLock.classList.remove('active');
           btnLock.style.color = '';
           btnLock.style.borderColor = '';
-          btnLock.title = "定格/锁定当前封面 (快捷键: 空格键或点击封面)";
-          showToast('🔓 已解除锁定，恢复自由漫游');
+          btnLock.title = "锁定当前封面 (快捷键: 空格键或点击封面)";
+          showToast('🔓');
         }
       }
     },
@@ -101,7 +105,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const isFav = favoritesManager.toggle(currentCover.id);
         hudCard.updateFavoriteUI(isFav);
         if (promptModal) promptModal.updateFavoriteUI(isFav);
-        showToast(isFav ? `❤️ 已喜爱：${currentCover.title} (快捷键 L)` : `已取消喜爱：${currentCover.title}`);
+        showToast(isFav ? '❤️' : '🤍');
       }
     }
   });

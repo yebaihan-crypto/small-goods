@@ -262,6 +262,10 @@
         if (w.page) {
           var more = el('a', 'btn btn-ghost');
           more.href = w.page;
+          if (/^https?:\/\//i.test(w.page)) {
+            more.target = '_blank';
+            more.rel = 'noopener';
+          }
           more.setAttribute('data-zh', '了解详情');
           more.setAttribute('data-en', 'Learn more');
           actions.appendChild(more);

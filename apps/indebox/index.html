@@ -6,13 +6,8 @@
     <title>Indebox - 在碎片中，整理思绪</title>
     <meta name="description" content="Indebox 是一款为碎片化灵感而设计的极简笔记工具。先写后归，一触即达。">
     <link rel="stylesheet" href="style.css">
-<script>(function(){try{var m=/[?&]lang=(zh|en)/.exec(location.search);var s=m?m[1]:localStorage.getItem("hub-lang");if(m){localStorage.setItem("hub-lang",m[1]);}var n=(navigator.language||"zh").toLowerCase();document.documentElement.setAttribute("data-lang",s||(n.indexOf("zh")===0?"zh":"en"));}catch(e){document.documentElement.setAttribute("data-lang","zh");}})();</script>
-<link rel="stylesheet" href="../../assets/css/shell.css">
 </head>
 <body>
-<div id="hub-bar"></div>
-<script>window.HUB_PAGE={"slug": "indebox", "nameZh": "间隙日记", "nameEn": "Indebox", "links": [{"href": "support.html", "zh": "技术支持", "en": "Support"}, {"href": "privacy.html", "zh": "隐私政策", "en": "Privacy"}], "storeUrl": "https://apps.apple.com/cn/app/id6782109821"};</script>
-
     <header>
         <div class="logo">
             <span class="lang-zh">Indebox</span>
@@ -31,7 +26,10 @@
                 <span class="lang-zh">隐私政策</span>
                 <span class="lang-en">Privacy</span>
             </a>
-            
+            <button class="lang-toggle" onclick="toggleLanguage()" aria-label="Switch language">
+                <span class="lang-zh">EN</span>
+                <span class="lang-en">中文</span>
+            </button>
         </nav>
     </header>
 
@@ -70,6 +68,17 @@
                     <span class="lang-en">Mac App Store</span>
                 </a>
             </div>
+        </section>
+
+        <section class="showcase">
+            <figure>
+                <video id="tourVideo" class="showcase-video"
+                       muted playsinline loop preload="none"
+                       poster="media/tour-poster.jpg"
+                       aria-label="Indebox guided tour">
+                    <source src="media/tour-15s.mp4" type="video/mp4">
+                </video>
+            </figure>
         </section>
 
         <section class="features">
@@ -142,8 +151,67 @@
         if (localStorage.getItem('lang') === 'en' || navigator.language.startsWith('en')) {
             document.body.classList.add('show-en');
         }
+
+        // Guided tour video: fetch only when it comes into view, pause when it leaves
+        (function () {
+            var v = document.getElementById('tourVideo');
+            if (!v) return;
+
+            var reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+            function fallback() {
+                v.controls = true;
+                v.preload = 'metadata';
+            }
+
+            if (reduce.matches) fallback();
+
+            if ('IntersectionObserver' in window) {
+                var io = new IntersectionObserver(function (entries) {
+                    entries.forEach(function (entry) {
+                        if (!entry.isIntersecting) {
+                            v.pause();
+                            return;
+                        }
+                        if (!v.dataset.loaded) {
+                            v.dataset.loaded = '1';
+                            v.preload = 'auto';
+                        }
+                        if (!reduce.matches) {
+                            var p = v.play();
+                            if (p && p.catch) p.catch(function () {});
+                        }
+                    });
+                }, { threshold: 0.2 });
+                io.observe(v);
+            } else {
+                v.preload = 'metadata';
+            }
+
+            v.addEventListener('click', function () {
+                if (document.fullscreenElement) {
+                    document.exitFullscreen();
+                    return;
+                }
+                v.muted = false;
+                v.controls = true;
+                if (v.requestFullscreen) {
+                    v.requestFullscreen().catch(function () {});
+                } else if (v.webkitEnterFullscreen) {
+                    v.webkitEnterFullscreen();
+                }
+            });
+
+            document.addEventListener('fullscreenchange', function () {
+                if (document.fullscreenElement) return;
+                v.muted = true;
+                v.controls = reduce.matches;
+                if (!reduce.matches) {
+                    var p = v.play();
+                    if (p && p.catch) p.catch(function () {});
+                }
+            });
+        })();
     </script>
-<div id="hub-foot"></div>
-<script src="../../assets/js/shell.js"></script>
 </body>
 </html>

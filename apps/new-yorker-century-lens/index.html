@@ -15,10 +15,6 @@
   <!-- Top Navigation & Control Dock -->
   <header class="top-dock">
     <div class="dock-brand">
-      <a href="../../index.html" class="dock-back-btn" title="返回作品集首页">
-        <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="margin-right:5px;flex-shrink:0;"><polyline points="15 18 9 12 15 6"></polyline></svg>
-        <span>独立小品</span>
-      </a>
       <span class="brand-monocle">🧐</span>
       <span class="brand-text">THE NEW YORKER</span>
     </div>
@@ -32,25 +28,34 @@
       <span class="timeline-year" id="timeline-year-display">2014</span>
     </div>
 
-    <!-- Live Search -->
-    <div class="dock-search">
-      <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-        <circle cx="11" cy="11" r="8"></circle>
-        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-      </svg>
-      <input type="text" id="search-input" placeholder="搜索画师、年代、题材..." autocomplete="off">
-      <div class="search-results" id="search-results"></div>
-    </div>
+    <!-- Dropdown Filters: 题材 & 画师 二级菜单 -->
+    <div class="dock-nav-dropdowns">
+      <!-- 1. 题材 (Themes) 二级菜单 -->
+      <div class="nav-dropdown" id="dropdown-category">
+        <button class="nav-dropdown-btn" id="btn-dropdown-category" type="button" aria-expanded="false" title="按题材筛选封面">
+          <span class="dropdown-icon">🏷️</span>
+          <span class="dropdown-label" id="label-category">题材</span>
+          <svg class="dropdown-arrow" viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="nav-dropdown-menu" id="menu-category"></div>
+      </div>
 
-    <!-- Category Tabs -->
-    <nav class="dock-categories">
-      <button class="cat-pill active" data-cat="all">全部</button>
-      <button class="cat-pill" data-cat="Urban Life">都市生活</button>
-      <button class="cat-pill" data-cat="Tech & Media">科技与屏幕</button>
-      <button class="cat-pill" data-cat="Satire & Politics">政治讽刺</button>
-      <button class="cat-pill" data-cat="Culture & Arts">文化艺术</button>
-      <button class="cat-pill" data-cat="Historical Milestone">百年名作</button>
-    </nav>
+      <!-- 2. 画师 (Artists) 二级菜单 -->
+      <div class="nav-dropdown" id="dropdown-artist">
+        <button class="nav-dropdown-btn" id="btn-dropdown-artist" type="button" aria-expanded="false" title="按画师筛选封面">
+          <span class="dropdown-icon">🎨</span>
+          <span class="dropdown-label" id="label-artist">画师</span>
+          <svg class="dropdown-arrow" viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="nav-dropdown-menu nav-dropdown-menu-wide" id="menu-artist"></div>
+      </div>
+
+      <!-- 快速重置并恢复显示全部 3,200 卷 -->
+      <button class="filter-reset-pill" id="btn-filter-reset" title="退出筛选，恢复显示全部 3,200 卷" style="display:none;">
+        <span class="reset-icon">✕</span>
+        <span class="reset-text" id="reset-filter-text">显示全部</span>
+      </button>
+    </div>
 
     <!-- Controls -->
     <div class="dock-actions">
@@ -143,7 +148,6 @@
       <div class="modal-header-meta">
         <span class="hud-category-badge" id="modal-category">Urban Life</span>
         <span class="hud-date-badge" id="modal-date">May 4, 2020</span>
-        <span class="hud-category-badge" style="color:var(--accent-gold);margin-left:auto;" id="modal-score">98%</span>
       </div>
 
       <h1 class="modal-title" id="modal-title">Bedtime</h1>

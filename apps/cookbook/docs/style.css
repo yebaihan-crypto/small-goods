@@ -1,0 +1,204 @@
+/* Cookbook App - App Support & Privacy Policy Theme */
+:root {
+  --primary-color: #ff6b35;
+  --primary-hover: #e85a24;
+  --secondary-color: #f7c59f;
+  --accent-color: #2ec4b6;
+  --bg-color: #fcfbf9;
+  --card-bg: #ffffff;
+  --text-main: #2b2d42;
+  --text-muted: #6c757d;
+  --border-color: #edf2f4;
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  --radius: 16px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+/* Header Navbar */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 24px;
+  margin-bottom: 32px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+.logo-icon {
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.3rem;
+  box-shadow: 0 4px 12px rgba(255, 107, 53, 0.25);
+}
+
+nav a {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-weight: 500;
+  margin-left: 20px;
+  transition: color 0.2s;
+}
+
+nav a:hover, nav a.active {
+  color: var(--primary-color);
+}
+
+/* Hero Section */
+.hero {
+  text-align: center;
+  padding: 40px 20px;
+  background: linear-gradient(180deg, #fff7f3 0%, var(--bg-color) 100%);
+  border-radius: var(--radius);
+  margin-bottom: 40px;
+}
+
+.hero h1 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--text-main);
+  margin-bottom: 12px;
+}
+
+.hero p {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Content Cards */
+.card {
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  padding: 32px;
+  margin-bottom: 24px;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border-color);
+}
+
+.card h2 {
+  font-size: 1.4rem;
+  color: var(--text-main);
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.card h2::before {
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 20px;
+  background-color: var(--primary-color);
+  border-radius: 3px;
+}
+
+.card h3 {
+  font-size: 1.1rem;
+  margin: 20px 0 8px 0;
+  color: var(--text-main);
+}
+
+.card p, .card ul {
+  color: var(--text-muted);
+  margin-bottom: 16px;
+}
+
+.card ul {
+  padding-left: 20px;
+}
+
+.card li {
+  margin-bottom: 8px;
+}
+
+/* Contact Info Box */
+.contact-box {
+  background: #fff8f5;
+  border-left: 4px solid var(--primary-color);
+  padding: 20px;
+  border-radius: 8px;
+  margin-top: 16px;
+}
+
+.contact-box p {
+  margin-bottom: 6px;
+  color: var(--text-main);
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding-top: 40px;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  border-top: 1px solid var(--border-color);
+  margin-top: 40px;
+}
+
+footer a {
+  color: var(--text-muted);
+  text-decoration: underline;
+}
+
+footer a:hover {
+  color: var(--primary-color);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .container {
+    padding: 20px 16px;
+  }
+  header {
+    flex-direction: column;
+    gap: 16px;
+    align-items: flex-start;
+  }
+  nav a {
+    margin-left: 0;
+    margin-right: 16px;
+  }
+  .hero h1 {
+    font-size: 1.75rem;
+  }
+  .card {
+    padding: 20px;
+  }
+}

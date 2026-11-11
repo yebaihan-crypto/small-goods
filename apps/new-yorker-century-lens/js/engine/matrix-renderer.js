@@ -9,17 +9,22 @@ class MatrixRenderer {
     this.isFavoriteFn = isFavoriteFn;
     this.ctx = canvas.getContext('2d', { alpha: false, desynchronized: true });
 
-    // Grid layout: 80 columns x 40 rows = 3,200 real covers
-    this.gridCols = 80;
-    this.gridRows = 40;
+    // Grid layout dimensions
     this.cellW = 86;
     this.cellH = 118; // 3:4 aspect ratio
     this.gapX = 14;
     this.gapY = 14;
     this.pitchX = this.cellW + this.gapX;
     this.pitchY = this.cellH + this.gapY;
+    
+    // Dynamic grid configuration (supports full 80x40 and filtered subgrids)
+    this.gridCols = 80;
+    this.gridRows = 40;
     this.totalGridWidth = this.gridCols * this.pitchX;
     this.totalGridHeight = this.gridRows * this.pitchY;
+    this.currentArchive = archive;
+    this.isFiltered = false;
+    this.buildGrid(this.archive);
 
     // Camera state
     this.camera = [0, 0];
@@ -63,6 +68,79 @@ class MatrixRenderer {
     // Start render loop
     this.animate = this.animate.bind(this);
     requestAnimationFrame(this.animate);
+  }
+
+  buildGrid(items) {
+    this.currentArchive = items;
+    this.isFiltered = items.length < this.archive.length;
+
+    if (!this.isFiltered) {
+      this.gridCols = 80;
+      this.gridRows = 40;
+      this.totalGridWidth = this.gridCols * this.pitchX;
+      this.totalGridHeight = this.gridRows * this.pitchY;
+      this.gridItems = new Array(this.gridCols * this.gridRows);
+      for (let i = 0; i < this.archive.length; i++) {
+        const it = this.archive[i];
+        delete it.displayCol;
+        delete it.displayRow;
+        this.gridItems[it.col * this.gridRows + it.row] = it;
+      }
+    } else {
+      const N = items.length;
+      let cols = 8;
+      if (N <= 1) cols = 1;
+      else if (N <= 4) cols = N;
+      else if (N <= 8) cols = 4;
+      else if (N <= 15) cols = 5;
+      else if (N <= 24) cols = 6;
+      else if (N <= 45) cols = 8;
+      else if (N <= 80) cols = 10;
+      else if (N <= 150) cols = 14;
+      else if (N <= 300) cols = 18;
+      else if (N <= 600) cols = 24;
+      else cols = 32;
+
+      const rows = Math.ceil(N / cols);
+      this.gridCols = cols;
+      this.gridRows = rows;
+      this.totalGridWidth = cols * this.pitchX;
+      this.totalGridHeight = rows * this.pitchY;
+
+      this.gridItems = new Array(cols * rows);
+      for (let i = 0; i < N; i++) {
+        const c = i % cols;
+        const r = Math.floor(i / cols);
+        const it = items[i];
+        it.displayCol = c;
+        it.displayRow = r;
+        this.gridItems[c * rows + r] = it;
+      }
+    }
+  }
+
+  setFilteredArchive(items) {
+    this.unlock();
+    const list = (items && items.length > 0) ? items : this.archive;
+    this.buildGrid(list);
+
+    // Reset camera to center smoothly
+    this.camera = [0, 0];
+    this.targetCamera = [0, 0];
+    this.dragVelocity = [0, 0];
+
+    if (this.isFiltered) {
+      const N = list.length;
+      this.targetZoom = N <= 3 ? 1.3 : (N <= 12 ? 1.15 : (N <= 30 ? 1.08 : 1.0));
+      this.zoom = this.targetZoom;
+    } else {
+      this.targetZoom = 1.0;
+    }
+
+    if (list.length > 0 && this.onFocusChange) {
+      this.currentFocusedId = list[0].id;
+      this.onFocusChange(list[0]);
+    }
   }
 
   resize() {
@@ -217,7 +295,7 @@ class MatrixRenderer {
 
     if (col >= 0 && col < this.gridCols && row >= 0 && row < this.gridRows) {
       const index = col * this.gridRows + row;
-      const clickedCover = this.archive[index];
+      const clickedCover = this.gridItems ? this.gridItems[index] : this.archive[index];
       if (clickedCover) {
         this.lockOn(clickedCover);
       }
@@ -228,8 +306,10 @@ class MatrixRenderer {
   lockOn(cover) {
     this.isLocked = true;
     this.lockedCover = cover;
-    this.lockedCol = cover.col;
-    this.lockedRow = cover.row;
+    const c = cover.displayCol !== undefined ? cover.displayCol : cover.col;
+    const r = cover.displayRow !== undefined ? cover.displayRow : cover.row;
+    this.lockedCol = c;
+    this.lockedRow = r;
 
     // Immediately halt all drifting
     this.dragVelocity = [0, 0];
@@ -237,8 +317,8 @@ class MatrixRenderer {
     // Smoothly center camera and lens on this cover
     const gridStartX = -this.totalGridWidth * 0.5;
     const gridStartY = -this.totalGridHeight * 0.5;
-    const targetX = gridStartX + (cover.col + 0.5) * this.pitchX;
-    const targetY = gridStartY + (cover.row + 0.5) * this.pitchY;
+    const targetX = gridStartX + (c + 0.5) * this.pitchX;
+    const targetY = gridStartY + (r + 0.5) * this.pitchY;
 
     this.targetCamera = [targetX, targetY];
     this.targetMouse = [this.width * 0.5, this.height * 0.5];
@@ -266,7 +346,7 @@ class MatrixRenderer {
       this.unlock();
     } else {
       // Lock onto whichever cover is currently under the lens
-      const currentCover = this.archive.find(c => c.id === this.currentFocusedId);
+      const currentCover = (this.currentArchive || this.archive).find(c => c.id === this.currentFocusedId);
       if (currentCover) {
         this.lockOn(currentCover);
       }
@@ -312,6 +392,14 @@ class MatrixRenderer {
 
     this.targetCamera = [targetX, targetY];
     this.targetMouse = [this.width * 0.5, this.height * 0.5];
+  }
+
+  // Focus directly onto a specific cover object (handling displayCol / displayRow)
+  focusOnCover(cover) {
+    if (!cover) return;
+    const c = cover.displayCol !== undefined ? cover.displayCol : cover.col;
+    const r = cover.displayRow !== undefined ? cover.displayRow : cover.row;
+    this.focusOn(c, r);
   }
 
   setTheme(isLight) {
@@ -388,7 +476,7 @@ class MatrixRenderer {
     for (let c = minCol; c <= maxCol; c++) {
       for (let r = minRow; r <= maxRow; r++) {
         const index = c * this.gridRows + r;
-        const item = this.archive[index];
+        const item = this.gridItems ? this.gridItems[index] : this.archive[index];
         if (!item) continue;
 
         const wx = gridStartX + (c + 0.5) * this.pitchX;

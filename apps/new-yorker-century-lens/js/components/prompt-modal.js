@@ -14,7 +14,6 @@ class PromptModal {
     this.dateEl = document.getElementById('modal-date');
     this.artistEl = document.getElementById('modal-artist');
     this.categoryEl = document.getElementById('modal-category');
-    this.scoreEl = document.getElementById('modal-score');
     this.storyEl = document.getElementById('modal-story');
     this.promptTextEl = document.getElementById('modal-prompt-text');
     this.copyBtn = document.getElementById('modal-copy-btn');
@@ -84,9 +83,21 @@ class PromptModal {
     this.currentCover = cover;
     this.titleEl.textContent = cover.title;
     this.dateEl.textContent = cover.date;
-    this.artistEl.textContent = `Cover illustrated by ${cover.artist}`;
-    this.categoryEl.textContent = cover.category;
-    this.scoreEl.textContent = `${cover.score}%`;
+    this.artistEl.textContent = cover.artist === 'The New Yorker 档案' 
+      ? 'The New Yorker 历史正刊档案 (Condé Nast Collection)' 
+      : `Cover illustrated by ${cover.artist}`;
+    
+    const CAT_LABELS = {
+      'Milestones & History': '百年名作与里程碑',
+      'Urban Life & NYC': '都市生活与纽约街头',
+      'Satire & Politics': '政治与时事讽刺',
+      'Tech & Digital': '科技与屏幕时代',
+      'Culture & Arts': '文化艺术与阅读',
+      'Seasons & Holidays': '四季更迭与节日',
+      'Everyday Life & Editorial': '当代日常与特稿',
+      'Historical Archive': '百年正刊原典档案'
+    };
+    this.categoryEl.textContent = CAT_LABELS[cover.category] || cover.category;
     this.storyEl.textContent = cover.story;
     this.promptTextEl.textContent = cover.prompt;
 

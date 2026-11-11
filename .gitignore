@@ -3,3 +3,17 @@ Thumbs.db
 __pycache__/
 *.pyc
 *.pyo
+
+.DS_Store
+Thumbs.db
+__pycache__/
+*.pyc
+*.pyo
+*.xcodeproj
+*.xcworkspace
+CookbookApp/
+CookbookWidget/
+Pongie/
+AppStore_Release_Pack/
+AppStore_Screenshots/
+data/_archive/

@@ -39,40 +39,6 @@
             border: 1px solid var(--border-color);
         }
 
-        .lang-switch {
-            display: flex;
-            justify-content: flex-end;
-            align-items: center;
-            gap: 8px;
-            font-size: 13px;
-            margin-bottom: 20px;
-        }
-
-        .lang-switch a {
-            color: var(--text-muted);
-            text-decoration: none;
-            padding: 4px 10px;
-            border-radius: 6px;
-            transition: all 0.2s ease;
-        }
-
-        .lang-switch a:hover {
-            color: var(--primary-color);
-            background-color: #FFF5F2;
-        }
-
-        .lang-switch span.active {
-            font-weight: 600;
-            color: var(--primary-color);
-            background: #FFF5F2;
-            padding: 4px 10px;
-            border-radius: 6px;
-        }
-
-        .lang-switch .sep {
-            color: var(--border-color);
-        }
-
         .header {
             text-align: center;
             padding-bottom: 32px;
@@ -136,22 +102,9 @@
             color: var(--text-muted);
         }
     </style>
-<script>(function(){try{var m=/[?&]lang=(zh|en)/.exec(location.search);var s=m?m[1]:localStorage.getItem("hub-lang");if(m){localStorage.setItem("hub-lang",m[1]);}var n=(navigator.language||"zh").toLowerCase();document.documentElement.setAttribute("data-lang",s||(n.indexOf("zh")===0?"zh":"en"));}catch(e){document.documentElement.setAttribute("data-lang","zh");}})();</script>
-<link rel="stylesheet" href="../../assets/css/shell.css">
 </head>
 <body>
-<div id="hub-bar"></div>
-<script>window.HUB_PAGE={"slug": "pongie", "nameZh": "乒球人", "nameEn": "Pongie", "links": [{"href": "index.html", "zh": "产品主页", "en": "Overview"}, {"href": "support.html", "zh": "技术支持", "en": "Support"}], "storeUrl": "https://apps.apple.com/cn/app/id6802175450"};</script>
-
-<div class="lang-zh">
-
     <div class="container">
-        <div class="lang-switch">
-            <span class="active">🇨🇳 中文</span>
-            <span class="sep">|</span>
-            <a class="lang-switch-legacy" href="privacy.html">🇺🇸 English</a>
-        </div>
-
         <div class="header">
             <h1>🏓 Pongie (乒球人)</h1>
             <p>隐私政策 (Privacy Policy) | 生效日期：2026年8月17日</p>
@@ -195,64 +148,5 @@
             <p>&copy; 2026 乒球人 (Pongie) Team. All Rights Reserved.</p>
         </div>
     </div>
-
-</div>
-<div class="lang-en">
-
-    <div class="container">
-        <div class="lang-switch">
-            <a class="lang-switch-legacy" href="privacy.html">🇨🇳 中文</a>
-            <span class="sep">|</span>
-            <span class="active">🇺🇸 English</span>
-        </div>
-
-        <div class="header">
-            <h1>🏓 Pongie</h1>
-            <p>Privacy Policy | Effective Date: August 17, 2026</p>
-        </div>
-
-        <div class="highlight-box">
-            <strong>Key Privacy Commitment:</strong> Pongie is a privacy-first, lightweight iOS application. We deeply respect and safeguard your personal data. <strong>All training logs, equipment records, and tactical analytics are stored strictly locally on your device via Apple SwiftData. We never collect, upload, track, or sell your personal data.</strong>
-        </div>
-
-        <h2>1. Information We Collect</h2>
-        <p>Pongie adheres strictly to the principle of data minimization:</p>
-        <ul>
-            <li><strong>Local Application Data:</strong> Includes your match logs, scores, opponent notes, blade and rubber models, and play hours. This data resides solely within your device's local iOS app sandbox and your private personal iCloud container.</li>
-            <li><strong>No Device Identifiers:</strong> We do not collect device IMEI, MAC address, GPS location, IDFA, or any persistent hardware identifiers.</li>
-            <li><strong>Zero Third-Party Trackers:</strong> No advertising SDKs, tracking frameworks, or third-party behavioral analytics tools are embedded in Pongie.</li>
-        </ul>
-
-        <h2>2. Data Storage & Security</h2>
-        <p>Your records are encrypted and stored locally using Apple's official SwiftData framework. If you have iCloud backup or CloudKit synchronization enabled on your iOS device, your data is synced exclusively under your personal Apple ID account. We have no access to your iCloud credentials or private storage.</p>
-
-        <h2>3. Device Permissions</h2>
-        <ul>
-            <li><strong>Notifications (Optional):</strong> Used exclusively for local rubber wear alerts and daily practice reminders. You can enable or disable this permission anytime in iOS Settings.</li>
-            <li><strong>Network Access:</strong> Pongie operates completely offline. No internet connection or cellular data is required to access any core features.</li>
-        </ul>
-
-        <h2>4. Children's Privacy</h2>
-        <p>Pongie does not knowingly collect or solicit any personal identifiable information from children under the age of 13 (or under 16 in certain jurisdictions).</p>
-
-        <h2>5. Updates to This Policy</h2>
-        <p>We may periodically update our Privacy Policy. Any updates will be posted directly to this web page with a revised effective date.</p>
-
-        <h2>6. Contact Us</h2>
-        <p>If you have any questions or feedback regarding this Privacy Policy, feel free to reach out to our team:</p>
-        <ul>
-            <li><strong>Email:</strong> support@pongie-app.com / dev@pongie.app</li>
-            <li><strong>Support Center:</strong> <a href="support.html" style="color: var(--primary-color);">Pongie Support</a></li>
-        </ul>
-
-        <div class="footer">
-            <p>&copy; 2026 Pongie Team. All Rights Reserved. | <a href="support.html" style="color: var(--text-muted);">Technical Support</a></p>
-        </div>
-    </div>
-
-</div>
-
-<div id="hub-foot"></div>
-<script src="../../assets/js/shell.js"></script>
 </body>
 </html>

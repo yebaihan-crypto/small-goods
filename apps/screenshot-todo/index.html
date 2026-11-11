@@ -3,386 +3,142 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="截屏即待办 (ScreenshotTodo) 官方网站 - 专为 iOS 设计的极速截图生成待办事项工具。本地 OCR 解析、锁屏实时活动展示、深度同步系统提醒事项，100% 隐私安全。">
-  <title>截屏即待办 - 本地智能识图，锁屏即刻同步</title>
-  <link rel="stylesheet" href="styles.css">
-<script>(function(){try{var m=/[?&]lang=(zh|en)/.exec(location.search);var s=m?m[1]:localStorage.getItem("hub-lang");if(m){localStorage.setItem("hub-lang",m[1]);}var n=(navigator.language||"zh").toLowerCase();document.documentElement.setAttribute("data-lang",s||(n.indexOf("zh")===0?"zh":"en"));}catch(e){document.documentElement.setAttribute("data-lang","zh");}})();</script>
-<link rel="stylesheet" href="../../assets/css/shell.css">
+  <meta name="theme-color" content="#000000">
+  <title>隐私政策 — Dotney</title>
+  <meta name="description" content="Dotney 官方隐私政策。深度借鉴 Pool 合规标准：了解 Dotney 如何处理您的屏幕截图、文本闪念、AI 智能归类与本地沙盒存储，含绝不用作模型训练承诺与零第三方追踪。">
+  <link rel="icon" href="assets/app-icon.png">
+  <link rel="stylesheet" href="pool.css">
 </head>
 <body>
-<div id="hub-bar"></div>
-<script>window.HUB_PAGE={"slug": "screenshot-todo", "nameZh": "截屏即待办", "nameEn": "ScreenshotTodo", "links": [{"href": "support.html", "zh": "技术支持", "en": "Support"}, {"href": "privacy.html", "zh": "隐私政策", "en": "Privacy"}], "storeUrl": "https://apps.apple.com/cn/app/id6780206676"};</script>
 
-<div class="lang-zh">
+<div class="dotted-bg">
+  <div class="page">
 
-
-  <!-- Navigation -->
-  <header>
-    <div class="nav-container">
-      <a href="index.html" class="logo">
-        <div class="logo-icon">📸</div>
-        <span>截屏即待办</span>
-      </a>
-      <nav>
-        <ul>
-          <li><a href="index.html" class="active">首页</a></li>
-          <li><a href="support.html">技术支持</a></li>
-          <li><a href="privacy.html">隐私政策</a></li>
-          <li><a class="lang-switch-legacy" href="index.html" style="opacity: 0.85; font-size: 0.85rem; padding: 0.2rem 0.5rem; border: 1px solid rgba(255,255,255,0.2); border-radius: 6px;">EN</a></li>
-        </ul>
-      </nav>
+    <!-- Header & Language Switch -->
+    <div class="header-row">
+      <p class="crumb"><a href="privacy.html">DOTNEY</a><span class="sep">/</span>PRIVACY POLICY</p>
+      <div class="lang-switch">
+        <a href="privacy_en.html">EN</a>
+      </div>
     </div>
-  </header>
 
-  <!-- Main Showcase -->
-  <main>
-    <section class="hero">
-      <div class="hero-content">
-        <div class="badge">iOS 17+ 原生效率工具</div>
-        <h1>截屏，即是待办。</h1>
-        <p class="hero-subtitle">
-          随手截屏，即可在本地瞬间解析文字、提取截止时间与二维码，并以 Live Activity 锁屏实时活动呈现，完美与系统原生「提醒事项」深度同步。
-        </p>
-        <div class="hero-actions">
-          <a href="#guide" class="btn btn-primary">📖 查看配置指南</a>
-          <a href="support.html" class="btn btn-secondary">✉️ 反馈与支持</a>
-        </div>
-      </div>
-      
-      <!-- CSS Animated Mockup -->
-      <div class="hero-visual">
-        <div class="mockup-container">
-          <div class="phone-screen">
-            <div class="phone-island"></div>
-            <div class="phone-header">
-              <span>9:41</span>
-              <span>🔋 100%</span>
-            </div>
-            
-            <div class="mockup-screen-flow">
-              <!-- Screenshot Box -->
-              <div class="mockup-image-box">
-                <span style="font-size: 2rem;">🖼️</span>
-                <span style="font-size: 0.75rem; opacity: 0.8; font-weight: 500;">模拟截屏输入</span>
-                <div style="background: rgba(0,0,0,0.4); padding: 0.35rem 0.65rem; border-radius: 6px; font-size: 0.65rem; font-family: monospace; text-align: left; margin-top: 0.25rem;">
-                  ☕️<br>健身买咖啡喝<br>今晚 21:28 前
-                </div>
-                <div class="mockup-ocr-line"></div>
-              </div>
-              
-              <!-- Process Transition -->
-              <div style="text-align: center; color: var(--secondary); font-size: 1.2rem; margin: -0.25rem 0;">
-                ⚡️
-              </div>
-              
-              <!-- Parsed Capsule -->
-              <div class="mockup-capsule">
-                <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.08); padding-bottom: 0.35rem;">
-                  <span style="font-weight: 600; font-size: 0.85rem; color: #fff;">☕️ 咖啡待办</span>
-                  <span style="background: #10b981; color: #fff; font-size: 0.6rem; padding: 0.1rem 0.35rem; border-radius: 9999px;">0/1 已完成</span>
-                </div>
-                <div style="font-size: 0.75rem; color: var(--text-secondary); margin-top: 0.25rem;">
-                  🏃 健身买咖啡喝
-                </div>
-                <div style="font-size: 0.65rem; color: var(--accent); margin-top: 0.25rem; display: flex; align-items: center; gap: 0.25rem;">
-                  <span>⏰ 截止时间:</span>
-                  <span style="font-weight: 500;">今天 21:28</span>
-                </div>
-                <div style="font-size: 0.6rem; color: #64748b; margin-top: 0.25rem; text-align: right;">
-                  🔄 已同步系统提醒事项
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    <!-- Title & Effective Date -->
+    <div class="section">
+      <h1 class="page-title">隐私政策</h1>
+      <p class="note">生效日期：2026 年 9 月 30 日</p>
+      <p>「Dotney」应用（以下简称“Dotney”、“本应用”或“我们”）致力于帮助用户无压力地捕捉、理解、整理与收藏屏幕截图、灵感闪念及剪贴板内容（践行“去待办灵感收藏”理念）。</p>
+      <p>鉴于用户的屏幕截图与随手速记往往包含高度私密的个人内容，本隐私政策旨在以<b>直接、严谨且透明</b>的条款，向您说明我们处理哪些数据、如何使用 AI 技术理解内容、数据如何留存，以及您拥有的完全控制权。</p>
+    </div>
 
-    <!-- Key Features Grid -->
-    <section>
-      <h2>应用核心特色</h2>
-      <div class="features-grid">
-        <div class="glass-card feature-card">
-          <div class="feature-icon">🚀</div>
-          <h3>极速截图触发</h3>
-          <p>无需繁琐的导出分享。通过 iOS 的「背面轻点」或「操作按钮」一键运行快捷指令，自动获取相册最新截屏并静默调起 App 自动处理。</p>
-        </div>
-        <div class="glass-card feature-card">
-          <div class="feature-icon">🧠</div>
-          <h3>本地智能 OCR 解析</h3>
-          <p>调用苹果官方 Vision 框架。在设备本地安全识别图片中的文字和二维码。采用本地规则解析器，秒级自动抓取任务截止时间，保护数据绝对安全。</p>
-        </div>
-        <div class="glass-card feature-card">
-          <div class="feature-icon">🔔</div>
-          <h3>系统级原生同步</h3>
-          <p>使用 EventKit API 深度同步系统「提醒事项 (Reminders)」。您通过截屏生成的待办任务可直接显示在苹果官方日程中，更支持跨设备云同步。</p>
-        </div>
-        <div class="glass-card feature-card">
-          <div class="feature-icon">📱</div>
-          <h3>锁屏实时活动</h3>
-          <p>借由 ActivityKit 支持，任务进度将在您的 iOS 锁定屏幕及灵动岛（Live Activity）中直观呈现，并自动带有截图缩略图，抬手即可概览进度。</p>
-        </div>
-      </div>
-    </section>
+    <hr class="rule">
 
-    <!-- Setup Guide -->
-    <section id="guide" class="guide-section">
-      <h2 style="margin-bottom: 1.5rem;">快捷指令配置指引</h2>
-      <p style="text-align: center; color: var(--text-secondary); margin-bottom: 3rem; font-size: 1rem;">
-        iOS 系统原生不提供“完成截图后静默执行”的触发器。因此，App 采用快捷指令作为执行入口。您仅需 3 分钟即可完成配置。
-      </p>
+    <!-- Section 1 -->
+    <div class="section">
+      <h2>1. 我们处理的信息类型</h2>
+      <p><b>您主动提供与导入的内容</b>：</p>
+      <ul>
+        <li>您主动选择导入或通过快捷指令“瞬移”存入的屏幕截图与图片。</li>
+        <li>随手记录的纯文字闪念 (Thought)、灵感笔记、复制到剪贴板的链接或文本。</li>
+      </ul>
 
-      <div class="guide-step">
-        <div class="step-num">1</div>
-        <div class="step-content">
-          <h3>新建快捷指令</h3>
-          <p>打开系统自带的 <b>「快捷指令 (Shortcuts)」</b> 应用，点击右上角的 <b>「+」</b> 新建，将其命名为 <code>截图即待办</code>。</p>
-        </div>
-      </div>
+      <p><b>系统权限与设备来源</b>：</p>
+      <ul>
+        <li><b>照片图库访问 (Photo Library)</b>：仅用于读取您主动挑选或由快捷指令传入的截图。我们绝不在后台暗中扫描您的私人相册。</li>
+        <li><b>麦克风与语音识别 (Microphone &amp; Speech)</b>：仅在您主动长按语音按钮速记闪念时调用，音频由 iOS 原生框架在本地实时转写为文本，绝不向外上传音频。</li>
+        <li><b>系统提醒事项 (EventKit)</b>：仅在您明确选择将卡片同步导出到系统日历与提醒事项时调用。</li>
+        <li><b>位置权限 (Location When In Use)</b>：仅用于在您查看地点卡片时在设备本地计算实时距离，不记录行踪轨迹，亦不上传位置。</li>
+      </ul>
 
-      <div class="guide-step">
-        <div class="step-num">2</div>
-        <div class="step-content">
-          <h3>获取最新照片截图</h3>
-          <p>在快捷指令中添加一个操作：<b>「查找照片」</b>，并在过滤器中进行如下配置限制，以准确获取刚刚生成的最新截图：</p>
-          <div class="guide-shortcut-code">■ 媒体类型 是 图像
-■ 相簿 是 截屏
-■ 排序方式 选择“创建日期”，顺序为“最新优先”
-■ 限制 开启，并设置仅获取 1 张照片</div>
-        </div>
-      </div>
+      <p><b>衍生数据与 AI 智能推断 (Derived Data &amp; Inferences)</b>：</p>
+      <ul>
+        <li>使用 Apple 原生 <code>Vision</code> 框架在设备本地从截图中识别提取的文字 (OCR)。</li>
+        <li>推断出的结构化标签：12 大灵感分类（日程 Schedule、电影 Movie、图书 Book、音乐 Music、日常探店 Routine、旅行胜地 Place、优惠卡券 PromoCode、心愿好物 Wishlist、博主主页 Profile、短视频 Video、行动待办 Action、纯图 Photo）。</li>
+        <li>由 AI 智能提炼生成的精炼标题、Emoji 标志符号、行动要点 (Todos) 与摘要。</li>
+      </ul>
 
-      <div class="guide-step">
-        <div class="step-num">3</div>
-        <div class="step-content">
-          <h3>调用 App 意图处理</h3>
-          <p>添加下一个操作，搜索并添加本 App 的 <b>「处理截图待办 (Process Screenshot Todo)」</b> 操作：</p>
-          <p style="margin-top: 0.5rem;">将上一步「查找照片」所输出的 <code>照片</code> 传入作为 <code>截图</code> 参数。</p>
-        </div>
-      </div>
+      <p><b>免登录架构</b>：Dotney 无账号体系，无需注册，不收集手机号、邮箱或任何第三方社交账号，亦不关联个人真实身份。</p>
+    </div>
 
-      <div class="guide-step">
-        <div class="step-num">4</div>
-        <div class="step-content">
-          <h3>绑定极速触发按键</h3>
-          <p>推荐将该快捷指令绑定在系统级物理触发入口，享受一键截图后立刻生成待办的爽快体验：</p>
-          <ul style="margin-top: 0.75rem; padding-left: 1.25rem; color: var(--text-secondary); font-size: 0.9rem;">
-            <li style="margin-bottom: 0.35rem;"><b>轻点背面</b>：前往「系统设置 > 辅助功能 > 触控 > 轻点背面」，在轻点两下或三下中，下拉选择刚刚创建的快捷指令 <code>截图即待办</code>。</li>
-            <li><b>操作按钮 (Action Button)</b>：前往「系统设置 > 操作按钮」，左右滑动选择「快捷指令」，指定为 <code>截图即待办</code>。</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-  </main>
+    <!-- Section 2 -->
+    <div class="section">
+      <h2>2. 信息的使用与 AI 处理机制</h2>
+      <p>我们处理上述信息仅为交付 Dotney 的核心产品体验：</p>
+      <ul>
+        <li>为您提取截图核心要点，生成高密度的斜切扇形堆叠灵感卡片。</li>
+        <li>智能分类归入 12 大预设灵感标签，构筑清晰的私人灵感宇宙。</li>
+        <li>驱动锁屏与灵动岛实时轻量看板，提供无压力的生活陪伴。</li>
+      </ul>
 
-  <!-- Footer -->
-  <footer>
-    <div class="footer-content">
-      <div class="footer-info">
-        <div class="logo" style="margin-bottom: 0.5rem;">
-          <div class="logo-icon" style="width:28px; height:28px; font-size: 1rem;">📸</div>
-          <span style="font-size: 1.1rem;">截屏即待办</span>
-        </div>
-        <p>© 2026 截屏即待办 App. 保留所有权利。</p>
-        <p>专为个人效率与数据绝对隐私安全打造。</p>
+      <!-- Pool-style Callout -->
+      <div class="callout-box">
+        <h4>🔒 绝不用作 AI 训练承诺 (No Training on Your Content)</h4>
+        <p><b>我们绝不使用您的任何屏幕截图、私密笔记、提取文本或由此衍生的任何数据来训练或微调 AI / 机器学习大模型。</b><br>
+        您的所有内容仅用于向您即时交付卡片整理服务；第三方大模型服务商同样受严格的开发者协议约束，禁止将您的数据留存于公共模型训练集。</p>
       </div>
+    </div>
+
+    <!-- Section 3 -->
+    <div class="section">
+      <h2>3. 第三方 AI 模型提供商披露</h2>
+      <p>为了向您提供高精度的语义归纳与 12 大标签分类，本应用接入了合规的大语言模型接口（如 DeepSeek API）：</p>
+      <ul>
+        <li><b>仅传输纯文本片段</b>：调用大模型接口时，<b>仅发送从截图中识别出的文字摘要</b>，绝不上传整张相册原图。</li>
+        <li><b>即时无状态处理</b>：API 请求为单次即时调用 (Stateless)，不包含用户身份标识，处理完成后即时返回结构化卡片结果，不保留跨会话用户画像。</li>
+        <li><b>公开元数据检索（辅助性）</b>：针对特定开源项目或公开网页，可能通过公开搜索引擎（如 DuckDuckGo 网页摘要、GitHub 开放 API）检索官方网址，不关联用户私密信息。</li>
+      </ul>
+    </div>
+
+    <!-- Section 4 -->
+    <div class="section">
+      <h2>4. 本地沙盒存储与绝对掌控权</h2>
+      <ul>
+        <li><b>本机沙盒存储 (On-Device Local Sandbox)</b>：您的所有截图原图、灵感卡片、分类标签与随手记笔记均 100% 留存在您本机的 App Sandbox 及本地私有容器 (App Group: <code>group.com.arcade.screenshottodo</code>) 中。</li>
+        <li><b>开发者零用户数据库</b>：开发者未搭建、未租用、未运营任何用于收集或储存用户个人数据的中心化服务器。开发者无法访问、无法查看、亦未留存您的私有卡片。</li>
+        <li><b>用户完全控制与彻底删除</b>：您可以随时在应用内单条删除或批量清空卡片；卸载应用将彻底清空本地沙盒中的所有数据。</li>
+        <li><b>iCloud 同步（可选）</b>：若开启系统 iCloud 备份，数据直接经由 Apple 官方端到端加密通道传输，开发者无法读取。</li>
+      </ul>
+    </div>
+
+    <!-- Section 5 -->
+    <div class="section">
+      <h2>5. 零广告与零第三方追踪</h2>
+      <ul>
+        <li><b>无第三方广告 SDK</b>：本应用不包含任何商业广告投放 SDK（如穿山甲、优量汇、AdMob 等）。</li>
+        <li><b>无行为追踪 SDK</b>：本应用不包含任何第三方用户行为分析与追踪框架（如 Firebase、Google Analytics、友盟等）。</li>
+        <li><b>绝不买卖个人信息</b>：我们不收集广告标识符 (IDFA)、设备唯一码 (UUID) 或设备指纹，绝不向任何第三方数据公司出售您的数据。</li>
+      </ul>
+    </div>
+
+    <!-- Section 6 -->
+    <div class="section">
+      <h2>6. 自动化处理的重要局限</h2>
+      <p>Dotney 使用自动化算法与大模型生成卡片标签、摘要与步骤。这些输出受自然语言处理能力的客观局限，可能存在不完整或识别偏差。Dotney 仅供个人灵感收藏与信息整理，请勿将其作为法律、金融、医疗或关键生活决策的依据。</p>
+    </div>
+
+    <!-- Section 7 -->
+    <div class="section">
+      <h2>7. 政策更新</h2>
+      <p>我们可能会根据功能更新或 Apple 开发者审核规范适时修订本隐私政策。任何修订都会在此页面发布并更新顶部的生效日期。建议您定期查阅以获取最新信息。</p>
+    </div>
+
+    <!-- Section 8 -->
+    <div class="section">
+      <h2>8. 联系开发者</h2>
+      <p>如果您对本隐私政策、数据处理方式或个人数据安全有任何疑问、建议或请求，欢迎通过以下邮箱与我们直接联系：</p>
+      <p><a href="mailto:yebaihan@qq.com">yebaihan@qq.com</a></p>
+    </div>
+
+    <!-- Footer Nav -->
+    <div class="footer-nav">
+      <div class="footer-copy">© 2026 Dotney. 保留所有权利。</div>
       <div class="footer-links">
-        <a href="index.html">首页</a>
-        <a href="support.html">技术支持</a>
-        <a href="privacy.html">隐私政策</a>
+        <a href="privacy.html" aria-current="page">PRIVACY POLICY</a>
+        <a href="terms.html">TERMS OF USE (EULA)</a>
       </div>
     </div>
-  </footer>
 
-  
-
-</div>
-<div class="lang-en">
-
-
-  <!-- Navigation -->
-  <header>
-    <div class="nav-container">
-      <a href="index.html" class="logo">
-        <div class="logo-icon">📸</div>
-        <span>ScreenshotTodo</span>
-      </a>
-      <nav>
-        <ul>
-          <li><a href="index.html" class="active">Home</a></li>
-          <li><a href="support.html">Support</a></li>
-          <li><a href="privacy.html">Privacy Policy</a></li>
-          <li><a class="lang-switch-legacy" href="index.html" style="opacity: 0.85; font-size: 0.85rem; padding: 0.2rem 0.5rem; border: 1px solid rgba(255,255,255,0.2); border-radius: 6px;">中文</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-
-  <!-- Main Showcase -->
-  <main>
-    <section class="hero">
-      <div class="hero-content">
-        <div class="badge">iOS 17+ Native Productivity Tool</div>
-        <h1>Snap. OCR. Done.</h1>
-        <p class="hero-subtitle">
-          Take a screenshot to extract text, due dates, and QR codes instantly on-device. View progress via Live Activity, and sync seamlessly with Apple Reminders.
-        </p>
-        <div class="hero-actions">
-          <a href="#guide" class="btn btn-primary">📖 Setup Guide</a>
-          <a href="support.html" class="btn btn-secondary">✉️ Support & Feedback</a>
-        </div>
-      </div>
-      
-      <!-- CSS Animated Mockup -->
-      <div class="hero-visual">
-        <div class="mockup-container">
-          <div class="phone-screen">
-            <div class="phone-island"></div>
-            <div class="phone-header">
-              <span>9:41</span>
-              <span>🔋 100%</span>
-            </div>
-            
-            <div class="mockup-screen-flow">
-              <!-- Screenshot Box -->
-              <div class="mockup-image-box">
-                <span style="font-size: 2rem;">🖼️</span>
-                <span style="font-size: 0.75rem; opacity: 0.8; font-weight: 500;">Screenshot Input</span>
-                <div style="background: rgba(0,0,0,0.4); padding: 0.35rem 0.65rem; border-radius: 6px; font-size: 0.65rem; font-family: monospace; text-align: left; margin-top: 0.25rem;">
-                  ☕️<br>Buy coffee after workout<br>Due tonight 9:28 PM
-                </div>
-                <div class="mockup-ocr-line"></div>
-              </div>
-              
-              <!-- Process Transition -->
-              <div style="text-align: center; color: var(--secondary); font-size: 1.2rem; margin: -0.25rem 0;">
-                ⚡️
-              </div>
-              
-              <!-- Parsed Capsule -->
-              <div class="mockup-capsule">
-                <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.08); padding-bottom: 0.35rem;">
-                  <span style="font-weight: 600; font-size: 0.85rem; color: #fff;">☕️ Coffee Task</span>
-                  <span style="background: #10b981; color: #fff; font-size: 0.6rem; padding: 0.1rem 0.35rem; border-radius: 9999px;">0/1 Done</span>
-                </div>
-                <div style="font-size: 0.75rem; color: var(--text-secondary); margin-top: 0.25rem;">
-                  🏃 Buy coffee after workout
-                </div>
-                <div style="font-size: 0.65rem; color: var(--accent); margin-top: 0.25rem; display: flex; align-items: center; gap: 0.25rem;">
-                  <span>⏰ Due:</span>
-                  <span style="font-weight: 500;">Today 9:28 PM</span>
-                </div>
-                <div style="font-size: 0.6rem; color: #64748b; margin-top: 0.25rem; text-align: right;">
-                  🔄 Synced to Apple Reminders
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Key Features Grid -->
-    <section>
-      <h2>Key Features</h2>
-      <div class="features-grid">
-        <div class="glass-card feature-card">
-          <div class="feature-icon">🚀</div>
-          <h3>Instant Shortcut Trigger</h3>
-          <p>Run silently via iOS "Back Tap" or "Action Button". Automatically fetches the latest screenshot and processes it in seconds.</p>
-        </div>
-        <div class="glass-card feature-card">
-          <div class="feature-icon">🧠</div>
-          <h3>On-Device OCR Intelligence</h3>
-          <p>Powered by Apple's Vision framework. Recognizes text and QR codes locally with 100% privacy and zero cloud server dependencies.</p>
-        </div>
-        <div class="glass-card feature-card">
-          <div class="feature-icon">🔔</div>
-          <h3>Apple Reminders Sync</h3>
-          <p>Deep EventKit integration. Tasks automatically save to your native Apple Reminders app and sync across all your devices via iCloud.</p>
-        </div>
-        <div class="glass-card feature-card">
-          <div class="feature-icon">📱</div>
-          <h3>Lock Screen Live Activity</h3>
-          <p>Track task progress right on your iOS Lock Screen & Dynamic Island with ActivityKit, complete with screenshot thumbnails.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Setup Guide -->
-    <section id="guide" class="guide-section">
-      <h2 style="margin-bottom: 1.5rem;">Shortcuts Setup Guide</h2>
-      <p style="text-align: center; color: var(--text-secondary); margin-bottom: 3rem; font-size: 1rem;">
-        Set up in just 3 minutes to turn screenshots into actionable tasks effortlessly.
-      </p>
-
-      <div class="guide-step">
-        <div class="step-num">1</div>
-        <div class="step-content">
-          <h3>Create a New Shortcut</h3>
-          <p>Open the native <b>Shortcuts</b> app on iOS, tap <b>"+"</b> to create a new shortcut, and name it <code>ScreenshotTodo</code>.</p>
-        </div>
-      </div>
-
-      <div class="guide-step">
-        <div class="step-num">2</div>
-        <div class="step-content">
-          <h3>Get Latest Screenshot</h3>
-          <p>Add action: <b>"Find Photos"</b>, and configure filters to retrieve the latest screenshot:</p>
-          <div class="guide-shortcut-code">■ Media Type is Image
-■ Album is Screenshots
-■ Sort by "Date Taken", Order "Latest First"
-■ Limit to 1 Photo</div>
-        </div>
-      </div>
-
-      <div class="guide-step">
-        <div class="step-num">3</div>
-        <div class="step-content">
-          <h3>Process Screenshot</h3>
-          <p>Add action: <b>"Process Screenshot Todo"</b> from this app, and pass the photo output from Step 2 as the <code>Screenshot</code> parameter.</p>
-        </div>
-      </div>
-
-      <div class="guide-step">
-        <div class="step-num">4</div>
-        <div class="step-content">
-          <h3>Bind Physical Trigger</h3>
-          <p>Assign the shortcut to a physical trigger for instant task creation:</p>
-          <ul style="margin-top: 0.75rem; padding-left: 1.25rem; color: var(--text-secondary); font-size: 0.9rem;">
-            <li style="margin-bottom: 0.35rem;"><b>Back Tap</b>: Settings > Accessibility > Touch > Back Tap, assign to <code>ScreenshotTodo</code>.</li>
-            <li><b>Action Button</b>: Settings > Action Button, select Shortcut > <code>ScreenshotTodo</code>.</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- Footer -->
-  <footer>
-    <div class="footer-content">
-      <div class="footer-info">
-        <div class="logo" style="margin-bottom: 0.5rem;">
-          <div class="logo-icon" style="width:28px; height:28px; font-size: 1rem;">📸</div>
-          <span style="font-size: 1.1rem;">ScreenshotTodo</span>
-        </div>
-        <p>© 2026 ScreenshotTodo App. All rights reserved.</p>
-        <p>Built for personal productivity and ultimate privacy.</p>
-      </div>
-      <div class="footer-links">
-        <a href="index.html">Home</a>
-        <a href="support.html">Support</a>
-        <a href="privacy.html">Privacy Policy</a>
-      </div>
-    </div>
-  </footer>
-
-  
-
+  </div>
 </div>
 
-<script src="app.js"></script>
-<div id="hub-foot"></div>
-<script src="../../assets/js/shell.js"></script>
 </body>
 </html>

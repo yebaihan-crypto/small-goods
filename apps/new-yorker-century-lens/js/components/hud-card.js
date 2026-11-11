@@ -23,13 +23,6 @@ class HudCard {
           <!-- Metadata & Details -->
           <div class="hud-meta-wrap">
             <div class="hud-top-meta">
-              <div class="hud-score-ring" id="hud-score-ring">
-                <svg viewBox="0 0 44 44" class="score-svg">
-                  <circle class="score-circle-bg" cx="22" cy="22" r="18" />
-                  <circle class="score-circle-fg" id="score-circle-fg" cx="22" cy="22" r="18" />
-                </svg>
-                <span class="score-number" id="score-number">98%</span>
-              </div>
               <span class="hud-category-badge" id="hud-category-badge">Urban Life</span>
               <span class="hud-date-badge" id="hud-date-badge">May 4, 2020</span>
             </div>
@@ -79,8 +72,6 @@ class HudCard {
     // Elements
     this.elThumb = document.getElementById('hud-cover-thumb');
     this.elThumbYear = document.getElementById('hud-thumb-year');
-    this.elScoreFg = document.getElementById('score-circle-fg');
-    this.elScoreNum = document.getElementById('score-number');
     this.elCatBadge = document.getElementById('hud-category-badge');
     this.elDateBadge = document.getElementById('hud-date-badge');
     this.elTitleText = document.getElementById('title-text');
@@ -157,16 +148,18 @@ class HudCard {
     const isFav = this.isFavoriteFn ? this.isFavoriteFn(cover.id) : false;
     this.updateFavoriteUI(isFav);
 
-    // Update circular score ring
-    const score = cover.score || 95;
-    this.elScoreNum.textContent = `${score}%`;
-    const circumference = 2 * Math.PI * 18;
-    const offset = circumference - (score / 100) * circumference;
-    this.elScoreFg.style.strokeDasharray = `${circumference}`;
-    this.elScoreFg.style.strokeDashoffset = `${offset}`;
-
-    // Update badges
-    this.elCatBadge.textContent = cover.category || "Editorial";
+    // Update badges with localized friendly category
+    const CAT_LABELS = {
+      'Milestones & History': '百年名作',
+      'Urban Life & NYC': '都市生活',
+      'Satire & Politics': '政治讽刺',
+      'Tech & Digital': '科技屏幕',
+      'Culture & Arts': '文化艺术',
+      'Seasons & Holidays': '四季节日',
+      'Everyday Life & Editorial': '日常特稿',
+      'Historical Archive': '历史原典'
+    };
+    this.elCatBadge.textContent = CAT_LABELS[cover.category] || cover.category || "正刊";
     this.elDateBadge.textContent = cover.date || `${cover.year}`;
 
     // Update title
