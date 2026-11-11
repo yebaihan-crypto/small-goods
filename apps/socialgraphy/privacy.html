@@ -10,6 +10,17 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <script>
+    (function() {
+        try {
+            var saved = localStorage.getItem('socialgraphy_lang') || localStorage.getItem('hub-lang');
+            var urlLang = (new URLSearchParams(window.location.search)).get('lang');
+            var lang = urlLang || saved || ((navigator.language || 'zh').toLowerCase().startsWith('zh') ? 'zh' : 'en');
+            document.documentElement.setAttribute('data-lang', lang);
+            document.documentElement.lang = lang === 'en' ? 'en' : 'zh-CN';
+        } catch (e) {}
+    })();
+    </script>
 </head>
 <body>
     <!-- Stars Background Canvas -->
@@ -23,12 +34,33 @@
                 <span class="logo-text">SocialGraphy</span>
             </a>
             <nav class="nav">
-                <a href="index.html#features" class="nav-link">产品特色</a>
-                <a href="index.html#faq" class="nav-link">常见问题</a>
-                <a href="index.html#support" class="nav-link">技术支持</a>
-                <a href="#" class="nav-link active">隐私政策</a>
+                <a href="index.html#features" class="nav-link">
+                    <span class="lang-zh">产品特色</span>
+                    <span class="lang-en">Features</span>
+                </a>
+                <a href="index.html#faq" class="nav-link">
+                    <span class="lang-zh">常见问题</span>
+                    <span class="lang-en">FAQ</span>
+                </a>
+                <a href="index.html#support" class="nav-link">
+                    <span class="lang-zh">技术支持</span>
+                    <span class="lang-en">Support</span>
+                </a>
+                <a href="#" class="nav-link active">
+                    <span class="lang-zh">隐私政策</span>
+                    <span class="lang-en">Privacy</span>
+                </a>
             </nav>
-            <a href="index.html#support" class="btn-download">联系支持</a>
+            <div class="header-actions">
+                <div class="lang-segmented" role="group" aria-label="Language selector">
+                    <button type="button" class="lang-btn" data-lang-set="zh">中</button>
+                    <button type="button" class="lang-btn" data-lang-set="en">EN</button>
+                </div>
+                <a href="index.html#support" class="btn-download">
+                    <span class="lang-zh">联系支持</span>
+                    <span class="lang-en">Contact Support</span>
+                </a>
+            </div>
         </div>
     </header>
 
@@ -36,104 +68,210 @@
     <section class="privacy-section">
         <div class="container container-narrow">
             <div class="privacy-card">
-                <div class="privacy-header">
-                    <h1>SocialGraphy 隐私政策</h1>
-                    <p class="last-updated">更新日期：2026 年 6 月 9 日</p>
+                <!-- Chinese Privacy Policy Content -->
+                <div class="lang-zh">
+                    <div class="privacy-header">
+                        <h1>SocialGraphy 隐私政策</h1>
+                        <p class="last-updated">更新日期：2026 年 6 月 9 日</p>
+                    </div>
+                    
+                    <div class="privacy-body">
+                        <p class="intro">
+                            SocialGraphy（以下简称“本应用”）是一款致力于保护用户隐私的人际网络管理与家庭记录工具。我们深知个人关系、伴侣随笔以及成长日志是非常私密的信息。因此，我们在设计本应用时将 <strong>“隐私第一”</strong> 作为最核心的原则。
+                        </p>
+
+                        <hr class="divider">
+
+                        <h2>一、 我们收集的信息</h2>
+                        <p>
+                            <strong>核心声明：本应用不会在第三方服务器收集、存储或分析您的任何个人数据。</strong>
+                        </p>
+                        <p>
+                            当您使用 SocialGraphy 时，您所创建的所有信息（包括但不限于联系人信息、亲密关系备注、日常随笔记事、共享日程安排、成长里程碑及接种疫苗记录等）都仅储存在以下两个地方：
+                        </p>
+                        <ul>
+                            <li><strong>您的本地 iOS 设备：</strong> 绝大多数数据在生成时会直接保存在本设备沙盒存储中。</li>
+                            <li><strong>您的个人 Apple iCloud 云盘：</strong> 当您开启 iCloud 同步或伴侣同步时，数据会上传至 Apple 为您提供的私有数据库。</li>
+                        </ul>
+
+                        <h2>二、 数据的存储与共享 (iCloud / CloudKit)</h2>
+                        <p>
+                            为了实现数据的多端同步和伴侣共享功能，本应用使用了 Apple 的官方 <strong>CloudKit 服务</strong>。
+                        </p>
+                        <ul>
+                            <li><strong>私有数据库 (Private Database)：</strong> 您的个人数据存储在您专用的私有 iCloud 空间中，其他任何用户（包括开发者本人）都完全无法查看或下载这些数据。</li>
+                            <li><strong>共享数据库 (Shared Database)：</strong> 当您在“设置”中选择“伴侣同步”并与伴侣建立同步时，共享的日程和随笔将存储于由 Apple 加密保护的共享容器中。只有接受了您的 iCloud 同步邀请的人（即您的伴侣）才可以读取或编辑这些共享的数据。</li>
+                            <li>数据在传输和存储过程中的安全性完全由 Apple iCloud 加密机制和安全协议进行托底。</li>
+                        </ul>
+
+                        <h2>三、 敏感权限的使用与说明</h2>
+                        <p>
+                            为了向您提供核心的图谱和记录功能，本应用可能会在必要时向您申请以下权限，我们的使用方式如下：
+                        </p>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>申请权限</th>
+                                    <th>使用目的</th>
+                                    <th>隐私声明</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>通讯录权限 (Contacts)</strong></td>
+                                    <td>读取联系人姓名和头像以方便您一键添加至“人际星图”进行编辑。</td>
+                                    <td>本应用仅在设备本地读取通讯录，<strong>绝不会</strong>将您的通讯录数据上传至任何服务器，也绝不与第三方共享。</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>通知权限 (Notifications)</strong></td>
+                                    <td>用于在接种疫苗时间到达前进行提醒，以及在信件到期、伴侣日程更新时发出提醒通知。</td>
+                                    <td>所有通知均在设备本地由系统定时触发，或由 iCloud 远程通知机制触发，不包含任何广告推送。</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>iCloud 云盘</strong></td>
+                                    <td>将本地数据备份及同步到您的个人云盘，并供您和伴侣实现数据同步。</td>
+                                    <td>如果您关闭了 iCloud 权限，您仍然可以正常在本地使用本应用的大部分功能，但同步和备份将失效。</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <h2>四、 第三方服务与 SDK</h2>
+                        <p>
+                            本应用<strong>没有</strong>集成任何用于收集用户行为、广告追踪、市场统计等目的的第三方 SDK 或分析平台（如 Google Analytics, Flurry 等）。我们不以任何形式将用户数据商业化。
+                        </p>
+
+                        <h2>五、 儿童隐私保护</h2>
+                        <p>
+                            虽然本应用包含“疫苗接种提醒与成长记录”功能，但该功能仅供家长作为记录和日常提醒使用。我们不直接面向 13 岁以下的儿童收集个人信息。成长日志中关于儿童的信息均由家长自愿记录，并完全储存于家长自有的、经过 Apple 加密的 iCloud 容器中。
+                        </p>
+
+                        <h2>六、 您的权利与控制权</h2>
+                        <p>
+                            您对自己的数据拥有绝对的控制权：
+                        </p>
+                        <ul>
+                            <li>您可以在 iOS 系统设置中随时关闭本应用的“通讯录”或“iCloud”访问权限。</li>
+                            <li>您随时可以在应用内删除添加的联系人或记事记录，删除操作将实时同步并从本地和您的个人 iCloud 云端彻底擦除，无法恢复。</li>
+                            <li>如果您想彻底清空保存在 iCloud 的本应用数据，您可以在 iOS “设置” -> “Apple ID” -> “iCloud” -> “管理账户储存空间” 中找到本应用并选择删除数据。</li>
+                        </ul>
+
+                        <h2>七、 隐私政策的更新</h2>
+                        <p>
+                            本应用可能会根据功能调整或合规要求的变化，不定期对本隐私政策进行更新。任何修改都会更新在此页面上，请您在需要时注意查阅“更新日期”。
+                        </p>
+
+                        <h2>八、 联系我们</h2>
+                        <p>
+                            如果您对本隐私政策、数据存储方式有任何疑问、建议或有任何数据安全方面的疑虑，欢迎随时通过以下方式与我们联系：
+                        </p>
+                        <p class="contact-info">
+                            <strong>电子邮箱：</strong> <a href="mailto:yebaihan@qq.com">yebaihan@qq.com</a><br>
+                            <strong>技术支持网址：</strong> <a href="index.html#support">SocialGraphy 支持中心</a>
+                        </p>
+                    </div>
                 </div>
-                
-                <div class="privacy-body">
-                    <p class="intro">
-                        SocialGraphy（以下简称“本应用”）是一款致力于保护用户隐私的人际网络管理与家庭记录工具。我们深知个人关系、伴侣随笔以及成长日志是非常私密的信息。因此，我们在设计本应用时将 **“隐私第一”** 作为最核心的原则。
-                    </p>
 
-                    <hr class="divider">
+                <!-- English Privacy Policy Content -->
+                <div class="lang-en">
+                    <div class="privacy-header">
+                        <h1>SocialGraphy Privacy Policy</h1>
+                        <p class="last-updated">Last Updated: June 9, 2026</p>
+                    </div>
+                    
+                    <div class="privacy-body">
+                        <p class="intro">
+                            SocialGraphy ("we", "our", or "the App") is dedicated to protecting user privacy while delivering personal relational mapping and memory journaling. We recognize that personal connections, partner notes, and family logs are deeply intimate. As such, <strong>"Privacy First"</strong> is our core guiding principle.
+                        </p>
 
-                    <h2>一、 我们收集的信息</h2>
-                    <p>
-                        <strong>核心声明：本应用不会在第三方服务器收集、存储或分析您的任何个人数据。</strong>
-                    </p>
-                    <p>
-                        当您使用 SocialGraphy 时，您所创建的所有信息（包括但不限于联系人信息、亲密关系备注、日常随笔记事、共享日程安排、成长里程碑及接种疫苗记录等）都仅储存在以下两个地方：
-                    </p>
-                    <ul>
-                        <li><strong>您的本地 iOS 设备：</strong> 绝大多数数据在生成时会直接保存在本设备沙盒存储中。</li>
-                        <li><strong>您的个人 Apple iCloud 云盘：</strong> 当您开启 iCloud 同步或伴侣同步时，数据会上传至 Apple 为您提供的私有数据库。</li>
-                    </ul>
+                        <hr class="divider">
 
-                    <h2>二、 数据的存储与共享 (iCloud / CloudKit)</h2>
-                    <p>
-                        为了实现数据的多端同步和伴侣共享功能，本应用使用了 Apple 的官方 <strong>CloudKit 服务</strong>。
-                    </p>
-                    <ul>
-                        <li><strong>私有数据库 (Private Database)：</strong> 您的个人数据存储在您专用的私有 iCloud 空间中，其他任何用户（包括开发者本人）都完全无法查看或下载这些数据。</li>
-                        <li><strong>共享数据库 (Shared Database)：</strong> 当您在“设置”中选择“伴侣同步”并与伴侣建立同步时，共享的日程和随笔将存储于由 Apple 加密保护的共享容器中。只有接受了您的 iCloud 同步邀请的人（即您的伴侣）才可以读取或编辑这些共享的数据。</li>
-                        <li>数据在传输和存储过程中的安全性完全由 Apple iCloud 加密机制和安全协议进行托底。</li>
-                    </ul>
+                        <h2>1. Information We Collect</h2>
+                        <p>
+                            <strong>Core Commitment: We do not collect, store, or analyze any of your personal data on external or third-party servers.</strong>
+                        </p>
+                        <p>
+                            All information you create within SocialGraphy (including contacts, relationship notes, diaries, shared schedules, child growth milestones, and vaccination records) is stored solely in two locations:
+                        </p>
+                        <ul>
+                            <li><strong>Your Local iOS Device:</strong> Most data is stored directly in the app's local sandbox storage.</li>
+                            <li><strong>Your Private Apple iCloud Container:</strong> When sync or partner collaboration is enabled, data is transferred directly to your private Apple CloudKit database.</li>
+                        </ul>
 
-                    <h2>三、 敏感权限的使用与说明</h2>
-                    <p>
-                        为了向您提供核心的图谱和记录功能，本应用可能会在必要时向您申请以下权限，我们的使用方式如下：
-                    </p>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>申请权限</th>
-                                <th>使用目的</th>
-                                <th>隐私声明</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><strong>通讯录权限 (Contacts)</strong></td>
-                                <td>读取联系人姓名和头像以方便您一键添加至“人际星图”进行编辑。</td>
-                                <td>本应用仅在设备本地读取通讯录，<strong>绝不会</strong>将您的通讯录数据上传至任何服务器，也绝不与第三方共享。</td>
-                            </tr>
-                            <tr>
-                                <td><strong>通知权限 (Notifications)</strong></td>
-                                <td>用于在接种疫苗时间到达前进行提醒，以及在信件到期、伴侣日程更新时发出提醒通知。</td>
-                                <td>所有通知均在设备本地由系统定时触发，或由 iCloud 远程通知机制触发，不包含任何广告推送。</td>
-                            </tr>
-                            <tr>
-                                <td><strong>iCloud 云盘</strong></td>
-                                <td>将本地数据备份及同步到您的个人云盘，并供您和伴侣实现数据同步。</td>
-                                <td>如果您关闭了 iCloud 权限，您仍然可以正常在本地使用本应用的大部分功能，但同步和备份将失效。</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                        <h2>2. Data Storage & Sharing (iCloud / CloudKit)</h2>
+                        <p>
+                            To achieve seamless multi-device synchronization and partner sharing, SocialGraphy uses official Apple <strong>CloudKit services</strong>.
+                        </p>
+                        <ul>
+                            <li><strong>Private Database:</strong> Personal data is stored in your dedicated private iCloud container. No other users (including the developers) can access or download this information.</li>
+                            <li><strong>Shared Database:</strong> When you initiate "Partner Sync" with your partner, shared calendars and journals are stored in an Apple end-to-end encrypted shared container accessible only to the invited participant.</li>
+                            <li>Data security during transit and storage is fully guaranteed by Apple iCloud security protocols and encryption.</li>
+                        </ul>
 
-                    <h2>四、 第三方服务与 SDK</h2>
-                    <p>
-                        本应用<strong>没有</strong>集成任何用于收集用户行为、广告追踪、市场统计等目的的第三方 SDK 或分析平台（如 Google Analytics, Flurry 等）。我们不以任何形式将用户数据商业化。
-                    </p>
+                        <h2>3. Permissions & System Access</h2>
+                        <p>
+                            To deliver core features, SocialGraphy may request the following system permissions when necessary:
+                        </p>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Permission</th>
+                                    <th>Purpose</th>
+                                    <th>Privacy Safeguard</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Contacts</strong></td>
+                                    <td>Quickly add family or friends into the Star Graph.</td>
+                                    <td>Read locally only. <strong>Never</strong> uploaded to any server or shared with third parties.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Notifications</strong></td>
+                                    <td>Remind you of upcoming vaccination dates, time capsule unlocks, and partner updates.</td>
+                                    <td>Triggered locally or via private iCloud pushes; zero advertising or promotional alerts.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>iCloud Drive</strong></td>
+                                    <td>Backup and sync data across devices and with your partner.</td>
+                                    <td>If disabled, the app functions locally, though cloud sync and backup will be paused.</td>
+                                </tr>
+                            </tbody>
+                        </table>
 
-                    <h2>五、 儿童隐私保护</h2>
-                    <p>
-                        虽然本应用包含“疫苗接种提醒与成长记录”功能，但该功能仅供家长作为记录和日常提醒使用。我们不直接面向 13 岁以下的儿童收集个人信息。成长日志中关于儿童的信息均由家长自愿记录，并完全储存于家长自有的、经过 Apple 加密的 iCloud 容器中。
-                    </p>
+                        <h2>4. Third-Party Services & Analytics</h2>
+                        <p>
+                            SocialGraphy contains <strong>zero</strong> third-party SDKs, tracking tools, advertising frameworks, or behavior analytics (such as Google Analytics or Flurry). We never monetize or sell user data in any manner.
+                        </p>
 
-                    <h2>六、 您的权利与控制权</h2>
-                    <p>
-                        您对自己的数据拥有绝对的控制权：
-                    </p>
-                    <ul>
-                        <li>您可以在 iOS 系统设置中随时关闭本应用的“通讯录”或“iCloud”访问权限。</li>
-                        <li>您随时可以在应用内删除添加的联系人或记事记录，删除操作将实时同步并从本地和您的个人 iCloud 云端彻底擦除，无法恢复。</li>
-                        <li>如果您想彻底清空保存在 iCloud 的本应用数据，您可以在 iOS “设置” -> “Apple ID” -> “iCloud” -> “管理账户储存空间” 中找到本应用并选择删除数据。</li>
-                    </ul>
+                        <h2>5. Children's Privacy</h2>
+                        <p>
+                            While the app offers milestone and vaccination trackers for babies, this feature is intended solely for parents as a personal reference. We do not knowingly collect personal data directly from children under 13.
+                        </p>
 
-                    <h2>七、 隐私政策的更新</h2>
-                    <p>
-                        本应用可能会根据功能调整或合规要求的变化，不定期对本隐私政策进行更新。任何修改都会更新在此页面上，请您在需要时注意查阅“更新日期”。
-                    </p>
+                        <h2>6. Your Rights and Data Control</h2>
+                        <p>
+                            You maintain total ownership and control over your data:
+                        </p>
+                        <ul>
+                            <li>You can revoke Contacts or iCloud permissions anytime in iOS Settings.</li>
+                            <li>You can delete any contact or journal entry within the app at any time, which permanently removes it locally and from iCloud.</li>
+                            <li>To completely erase all app data stored in iCloud, navigate to iOS Settings &gt; [Your Apple ID] &gt; iCloud &gt; Manage Account Storage &gt; SocialGraphy &gt; Delete Data.</li>
+                        </ul>
 
-                    <h2>八、 联系我们</h2>
-                    <p>
-                        如果您对本隐私政策、数据存储方式有任何疑问、建议或有任何数据安全方面的疑虑，欢迎随时通过以下方式与我们联系：
-                    </p>
-                    <p class="contact-info">
-                        <strong>电子邮箱：</strong> <a href="mailto:yebaihan@qq.com">yebaihan@qq.com</a><br>
-                        <strong>技术支持网址：</strong> <a href="index.html#support">SocialGraphy 支持中心</a>
-                    </p>
+                        <h2>7. Updates to This Policy</h2>
+                        <p>
+                            We may update this Privacy Policy occasionally to reflect product changes or legal requirements. Updates will be posted on this page with an updated revision date.
+                        </p>
+
+                        <h2>8. Contact Information</h2>
+                        <p>
+                            If you have questions, feedback, or concerns regarding your privacy and data security, please reach out to us:
+                        </p>
+                        <p class="contact-info">
+                            <strong>Email:</strong> <a href="mailto:yebaihan@qq.com">yebaihan@qq.com</a><br>
+                            <strong>Support Page:</strong> <a href="index.html#support">SocialGraphy Support Center</a>
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -145,23 +283,44 @@
             <div class="footer-brand">
                 <span class="logo-icon">🪐</span>
                 <span class="logo-text">SocialGraphy</span>
-                <p>将珍贵的情感与轨道，定格在银河星空中。</p>
+                <p>
+                    <span class="lang-zh">将珍贵的情感与轨道，定格在银河星空中。</span>
+                    <span class="lang-en">Capturing precious human bonds within the cosmic galaxy.</span>
+                </p>
             </div>
             <div class="footer-links">
                 <div class="footer-column">
-                    <h4>法律合规</h4>
-                    <a href="#">隐私政策</a>
-                    <a href="#">使用条款</a>
+                    <h4>
+                        <span class="lang-zh">法律合规</span>
+                        <span class="lang-en">Legal</span>
+                    </h4>
+                    <a href="#">
+                        <span class="lang-zh">隐私政策</span>
+                        <span class="lang-en">Privacy Policy</span>
+                    </a>
+                    <a href="#">
+                        <span class="lang-zh">使用条款</span>
+                        <span class="lang-en">Terms of Service</span>
+                    </a>
                 </div>
                 <div class="footer-column">
-                    <h4>联系我们</h4>
+                    <h4>
+                        <span class="lang-zh">联系我们</span>
+                        <span class="lang-en">Contact</span>
+                    </h4>
                     <a href="mailto:yebaihan@qq.com">yebaihan@qq.com</a>
-                    <a href="index.html#support">常见反馈</a>
+                    <a href="index.html#support">
+                        <span class="lang-zh">常见反馈</span>
+                        <span class="lang-en">Feedback</span>
+                    </a>
                 </div>
             </div>
         </div>
         <div class="container footer-bottom">
-            <p>&copy; 2026 SocialGraphy Team. All rights reserved. 保护您的隐私是我们的首要责任。</p>
+            <p>
+                <span class="lang-zh">&copy; 2026 SocialGraphy Team. 保留所有权利。保护您的隐私是我们的首要责任。</span>
+                <span class="lang-en">&copy; 2026 SocialGraphy Team. All rights reserved. Safeguarding your privacy is our primary commitment.</span>
+            </p>
         </div>
     </footer>
 

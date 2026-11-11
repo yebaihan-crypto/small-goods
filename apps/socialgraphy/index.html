@@ -10,6 +10,17 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <script>
+    (function() {
+        try {
+            var saved = localStorage.getItem('socialgraphy_lang') || localStorage.getItem('hub-lang');
+            var urlLang = (new URLSearchParams(window.location.search)).get('lang');
+            var lang = urlLang || saved || ((navigator.language || 'zh').toLowerCase().startsWith('zh') ? 'zh' : 'en');
+            document.documentElement.setAttribute('data-lang', lang);
+            document.documentElement.lang = lang === 'en' ? 'en' : 'zh-CN';
+        } catch (e) {}
+    })();
+    </script>
 </head>
 <body>
     <!-- Stars Background Canvas -->
@@ -23,12 +34,33 @@
                 <span class="logo-text">SocialGraphy</span>
             </a>
             <nav class="nav">
-                <a href="#features" class="nav-link">产品特色</a>
-                <a href="#faq" class="nav-link">常见问题</a>
-                <a href="#support" class="nav-link">技术支持</a>
-                <a href="privacy.html" class="nav-link">隐私政策</a>
+                <a href="#features" class="nav-link">
+                    <span class="lang-zh">产品特色</span>
+                    <span class="lang-en">Features</span>
+                </a>
+                <a href="#faq" class="nav-link">
+                    <span class="lang-zh">常见问题</span>
+                    <span class="lang-en">FAQ</span>
+                </a>
+                <a href="#support" class="nav-link">
+                    <span class="lang-zh">技术支持</span>
+                    <span class="lang-en">Support</span>
+                </a>
+                <a href="privacy.html" class="nav-link">
+                    <span class="lang-zh">隐私政策</span>
+                    <span class="lang-en">Privacy</span>
+                </a>
             </nav>
-            <a href="#support" class="btn-download">联系支持</a>
+            <div class="header-actions">
+                <div class="lang-segmented" role="group" aria-label="Language selector">
+                    <button type="button" class="lang-btn" data-lang-set="zh">中</button>
+                    <button type="button" class="lang-btn" data-lang-set="en">EN</button>
+                </div>
+                <a href="#support" class="btn-download">
+                    <span class="lang-zh">联系支持</span>
+                    <span class="lang-en">Contact Support</span>
+                </a>
+            </div>
         </div>
     </header>
 
@@ -36,17 +68,26 @@
     <section class="hero">
         <div class="container hero-container">
             <div class="hero-content">
-                <span class="badge">iOS 17+ / iCloud 安全同步</span>
-                <h1>探索你的<br><span class="text-gradient">人际星系</span></h1>
+                <span class="badge">
+                    <span class="lang-zh">iOS 17+ / iCloud 安全同步</span>
+                    <span class="lang-en">iOS 17+ / Private iCloud Sync</span>
+                </span>
+                <h1>
+                    <span class="lang-zh">探索你的<br><span class="text-gradient">人际星系</span></span>
+                    <span class="lang-en">Explore Your<br><span class="text-gradient">Relational Cosmos</span></span>
+                </h1>
                 <p class="hero-desc">
-                    把珍贵的关系编织进闪烁的宇宙。SocialGraphy 是一款专为伴侣及个人打造的人际网络管理与生活记录应用。让您以银河视角鸟瞰关系，守护家庭里程碑，封存未来的信件。
+                    <span class="lang-zh">把珍贵的关系编织进闪烁的宇宙。SocialGraphy 是一款专为伴侣及个人打造的人际网络管理与生活记录应用。让您以银河视角鸟瞰关系，守护家庭里程碑，封存未来的信件。</span>
+                    <span class="lang-en">Weave your precious relationships into a sparkling universe. SocialGraphy is a personal network manager and memory journal crafted for couples and individuals. View connections through a cosmic lens, celebrate family milestones, and seal letters to the future.</span>
                 </p>
                 <div class="hero-actions">
                     <a href="#support" class="btn btn-primary-glow">
-                        <span>✉️ 提交支持请求</span>
+                        <span class="lang-zh">✉️ 提交支持请求</span>
+                        <span class="lang-en">✉️ Submit Support Request</span>
                     </a>
                     <a href="#features" class="btn btn-secondary">
-                        <span>了解产品特色</span>
+                        <span class="lang-zh">了解产品特色</span>
+                        <span class="lang-en">Explore Features</span>
                     </a>
                 </div>
             </div>
@@ -59,8 +100,14 @@
                             <!-- App View UI Inside Screen -->
                             <div class="app-ui">
                                 <div class="app-header">
-                                    <span class="app-title">人际星图</span>
-                                    <span class="app-subtitle">我的银河系</span>
+                                    <span class="app-title">
+                                        <span class="lang-zh">人际星图</span>
+                                        <span class="lang-en">Star Graph</span>
+                                    </span>
+                                    <span class="app-subtitle">
+                                        <span class="lang-zh">我的银河系</span>
+                                        <span class="lang-en">My Galaxy</span>
+                                    </span>
                                 </div>
                                 <div class="galaxy-viewport">
                                     <!-- Rotating orbital lines and nodes generated dynamically in CSS/JS -->
@@ -69,15 +116,21 @@
                                     <div class="orbit orbit-3"></div>
                                     <div class="galaxy-center">✨</div>
                                     <!-- Stars/Persons -->
-                                    <div class="person-node p1" data-name="伴侣 (阿雅)" data-role="Family"></div>
-                                    <div class="person-node p2" data-name="母亲" data-role="Family"></div>
-                                    <div class="person-node p3" data-name="老王" data-role="Friend"></div>
-                                    <div class="person-node p4" data-name="Leader 李" data-role="Work"></div>
-                                    <div class="person-node p5" data-name="孩子 (小麦)" data-role="Family"></div>
+                                    <div class="person-node p1" data-name="伴侣 (阿雅)" data-name-en="Partner (Aya)" data-role="Family"></div>
+                                    <div class="person-node p2" data-name="母亲" data-name-en="Mother" data-role="Family"></div>
+                                    <div class="person-node p3" data-name="老王" data-name-en="Lao Wang" data-role="Friend"></div>
+                                    <div class="person-node p4" data-name="Leader 李" data-name-en="Leader Li" data-role="Work"></div>
+                                    <div class="person-node p5" data-name="孩子 (小麦)" data-name-en="Child (Wheat)" data-role="Family"></div>
                                 </div>
                                 <div class="app-card">
-                                    <div class="card-title">🪐 宇宙亲密度引力</div>
-                                    <p class="card-text">阿雅与您在 7 天内进行了 14 次互动，处于第一星轨核心圈。</p>
+                                    <div class="card-title">
+                                        <span class="lang-zh">🪐 宇宙亲密度引力</span>
+                                        <span class="lang-en">🪐 Cosmic Proximity Gravity</span>
+                                    </div>
+                                    <p class="card-text">
+                                        <span class="lang-zh">阿雅与您在 7 天内进行了 14 次互动，处于第一星轨核心圈。</span>
+                                        <span class="lang-en">14 interactions with Aya in the last 7 days. Residing in core orbit 1.</span>
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -92,46 +145,88 @@
         <div class="container">
             <div class="section-header">
                 <span class="section-subtitle">Features</span>
-                <h2>精心打磨的核心功能</h2>
-                <p>SocialGraphy 致力于在保护隐私的前提下，为您呈现富有情感厚度的人际连结方式。</p>
+                <h2>
+                    <span class="lang-zh">精心打磨的核心功能</span>
+                    <span class="lang-en">Thoughtfully Crafted Features</span>
+                </h2>
+                <p>
+                    <span class="lang-zh">SocialGraphy 致力于在保护隐私的前提下，为您呈现富有情感厚度的人际连结方式。</span>
+                    <span class="lang-en">SocialGraphy delivers emotionally resonant ways to connect while keeping privacy at the center.</span>
+                </p>
             </div>
             
             <div class="features-grid">
                 <!-- Card 1 -->
                 <div class="feature-card">
                     <div class="feature-icon">🌌</div>
-                    <h3>银河人际星图</h3>
-                    <p>可视化人际关系网络，根据互动频率与情感引力，自动将联系人呈现为不同轨道上的星子。支持家庭、朋友、工作等分类星群一键切换。</p>
+                    <h3>
+                        <span class="lang-zh">银河人际星图</span>
+                        <span class="lang-en">Cosmic Relational Graph</span>
+                    </h3>
+                    <p>
+                        <span class="lang-zh">可视化人际关系网络，根据互动频率与情感引力，自动将联系人呈现为不同轨道上的星子。支持家庭、朋友、工作等分类星群一键切换。</span>
+                        <span class="lang-en">Visualize personal connections like star orbits shaped by interaction frequency and gravitational closeness. Effortlessly filter across Family, Friends, and Work constellations.</span>
+                    </p>
                 </div>
                 <!-- Card 2 -->
                 <div class="feature-card">
                     <div class="feature-icon">💑</div>
-                    <h3>双端伴侣同步与共享日历</h3>
-                    <p>专为亲密关系设计的双端协作。通过 Apple 官方私有 CloudKit 安全共享数据库，无需额外注册账号，即可实时共享相册、随笔与家庭日历日程。</p>
+                    <h3>
+                        <span class="lang-zh">双端伴侣同步与共享日历</span>
+                        <span class="lang-en">Dual-Device Sync & Shared Calendar</span>
+                    </h3>
+                    <p>
+                        <span class="lang-zh">专为亲密关系设计的双端协作。通过 Apple 官方私有 CloudKit 安全共享数据库，无需额外注册账号，即可实时共享相册、随笔与家庭日历日程。</span>
+                        <span class="lang-en">Built for intimacy. Securely sync photos, notes, and family schedules via Apple CloudKit without third-party accounts or logins.</span>
+                    </p>
                 </div>
                 <!-- Card 3 -->
                 <div class="feature-card">
                     <div class="feature-icon">👶</div>
-                    <h3>疫苗接种提醒与成长记录</h3>
-                    <p>内置精准的疫苗接种周期提醒表与成长阶段里程碑。伴侣双方可同时接收推送通知，重要接种节点绝不遗漏，共同守护宝宝成长健康。</p>
+                    <h3>
+                        <span class="lang-zh">疫苗接种提醒与成长记录</span>
+                        <span class="lang-en">Vaccination Timers & Milestones</span>
+                    </h3>
+                    <p>
+                        <span class="lang-zh">内置精准的疫苗接种周期提醒表与成长阶段里程碑。伴侣双方可同时接收推送通知，重要接种节点绝不遗漏，共同守护宝宝成长健康。</span>
+                        <span class="lang-en">Preloaded with immunization schedules and child development milestones. Both partners receive synced reminders to nurture health together.</span>
+                    </p>
                 </div>
                 <!-- Card 4 -->
                 <div class="feature-card">
                     <div class="feature-icon">✉️</div>
-                    <h3>时空胶囊 (未来的信)</h3>
-                    <p>给未来的你们写一封信，封存当下的温情照片与感悟，设置特定解锁时间。让真挚的情感在时间的轨道中静静滑行，到期自动投递。</p>
+                    <h3>
+                        <span class="lang-zh">时空胶囊 (未来的信)</span>
+                        <span class="lang-en">Time Capsule (Letters to Future)</span>
+                    </h3>
+                    <p>
+                        <span class="lang-zh">给未来的你们写一封信，封存当下的温情照片与感悟，设置特定解锁时间。让真挚的情感在时间的轨道中静静滑行，到期自动投递。</span>
+                        <span class="lang-en">Seal heartfelt memories, photos, and reflections with a future unlock date. Warm feelings travel across time until their scheduled arrival.</span>
+                    </p>
                 </div>
                 <!-- Card 5 -->
                 <div class="feature-card">
                     <div class="feature-icon">📊</div>
-                    <h3>社交词频与互动分析</h3>
-                    <p>本地运行的高级自然语言词频统计，分析您在备注和生活随笔中提及的高频词汇，智能勾勒你们的社交纽带关键词，感知心绪变化。</p>
+                    <h3>
+                        <span class="lang-zh">社交词频与互动分析</span>
+                        <span class="lang-en">Local Sentiment & Frequency Analytics</span>
+                    </h3>
+                    <p>
+                        <span class="lang-zh">本地运行的高级自然语言词频统计，分析您在备注和生活随笔中提及的高频词汇，智能勾勒你们的社交纽带关键词，感知心绪变化。</span>
+                        <span class="lang-en">On-device text processing analyzes recurring topics in your journals, revealing emotional bonds and sentiment shifts without cloud exposure.</span>
+                    </p>
                 </div>
                 <!-- Card 6 -->
                 <div class="feature-card">
                     <div class="feature-icon">🔒</div>
-                    <h3>100% 隐私权守护</h3>
-                    <p>我们坚信隐私至上。SocialGraphy 没有第三方中央服务器，所有数据直接存储于您的私有 iCloud 容器中，数据传输与存储全由 Apple 加密保障。</p>
+                    <h3>
+                        <span class="lang-zh">100% 隐私权守护</span>
+                        <span class="lang-en">100% Privacy by Design</span>
+                    </h3>
+                    <p>
+                        <span class="lang-zh">我们坚信隐私至上。SocialGraphy 没有第三方中央服务器，所有数据直接存储于您的私有 iCloud 容器中，数据传输与存储全由 Apple 加密保障。</span>
+                        <span class="lang-en">Zero third-party tracking or central servers. All data lives on your device and inside your private Apple iCloud container, fully encrypted end-to-end.</span>
+                    </p>
                 </div>
             </div>
         </div>
@@ -142,48 +237,78 @@
         <div class="container">
             <div class="section-header">
                 <span class="section-subtitle">FAQ</span>
-                <h2>常见问题解答</h2>
-                <p>关于 SocialGraphy 隐私安全、同步机制及操作的使用解答</p>
+                <h2>
+                    <span class="lang-zh">常见问题解答</span>
+                    <span class="lang-en">Frequently Asked Questions</span>
+                </h2>
+                <p>
+                    <span class="lang-zh">关于 SocialGraphy 隐私安全、同步机制及操作的使用解答</span>
+                    <span class="lang-en">Answers regarding privacy, sync mechanics, and everyday usage</span>
+                </p>
             </div>
             
             <div class="faq-list">
                 <div class="faq-item">
                     <div class="faq-question">
-                        <span>SocialGraphy 是如何保证我的人际隐私安全的？</span>
+                        <span>
+                            <span class="lang-zh">SocialGraphy 是如何保证我的人际隐私安全的？</span>
+                            <span class="lang-en">How does SocialGraphy safeguard my personal privacy?</span>
+                        </span>
                         <span class="faq-toggle">+</span>
                     </div>
                     <div class="faq-answer">
-                        <p>SocialGraphy 不设任何第三方服务器。您的所有通讯录联系人关系、成长照片、随笔和健康记录全部保存在您本人的设备本地以及您专属的苹果 iCloud 个人私有数据库中。作为开发者，我们完全无法获取、读取或分析您的任何个人隐私数据，一切由 Apple 强大的加密机制全程保护。</p>
+                        <p>
+                            <span class="lang-zh">SocialGraphy 不设任何第三方服务器。您的所有通讯录联系人关系、成长照片、随笔和健康记录全部保存在您本人的设备本地以及您专属的苹果 iCloud 个人私有数据库中。作为开发者，我们完全无法获取、读取或分析您的任何个人隐私数据，一切由 Apple 强大的加密机制全程保护。</span>
+                            <span class="lang-en">SocialGraphy operates with zero external servers. All contacts, relationship notes, growth photos, and logs are kept strictly on your local device and private Apple iCloud database. Even as developers, we have zero access to read or inspect your data.</span>
+                        </p>
                     </div>
                 </div>
 
                 <div class="faq-item">
                     <div class="faq-question">
-                        <span>如何启用伴侣双端同步与共享日程？</span>
+                        <span>
+                            <span class="lang-zh">如何启用伴侣双端同步与共享日程？</span>
+                            <span class="lang-en">How do I enable partner sync and shared calendar?</span>
+                        </span>
                         <span class="faq-toggle">+</span>
                     </div>
                     <div class="faq-answer">
-                        <p>在 App 内部点击右上角的“设置”，选择“伴侣同步设置”。点击“发起同步邀请”，App 会生成一段安全的 iCloud 协作链接。通过 iMessage 或微信发送给您的伴侣，对方点击链接并接受协作后，双方设备将自动建立连接，日程与记录便会自动开启实时同步。</p>
+                        <p>
+                            <span class="lang-zh">在 App 内部点击右上角的“设置”，选择“伴侣同步设置”。点击“发起同步邀请”，App 会生成一段安全的 iCloud 协作链接。通过 iMessage 或微信发送给您的伴侣，对方点击链接并接受协作后，双方设备将自动建立连接，日程与记录便会自动开启实时同步。</span>
+                            <span class="lang-en">Tap Settings in the top-right corner and select "Partner Sync". Tap "Send Invite" to generate a secure iCloud collaboration link. Share it with your partner via iMessage or chat; once accepted, real-time syncing starts automatically.</span>
+                        </p>
                     </div>
                 </div>
 
                 <div class="faq-item">
                     <div class="faq-question">
-                        <span>为什么新添加了联系人，但星图没有变化？</span>
+                        <span>
+                            <span class="lang-zh">为什么新添加了联系人，但星图没有变化？</span>
+                            <span class="lang-en">Why doesn't the star graph change immediately after adding a contact?</span>
+                        </span>
                         <span class="faq-toggle">+</span>
                     </div>
                     <div class="faq-answer">
-                        <p>“人际星图”的距离和发光度是基于您与联系人的“互动深度”（如记事次数、关联日历日程数、时间距离等）进行智能计算的。随着您在应用中记录有关该联系人的日常点滴，对应的行星就会越亮、轨道越靠近中心。这是一个需要您日常记录逐渐养成的动态星图。</p>
+                        <p>
+                            <span class="lang-zh">“人际星图”的距离和发光度是基于您与联系人的“互动深度”（如记事次数、关联日历日程数、时间距离等）进行智能计算的。随着您在应用中记录有关该联系人的日常点滴，对应的行星就会越亮、轨道越靠近中心。这是一个需要您日常记录逐渐养成的动态星图。</span>
+                            <span class="lang-en">Distance and luminosity in the Star Graph are calculated from interaction depth (journal frequency, events, recency). As you log moments over time, their planet brightens and draws closer to your inner orbit.</span>
+                        </p>
                     </div>
                 </div>
 
                 <div class="faq-item">
                     <div class="faq-question">
-                        <span>未来信件（时间胶囊）可以提前解锁吗？</span>
+                        <span>
+                            <span class="lang-zh">未来信件（时间胶囊）可以提前解锁吗？</span>
+                            <span class="lang-en">Can letters in the Time Capsule be opened early?</span>
+                        </span>
                         <span class="faq-toggle">+</span>
                     </div>
                     <div class="faq-answer">
-                        <p>不能。为了维持时间仪式的神秘感和厚重感，封存后的未来信件在设定的解锁时间到达之前是无法读取内容的。到期后，系统会向您和伴侣推送通知，信件将自动解锁呈现。</p>
+                        <p>
+                            <span class="lang-zh">不能。为了维持时间仪式的神秘感和厚重感，封存后的未来信件在设定的解锁时间到达之前是无法读取内容的。到期后，系统会向您和伴侣推送通知，信件将自动解锁呈现。</span>
+                            <span class="lang-en">No. To preserve the ritual and emotional weight of time capsules, sealed letters cannot be previewed before their unlock date. When reached, both you and your partner receive a notification to open it.</span>
+                        </p>
                     </div>
                 </div>
             </div>
@@ -195,17 +320,35 @@
         <div class="container">
             <div class="support-wrapper">
                 <div class="support-info">
-                    <h2>技术支持与反馈中心</h2>
-                    <p>使用 SocialGraphy 时遇到了问题，或者有更好的功能建议？我们非常乐意倾听您的声音！</p>
-                    <p>您可以通过右侧的表单提交技术支持工单，我们的团队会在 24-48 小时内通过邮件联系您。您也可以直接向我们的官方支持邮箱发送邮件：</p>
+                    <h2>
+                        <span class="lang-zh">技术支持与反馈中心</span>
+                        <span class="lang-en">Support & Feedback Center</span>
+                    </h2>
+                    <p>
+                        <span class="lang-zh">使用 SocialGraphy 时遇到了问题，或者有更好的功能建议？我们非常乐意倾听您的声音！</span>
+                        <span class="lang-en">Encountered an issue or have an idea to improve SocialGraphy? We'd love to hear from you!</span>
+                    </p>
+                    <p>
+                        <span class="lang-zh">您可以通过右侧的表单提交技术支持工单，我们的团队会在 24-48 小时内通过邮件联系您。您也可以直接向我们的官方支持邮箱发送邮件：</span>
+                        <span class="lang-en">Submit a ticket through the form on the right and we will respond within 24-48 hours. You can also reach our official support inbox directly:</span>
+                    </p>
                     <div class="support-email">
                         <span>📩</span> <a href="mailto:yebaihan@qq.com">yebaihan@qq.com</a>
                     </div>
                     <div class="support-appstore">
-                        <p>当前支持环境：</p>
+                        <p>
+                            <span class="lang-zh">当前支持环境：</span>
+                            <span class="lang-en">System Requirements:</span>
+                        </p>
                         <ul>
-                            <li>系统版本：iOS 17.0 或更高版本</li>
-                            <li>要求：开启系统设置中的“iCloud”及“iCloud 云盘”</li>
+                            <li>
+                                <span class="lang-zh">系统版本：iOS 17.0 或更高版本</span>
+                                <span class="lang-en">OS: iOS 17.0 or later</span>
+                            </li>
+                            <li>
+                                <span class="lang-zh">要求：开启系统设置中的“iCloud”及“iCloud 云盘”</span>
+                                <span class="lang-en">Requirement: "iCloud" & "iCloud Drive" enabled in iOS Settings</span>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -214,17 +357,26 @@
                     <form id="support-form" class="support-form">
                         <div class="form-row">
                             <div class="form-group">
-                                <label for="name">您的姓名 / 昵称</label>
+                                <label for="name">
+                                    <span class="lang-zh">您的姓名 / 昵称</span>
+                                    <span class="lang-en">Your Name / Nickname</span>
+                                </label>
                                 <input type="text" id="name" required placeholder="例如：王小明">
                             </div>
                             <div class="form-group">
-                                <label for="email">联系邮箱</label>
+                                <label for="email">
+                                    <span class="lang-zh">联系邮箱</span>
+                                    <span class="lang-en">Email Address</span>
+                                </label>
                                 <input type="email" id="email" required placeholder="例如：xiaoming@example.com">
                             </div>
                         </div>
                         
                         <div class="form-group">
-                            <label for="category">问题类别</label>
+                            <label for="category">
+                                <span class="lang-zh">问题类别</span>
+                                <span class="lang-en">Issue Category</span>
+                            </label>
                             <select id="category" required>
                                 <option value="" disabled selected>请选择问题类型...</option>
                                 <option value="bug">Bug 汇报 (程序闪退/异常)</option>
@@ -236,26 +388,42 @@
                         </div>
                         
                         <div class="form-group">
-                            <label for="subject">主题摘要</label>
+                            <label for="subject">
+                                <span class="lang-zh">主题摘要</span>
+                                <span class="lang-en">Subject</span>
+                            </label>
                             <input type="text" id="subject" required placeholder="一句话概括您遇到的问题">
                         </div>
                         
                         <div class="form-group">
-                            <label for="message">详细描述</label>
+                            <label for="message">
+                                <span class="lang-zh">详细描述</span>
+                                <span class="lang-en">Detailed Description</span>
+                            </label>
                             <textarea id="message" rows="6" required placeholder="请详细描述您的问题，包含操作步骤，如涉及同步，请说明伴侣设备是否已开启 iCloud。"></textarea>
                         </div>
                         
                         <button type="submit" class="btn btn-primary-glow btn-block" id="btn-submit-support">
-                            <span>🚀 提交支持请求</span>
+                            <span class="lang-zh">🚀 提交支持请求</span>
+                            <span class="lang-en">🚀 Submit Support Request</span>
                         </button>
                     </form>
                     
                     <!-- Form Success Message -->
                     <div id="form-success" class="form-success-card hidden">
                         <div class="success-icon">✨</div>
-                        <h3>提交成功！</h3>
-                        <p>您的支持请求已被记录。系统已分配工单，我们将会在 24 小时内发送邮件回复至您填写的联系邮箱。</p>
-                        <button class="btn btn-secondary btn-sm" id="btn-reset-form">填写新工单</button>
+                        <h3>
+                            <span class="lang-zh">提交成功！</span>
+                            <span class="lang-en">Submitted Successfully!</span>
+                        </h3>
+                        <p>
+                            <span class="lang-zh">您的支持请求已被记录。系统已分配工单，我们将会在 24 小时内发送邮件回复至您填写的联系邮箱。</span>
+                            <span class="lang-en">Your support request has been logged. We will send an email response to your contact address within 24 hours.</span>
+                        </p>
+                        <button class="btn btn-secondary btn-sm" id="btn-reset-form">
+                            <span class="lang-zh">填写新工单</span>
+                            <span class="lang-en">Submit Another Request</span>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -268,23 +436,44 @@
             <div class="footer-brand">
                 <span class="logo-icon">🪐</span>
                 <span class="logo-text">SocialGraphy</span>
-                <p>将珍贵的情感与轨道，定格在银河星空中。</p>
+                <p>
+                    <span class="lang-zh">将珍贵的情感与轨道，定格在银河星空中。</span>
+                    <span class="lang-en">Capturing precious human bonds within the cosmic galaxy.</span>
+                </p>
             </div>
             <div class="footer-links">
                 <div class="footer-column">
-                    <h4>法律合规</h4>
-                    <a href="privacy.html">隐私政策</a>
-                    <a href="#">使用条款</a>
+                    <h4>
+                        <span class="lang-zh">法律合规</span>
+                        <span class="lang-en">Legal</span>
+                    </h4>
+                    <a href="privacy.html">
+                        <span class="lang-zh">隐私政策</span>
+                        <span class="lang-en">Privacy Policy</span>
+                    </a>
+                    <a href="#">
+                        <span class="lang-zh">使用条款</span>
+                        <span class="lang-en">Terms of Service</span>
+                    </a>
                 </div>
                 <div class="footer-column">
-                    <h4>联系我们</h4>
+                    <h4>
+                        <span class="lang-zh">联系我们</span>
+                        <span class="lang-en">Contact</span>
+                    </h4>
                     <a href="mailto:yebaihan@qq.com">yebaihan@qq.com</a>
-                    <a href="#support">常见反馈</a>
+                    <a href="#support">
+                        <span class="lang-zh">常见反馈</span>
+                        <span class="lang-en">Feedback</span>
+                    </a>
                 </div>
             </div>
         </div>
         <div class="container footer-bottom">
-            <p>&copy; 2026 SocialGraphy Team. All rights reserved. 保护您的隐私是我们的首要责任。</p>
+            <p>
+                <span class="lang-zh">&copy; 2026 SocialGraphy Team. 保留所有权利。保护您的隐私是我们的首要责任。</span>
+                <span class="lang-en">&copy; 2026 SocialGraphy Team. All rights reserved. Safeguarding your privacy is our primary commitment.</span>
+            </p>
         </div>
     </footer>
 
