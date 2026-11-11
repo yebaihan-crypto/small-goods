@@ -39,6 +39,80 @@
             border: 1px solid var(--border-color);
         }
 
+        /* Top Navigation */
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 28px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+        }
+
+        .nav-link {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        /* Language Switcher */
+        .lang-segmented {
+            display: inline-flex;
+            align-items: center;
+            background: #F0EDE6;
+            border: 1px solid rgba(255, 107, 74, 0.25);
+            border-radius: 20px;
+            padding: 3px;
+            transition: all 0.2s ease;
+        }
+
+        .lang-segmented:hover {
+            border-color: rgba(255, 107, 74, 0.5);
+        }
+
+        .lang-btn {
+            border: none;
+            background: transparent;
+            color: var(--text-muted);
+            font-size: 13px;
+            font-weight: 600;
+            padding: 3px 11px;
+            border-radius: 14px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .lang-btn:hover {
+            color: var(--text-dark);
+        }
+
+        .lang-btn.active {
+            background: var(--primary-color);
+            color: #FFFFFF;
+            box-shadow: 0 2px 8px rgba(255, 107, 74, 0.3);
+        }
+
+        [data-lang="en"] .lang-zh {
+            display: none !important;
+        }
+
+        [data-lang="zh"] .lang-en {
+            display: none !important;
+        }
+
         .header {
             text-align: center;
             padding-bottom: 32px;
@@ -101,52 +175,179 @@
             font-size: 13px;
             color: var(--text-muted);
         }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 28px 18px;
+            }
+            .header h1 {
+                font-size: 24px;
+            }
+            .top-nav {
+                flex-wrap: wrap;
+                gap: 12px;
+            }
+        }
     </style>
+    <script>
+    (function() {
+        try {
+            var saved = localStorage.getItem('pongie_lang') || localStorage.getItem('hub-lang');
+            var urlLang = (new URLSearchParams(window.location.search)).get('lang');
+            var lang = urlLang || saved || ((navigator.language || 'zh').toLowerCase().startsWith('zh') ? 'zh' : 'en');
+            document.documentElement.setAttribute('data-lang', lang);
+            document.documentElement.lang = lang === 'en' ? 'en' : 'zh-CN';
+        } catch (e) {}
+    })();
+    </script>
 </head>
 <body>
     <div class="container">
+        <!-- Top Navigation with Language Switcher -->
+        <div class="top-nav">
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">
+                    <span class="lang-zh">首页</span>
+                    <span class="lang-en">Home</span>
+                </a>
+                <a href="support.html" class="nav-link">
+                    <span class="lang-zh">技术支持</span>
+                    <span class="lang-en">Support</span>
+                </a>
+                <a href="privacy.html" class="nav-link active">
+                    <span class="lang-zh">隐私政策</span>
+                    <span class="lang-en">Privacy</span>
+                </a>
+            </div>
+            <div class="lang-segmented" role="group" aria-label="Language selector">
+                <button type="button" class="lang-btn" data-lang-set="zh">中</button>
+                <button type="button" class="lang-btn" data-lang-set="en">EN</button>
+            </div>
+        </div>
+
         <div class="header">
-            <h1>🏓 Pongie (乒球人)</h1>
-            <p>隐私政策 (Privacy Policy) | 生效日期：2026年8月17日</p>
+            <h1>
+                <span class="lang-zh">🏓 Pongie (乒球人)</span>
+                <span class="lang-en">🏓 Pongie</span>
+            </h1>
+            <p>
+                <span class="lang-zh">隐私政策 (Privacy Policy) | 生效日期：2026年8月17日</span>
+                <span class="lang-en">Privacy Policy | Effective Date: August 17, 2026</span>
+            </p>
         </div>
 
-        <div class="highlight-box">
-            <strong>隐私承诺要点：</strong> “乒球人”(Pongie) 是一款注重个人隐私保护的轻量化 App。我们极度重视您的数据隐私，<strong>所有打卡记录、装备日志与分析记录均纯本地存储于您的设备中（SwiftData），我们绝不上传或售卖您的任何个人信息。</strong>
+        <!-- Chinese Content -->
+        <div class="lang-zh">
+            <div class="highlight-box">
+                <strong>隐私承诺要点：</strong> “乒球人”(Pongie) 是一款注重个人隐私保护的轻量化 App。我们极度重视您的数据隐私，<strong>所有打卡记录、装备日志与分析记录均纯本地存储于您的设备中（SwiftData），我们绝不上传或售卖您的任何个人信息。</strong>
+            </div>
+
+            <h2>1. 我们收集的信息</h2>
+            <p>乒球人遵循“最小必要”原则：</p>
+            <ul>
+                <li><strong>本地数据：</strong> 包括您输入的乒乓球打卡记录、比赛胜负分级、底板与胶皮型号及使用时长。这些数据仅保存在您的 iPhone 本地或您个人的 iCloud 私有存储中。</li>
+                <li><strong>设备信息：</strong> 我们不收集设备的 IMEI、MAC 地址、地理位置等敏感信息。</li>
+                <li><strong>无第三方追踪：</strong> App 内未集成任何广告追踪 SDK 或第三方数据采集分析平台。</li>
+            </ul>
+
+            <h2>2. 数据存储与安全</h2>
+            <p>您的所有数据均使用 Apple 原生 SwiftData 框架加密存储于 iOS 本地沙盒中。如果您开启了设备的 iCloud 备份，数据将随您的 iOS 系统自动备份至您的个人 Apple ID 账号下，我们无权访问您的 iCloud 空间。</p>
+
+            <h2>3. 权限说明</h2>
+            <ul>
+                <li><strong>通知权限（可选）：</strong> 仅用于装备保养磨损到期提醒与每日打卡提醒。您随时可以在系统设置中关闭此权限。</li>
+                <li><strong>网络权限：</strong> App 完全支持离线运行，不需要蜂窝网络或 Wi-Fi 传输数据。</li>
+            </ul>
+
+            <h2>4. 儿童隐私保护</h2>
+            <p>乒球人不会显式收集或诱导收集 13 岁以下儿童的任何个人信息。</p>
+
+            <h2>5. 隐私政策的更新</h2>
+            <p>如果我们的隐私政策有所变更，我们将在此页面及时更新版本。建议您定期查看本政策。</p>
+
+            <h2>6. 联系我们</h2>
+            <p>如果您对本隐私政策有任何疑问、建议或意见，欢迎通过以下方式与我们联系：</p>
+            <ul>
+                <li><strong>电子邮箱：</strong> <a href="mailto:support@pongie-app.com">support@pongie-app.com</a> / <a href="mailto:dev@pongie.app">dev@pongie.app</a></li>
+                <li><strong>技术支持页面：</strong> <a href="support.html" style="color: var(--primary-color);">乒球人 Support</a></li>
+            </ul>
         </div>
 
-        <h2>1. 我们收集的信息</h2>
-        <p>乒球人遵循“最小必要”原则：</p>
-        <ul>
-            <li><strong>本地数据：</strong> 包括您输入的乒乓球打卡记录、比赛胜负分级、底板与胶皮型号及使用时长。这些数据仅保存在您的 iPhone 本地或您个人的 iCloud 私有存储中。</li>
-            <li><strong>设备信息：</strong> 我们不收集设备的 IMEI、MAC 地址、地理位置等敏感信息。</li>
-            <li><strong>无第三方追踪：</strong> App 内未集成任何广告追踪 SDK 或第三方数据采集分析平台。</li>
-        </ul>
+        <!-- English Content -->
+        <div class="lang-en">
+            <div class="highlight-box">
+                <strong>Key Privacy Commitment:</strong> Pongie is a lightweight table tennis companion built with privacy by design. <strong>All check-in records, gear logs, and analytics are stored strictly on your local device (SwiftData). We never collect, upload, or sell your personal data.</strong>
+            </div>
 
-        <h2>2. 数据存储与安全</h2>
-        <p>您的所有数据均使用 Apple 原生 SwiftData 框架加密存储于 iOS 本地沙盒中。如果您开启了设备的 iCloud 备份，数据将随您的 iOS 系统自动备份至您的个人 Apple ID 账号下，我们无权访问您的 iCloud 空间。</p>
+            <h2>1. Information We Collect</h2>
+            <p>Pongie follows the principle of minimal data collection:</p>
+            <ul>
+                <li><strong>On-Device Data:</strong> Includes your session check-ins, match outcomes, blade and rubber models, and hours of use. All data stays strictly in your iPhone's local sandbox or private iCloud container.</li>
+                <li><strong>Device Information:</strong> We do not collect device identifiers, MAC addresses, GPS locations, or personal identity details.</li>
+                <li><strong>Zero Third-Party Tracking:</strong> The App contains no advertising trackers, analytics SDKs, or data broker integrations.</li>
+            </ul>
 
-        <h2>3. 权限说明</h2>
-        <ul>
-            <li><strong>通知权限（可选）：</strong> 仅用于装备保养磨损到期提醒与每日打卡提醒。您随时可以在系统设置中关闭此权限。</li>
-            <li><strong>网络权限：</strong> App 完全支持离线运行，不需要蜂窝网络或 Wi-Fi 传输数据。</li>
-        </ul>
+            <h2>2. Data Storage & Security</h2>
+            <p>All data is secured using Apple's native SwiftData framework inside the iOS app sandbox. If you enable device backups, data synchronizes exclusively under your personal Apple ID. We have no access to your iCloud repository.</p>
 
-        <h2>4. 儿童隐私保护</h2>
-        <p>乒球人不会显式收集或诱导收集 13 岁以下儿童的任何个人信息。</p>
+            <h2>3. System Permissions</h2>
+            <ul>
+                <li><strong>Notifications (Optional):</strong> Used solely to alert you when rubber wear thresholds are reached and for optional practice reminders. You can disable this anytime in iOS Settings.</li>
+                <li><strong>Network Access:</strong> The App is fully offline-capable and requires no internet connection to operate.</li>
+            </ul>
 
-        <h2>5. 隐私政策的更新</h2>
-        <p>如果我们的隐私政策有所变更，我们将在此页面及时更新版本。建议您定期查看本政策。</p>
+            <h2>4. Children's Privacy</h2>
+            <p>Pongie is suitable for general audiences and does not knowingly collect personal information from children under 13.</p>
 
-        <h2>6. 联系我们</h2>
-        <p>如果您对本隐私政策有任何疑问、建议或意见，欢迎通过以下方式与我们联系：</p>
-        <ul>
-            <li><strong>电子邮箱：</strong> support@pongie-app.com / dev@pongie.app</li>
-            <li><strong>技术支持页面：</strong> <a href="support.html" style="color: var(--primary-color);">乒球人 Support</a></li>
-        </ul>
+            <h2>5. Updates to This Policy</h2>
+            <p>Any updates to this privacy policy will be posted on this page with an updated effective date. We recommend checking back periodically.</p>
+
+            <h2>6. Contact Us</h2>
+            <p>If you have questions, suggestions, or concerns regarding this policy, please reach out to us:</p>
+            <ul>
+                <li><strong>Email:</strong> <a href="mailto:support@pongie-app.com">support@pongie-app.com</a> / <a href="mailto:dev@pongie.app">dev@pongie.app</a></li>
+                <li><strong>Support Center:</strong> <a href="support.html" style="color: var(--primary-color);">Pongie Support</a></li>
+            </ul>
+        </div>
 
         <div class="footer">
-            <p>&copy; 2026 乒球人 (Pongie) Team. All Rights Reserved.</p>
+            <p>
+                <span class="lang-zh">&copy; 2026 乒球人 (Pongie) Team. All Rights Reserved. | <a href="index.html" style="color: var(--text-muted);">首页</a> | <a href="support.html" style="color: var(--text-muted);">技术支持</a></span>
+                <span class="lang-en">&copy; 2026 Pongie Team. All Rights Reserved. | <a href="index.html" style="color: var(--text-muted);">Home</a> | <a href="support.html" style="color: var(--text-muted);">Support</a></span>
+            </p>
         </div>
     </div>
+
+    <script>
+    (function() {
+        const LANG_KEY = 'pongie_lang';
+
+        function applyLang(lang) {
+            document.documentElement.setAttribute('data-lang', lang);
+            document.documentElement.lang = lang === 'en' ? 'en' : 'zh-CN';
+            try { localStorage.setItem(LANG_KEY, lang); } catch (e) {}
+
+            document.querySelectorAll('[data-lang-set]').forEach(function(btn) {
+                btn.classList.toggle('active', btn.getAttribute('data-lang-set') === lang);
+            });
+
+            const titleEl = document.querySelector('title');
+            if (titleEl) {
+                titleEl.textContent = lang === 'en'
+                    ? 'Pongie - Privacy Policy'
+                    : 'Pongie (乒球人) - 隐私政策 (Privacy Policy)';
+            }
+        }
+
+        document.querySelectorAll('[data-lang-set]').forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                applyLang(btn.getAttribute('data-lang-set'));
+            });
+        });
+
+        const currentLang = document.documentElement.getAttribute('data-lang') || 'zh';
+        applyLang(currentLang);
+    })();
+    </script>
 </body>
 </html>

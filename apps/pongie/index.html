@@ -39,6 +39,80 @@
             border: 1px solid var(--border-color);
         }
 
+        /* Top Navigation */
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 28px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+        }
+
+        .nav-link {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        /* Language Switcher */
+        .lang-segmented {
+            display: inline-flex;
+            align-items: center;
+            background: #F0EDE6;
+            border: 1px solid rgba(255, 107, 74, 0.25);
+            border-radius: 20px;
+            padding: 3px;
+            transition: all 0.2s ease;
+        }
+
+        .lang-segmented:hover {
+            border-color: rgba(255, 107, 74, 0.5);
+        }
+
+        .lang-btn {
+            border: none;
+            background: transparent;
+            color: var(--text-muted);
+            font-size: 13px;
+            font-weight: 600;
+            padding: 3px 11px;
+            border-radius: 14px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .lang-btn:hover {
+            color: var(--text-dark);
+        }
+
+        .lang-btn.active {
+            background: var(--primary-color);
+            color: #FFFFFF;
+            box-shadow: 0 2px 8px rgba(255, 107, 74, 0.3);
+        }
+
+        [data-lang="en"] .lang-zh {
+            display: none !important;
+        }
+
+        [data-lang="zh"] .lang-en {
+            display: none !important;
+        }
+
         .header {
             text-align: center;
             padding-bottom: 32px;
@@ -140,45 +214,162 @@
             font-size: 13px;
             color: var(--text-muted);
         }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 28px 18px;
+            }
+            .header h1 {
+                font-size: 28px;
+            }
+            .top-nav {
+                flex-wrap: wrap;
+                gap: 12px;
+            }
+        }
     </style>
+    <script>
+    (function() {
+        try {
+            var saved = localStorage.getItem('pongie_lang') || localStorage.getItem('hub-lang');
+            var urlLang = (new URLSearchParams(window.location.search)).get('lang');
+            var lang = urlLang || saved || ((navigator.language || 'zh').toLowerCase().startsWith('zh') ? 'zh' : 'en');
+            document.documentElement.setAttribute('data-lang', lang);
+            document.documentElement.lang = lang === 'en' ? 'en' : 'zh-CN';
+        } catch (e) {}
+    })();
+    </script>
 </head>
 <body>
     <div class="container">
+        <!-- Top Navigation with Language Switcher -->
+        <div class="top-nav">
+            <div class="nav-links">
+                <a href="index.html" class="nav-link active">
+                    <span class="lang-zh">首页</span>
+                    <span class="lang-en">Home</span>
+                </a>
+                <a href="support.html" class="nav-link">
+                    <span class="lang-zh">技术支持</span>
+                    <span class="lang-en">Support</span>
+                </a>
+                <a href="privacy.html" class="nav-link">
+                    <span class="lang-zh">隐私政策</span>
+                    <span class="lang-en">Privacy</span>
+                </a>
+            </div>
+            <div class="lang-segmented" role="group" aria-label="Language selector">
+                <button type="button" class="lang-btn" data-lang-set="zh">中</button>
+                <button type="button" class="lang-btn" data-lang-set="en">EN</button>
+            </div>
+        </div>
+
         <div class="header">
-            <h1>🏓 Pongie (乒球人)</h1>
-            <p>专注乒乓球日常打卡、装备日志与物理情绪球池的轻量 iOS 应用</p>
+            <h1>
+                <span class="lang-zh">🏓 Pongie (乒球人)</span>
+                <span class="lang-en">🏓 Pongie</span>
+            </h1>
+            <p>
+                <span class="lang-zh">专注乒乓球日常打卡、装备日志与物理情绪球池的轻量 iOS 应用</span>
+                <span class="lang-en">A lightweight iOS ping pong tracker &amp; gear companion featuring a physics mood pool</span>
+            </p>
         </div>
 
         <div class="grid">
             <a href="support.html" class="card">
                 <div>
-                    <h3>🛟 技术支持中心</h3>
-                    <p>查看常见问题解答 (FAQ)、使用技巧及反馈问题渠道。</p>
+                    <h3>
+                        <span class="lang-zh">🛟 技术支持中心</span>
+                        <span class="lang-en">🛟 Support &amp; Help Center</span>
+                    </h3>
+                    <p>
+                        <span class="lang-zh">查看常见问题解答 (FAQ)、使用技巧及反馈问题渠道。</span>
+                        <span class="lang-en">Explore FAQs, playing tips, widget setups, and feedback channels.</span>
+                    </p>
                 </div>
-                <span class="btn-link">前往技术支持 &rarr;</span>
+                <span class="btn-link">
+                    <span class="lang-zh">前往技术支持 &rarr;</span>
+                    <span class="lang-en">Visit Support &rarr;</span>
+                </span>
             </a>
 
             <a href="privacy.html" class="card">
                 <div>
-                    <h3>🔒 隐私政策</h3>
-                    <p>了解 Pongie 如何保护您的个人信息与本地数据隐私。</p>
+                    <h3>
+                        <span class="lang-zh">🔒 隐私政策</span>
+                        <span class="lang-en">🔒 Privacy Policy</span>
+                    </h3>
+                    <p>
+                        <span class="lang-zh">了解 Pongie 如何保护您的个人信息与本地数据隐私。</span>
+                        <span class="lang-en">Learn how Pongie protects your personal data and local privacy.</span>
+                    </p>
                 </div>
-                <span class="btn-link">查看隐私政策 &rarr;</span>
+                <span class="btn-link">
+                    <span class="lang-zh">查看隐私政策 &rarr;</span>
+                    <span class="lang-en">Read Privacy Policy &rarr;</span>
+                </span>
             </a>
         </div>
 
         <div class="features">
-            <h2>💡 关于 Pongie (乒球人)</h2>
+            <h2>
+                <span class="lang-zh">💡 关于 Pongie (乒球人)</span>
+                <span class="lang-en">💡 About Pongie</span>
+            </h2>
             <ul>
-                <li><strong>本地安全：</strong> 采用 Apple 原生 SwiftData 本地加密存储，无服务器上传，隐私极度安全。</li>
-                <li><strong>物理情绪球池：</strong> 基于 SpriteKit 物理引擎，每次打卡生成动态乒乓球沉降碰撞。</li>
-                <li><strong>装备损耗监测：</strong> 精确追踪底板与正反手胶皮使用时长，及时提醒保养与更新。</li>
+                <li>
+                    <span class="lang-zh"><strong>本地安全：</strong> 采用 Apple 原生 SwiftData 本地加密存储，无服务器上传，隐私极度安全。</span>
+                    <span class="lang-en"><strong>Local Security:</strong> Built with Apple's native SwiftData framework. No server uploads; complete offline privacy.</span>
+                </li>
+                <li>
+                    <span class="lang-zh"><strong>物理情绪球池：</strong> 基于 SpriteKit 物理引擎，每次打卡生成动态乒乓球沉降碰撞。</span>
+                    <span class="lang-en"><strong>Physics Mood Pool:</strong> Powered by SpriteKit physics. Every match creates hand-drawn balls settling with gravity and haptics.</span>
+                </li>
+                <li>
+                    <span class="lang-zh"><strong>装备损耗监测：</strong> 精确追踪底板与正反手胶皮使用时长，及时提醒保养与更新。</span>
+                    <span class="lang-en"><strong>Gear Lifespan Tracker:</strong> Accurately monitor blade and rubber wear hours with proactive maintenance reminders.</span>
+                </li>
             </ul>
         </div>
 
         <div class="footer">
-            <p>&copy; 2026 乒球人 (Pongie) Team. All Rights Reserved. | <a href="support.html" style="color: var(--text-muted);">技术支持</a> | <a href="privacy.html" style="color: var(--text-muted);">隐私政策</a></p>
+            <p>
+                <span class="lang-zh">&copy; 2026 乒球人 (Pongie) Team. All Rights Reserved. | <a href="support.html" style="color: var(--text-muted);">技术支持</a> | <a href="privacy.html" style="color: var(--text-muted);">隐私政策</a></span>
+                <span class="lang-en">&copy; 2026 Pongie Team. All Rights Reserved. | <a href="support.html" style="color: var(--text-muted);">Support</a> | <a href="privacy.html" style="color: var(--text-muted);">Privacy Policy</a></span>
+            </p>
         </div>
     </div>
+
+    <script>
+    (function() {
+        const LANG_KEY = 'pongie_lang';
+
+        function applyLang(lang) {
+            document.documentElement.setAttribute('data-lang', lang);
+            document.documentElement.lang = lang === 'en' ? 'en' : 'zh-CN';
+            try { localStorage.setItem(LANG_KEY, lang); } catch (e) {}
+
+            document.querySelectorAll('[data-lang-set]').forEach(function(btn) {
+                btn.classList.toggle('active', btn.getAttribute('data-lang-set') === lang);
+            });
+
+            const titleEl = document.querySelector('title');
+            if (titleEl) {
+                titleEl.textContent = lang === 'en'
+                    ? 'Pongie - Table Tennis Tracker & Mood Pool'
+                    : 'Pongie (乒球人) - 官方网站';
+            }
+        }
+
+        document.querySelectorAll('[data-lang-set]').forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                applyLang(btn.getAttribute('data-lang-set'));
+            });
+        });
+
+        const currentLang = document.documentElement.getAttribute('data-lang') || 'zh';
+        applyLang(currentLang);
+    })();
+    </script>
 </body>
 </html>

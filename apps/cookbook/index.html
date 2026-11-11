@@ -6,65 +6,187 @@
   <title>家常菜谱与美食点餐记录 - 技术支持与帮助中心</title>
   <meta name="description" content="《家常菜谱与美食点餐记录》App 官方技术支持、使用帮助、常见问题与反馈通道。">
   <link rel="stylesheet" href="style.css">
+  <script>
+    (function() {
+      try {
+        var saved = localStorage.getItem('cookbook_lang') || localStorage.getItem('hub-lang');
+        var urlLang = (new URLSearchParams(window.location.search)).get('lang');
+        var lang = urlLang || saved || ((navigator.language || 'zh').toLowerCase().startsWith('zh') ? 'zh' : 'en');
+        document.documentElement.setAttribute('data-lang', lang);
+        document.documentElement.lang = lang === 'en' ? 'en' : 'zh-CN';
+      } catch (e) {}
+    })();
+  </script>
 </head>
 <body>
   <div class="container">
     <header>
       <a href="index.html" class="logo">
         <div class="logo-icon">🍳</div>
-        <span>菜谱与点餐助手</span>
+        <span>
+          <span class="lang-zh">菜谱与点餐助手</span>
+          <span class="lang-en">Cookbook</span>
+        </span>
       </a>
-      <nav>
-        <a href="index.html" class="active">技术支持</a>
-        <a href="privacy.html">隐私政策</a>
-      </nav>
+      <div class="header-actions">
+        <nav>
+          <a href="index.html" class="active">
+            <span class="lang-zh">技术支持</span>
+            <span class="lang-en">Support</span>
+          </a>
+          <a href="privacy.html">
+            <span class="lang-zh">隐私政策</span>
+            <span class="lang-en">Privacy</span>
+          </a>
+        </nav>
+        <div class="lang-segmented" role="group" aria-label="Language selector">
+          <button type="button" class="lang-btn" data-lang-set="zh">中</button>
+          <button type="button" class="lang-btn" data-lang-set="en">EN</button>
+        </div>
+      </div>
     </header>
 
     <main>
       <section class="hero">
-        <h1>🍳 欢迎使用《菜谱与点餐助手》</h1>
-        <p>您的智能美食记录与家庭点餐伴侣。为您提供全方位的技术支持与帮助服务。</p>
+        <h1>
+          <span class="lang-zh">🍳 欢迎使用《菜谱与点餐助手》</span>
+          <span class="lang-en">🍳 Welcome to Cookbook</span>
+        </h1>
+        <p>
+          <span class="lang-zh">您的智能美食记录与家庭点餐伴侣。为您提供全方位的技术支持与帮助服务。</span>
+          <span class="lang-en">Your smart culinary journal and family meal ordering companion. Comprehensive support and guides at your fingertips.</span>
+        </p>
       </section>
 
       <section class="card">
-        <h2>应用主要亮点功能</h2>
+        <h2>
+          <span class="lang-zh">应用主要亮点功能</span>
+          <span class="lang-en">Key Features & Highlights</span>
+        </h2>
         <ul>
-          <li><strong>智能点餐与菜谱挑选：</strong>轻松解决“今天吃什么”的抉择难题，定制专属菜单。</li>
-          <li><strong>语音智能记录：</strong>支持语音识别转文字，快速记录食材与烹饪步骤。</li>
-          <li><strong>细致烹饪指引：</strong>步骤化图文指引与步骤控制，让厨房新手秒变大厨。</li>
-          <li><strong>美食时光日记：</strong>时间轴记录每一餐的精致美味与欢聚时刻。</li>
-          <li><strong>桌面小组件 & iCloud 备份：</strong>Widget 快速提醒，私有 iCloud 多设备无缝同步。</li>
+          <li>
+            <span class="lang-zh"><strong>智能点餐与菜谱挑选：</strong>轻松解决“今天吃什么”的抉择难题，定制专属菜单。</span>
+            <span class="lang-en"><strong>Smart Meal Ordering & Picking:</strong> Solves the daily "what to eat today" dilemma with custom family menus.</span>
+          </li>
+          <li>
+            <span class="lang-zh"><strong>语音智能记录：</strong>支持语音识别转文字，快速记录食材与烹饪步骤。</span>
+            <span class="lang-en"><strong>Smart Voice Dictation:</strong> Dictate ingredients and cooking instructions with instant speech-to-text.</span>
+          </li>
+          <li>
+            <span class="lang-zh"><strong>细致烹饪指引：</strong>步骤化图文指引与步骤控制，让厨房新手秒变大厨。</span>
+            <span class="lang-en"><strong>Step-by-Step Cooking Guide:</strong> Guided visual workflows that turn beginner cooks into kitchen masters.</span>
+          </li>
+          <li>
+            <span class="lang-zh"><strong>美食时光日记：</strong>时间轴记录每一餐的精致美味与欢聚时刻。</span>
+            <span class="lang-en"><strong>Mealtime Timeline:</strong> A visual chronological timeline celebrating every delicious homemade dinner.</span>
+          </li>
+          <li>
+            <span class="lang-zh"><strong>桌面小组件 &amp; iCloud 备份：</strong>Widget 快速提醒，私有 iCloud 多设备无缝同步。</span>
+            <span class="lang-en"><strong>Home Widgets &amp; Private iCloud:</strong> Glanceable desktop widgets with seamless sync across all your Apple devices.</span>
+          </li>
         </ul>
       </section>
 
       <section class="card">
-        <h2>常见问题 (FAQ)</h2>
+        <h2>
+          <span class="lang-zh">常见问题 (FAQ)</span>
+          <span class="lang-en">Frequently Asked Questions (FAQ)</span>
+        </h2>
         
-        <h3>Q1: 应用需要注册账号吗？我的菜谱数据保存在哪里？</h3>
-        <p>不需要注册账号。应用中的数据默认全量存储于您的 iPhone 本地。若您启用了 iCloud，数据将通过 Apple 官方 iCloud 服务的私有数据库进行跨设备备份与同步，我们无法调阅您的任何数据。</p>
+        <h3>
+          <span class="lang-zh">Q1: 应用需要注册账号吗？我的菜谱数据保存在哪里？</span>
+          <span class="lang-en">Q1: Do I need an account? Where are my recipes stored?</span>
+        </h3>
+        <p>
+          <span class="lang-zh">不需要注册账号。应用中的数据默认全量存储于您的 iPhone 本地。若您启用了 iCloud，数据将通过 Apple 官方 iCloud 服务的私有数据库进行跨设备备份与同步，我们无法调阅您的任何数据。</span>
+          <span class="lang-en">No account registration required. Your recipes are stored locally on your device by default. When enabled, private Apple iCloud (CloudKit) handles backup and cross-device sync. We have zero access to your data.</span>
+        </p>
 
-        <h3>Q2: 为什么应用请求相机和麦克风权限？</h3>
-        <p>相机权限仅用于为您拍摄或导入菜品的美照；麦克风与语音识别权限仅用于您在添加菜谱时通过语音录入步骤与食材。我们绝不会在您不知情的情况下后台录音或拍照。</p>
+        <h3>
+          <span class="lang-zh">Q2: 为什么应用请求相机和麦克风权限？</span>
+          <span class="lang-en">Q2: Why does the app request Camera and Microphone permissions?</span>
+        </h3>
+        <p>
+          <span class="lang-zh">相机权限仅用于为您拍摄或导入菜品的美照；麦克风与语音识别权限仅用于您在添加菜谱时通过语音录入步骤与食材。我们绝不会在您不知情的情况下后台录音或拍照。</span>
+          <span class="lang-en">Camera access is used strictly to capture or import photos of your dishes. Microphone and speech recognition permissions are used only when you choose to dictate ingredients and steps. No background audio or image capture is ever performed.</span>
+        </p>
 
-        <h3>Q3: 如何重置或清除我的菜谱数据？</h3>
-        <p>您可以在 App 内的“设置”界面中选择清理缓存，或在手机的 iOS“设置 - iCloud - 管理储存空间”中管理您的菜谱云端备份。</p>
+        <h3>
+          <span class="lang-zh">Q3: 如何重置或清除我的菜谱数据？</span>
+          <span class="lang-en">Q3: How do I reset or clear my recipe data?</span>
+        </h3>
+        <p>
+          <span class="lang-zh">您可以在 App 内的“设置”界面中选择清理缓存，或在手机的 iOS“设置 - iCloud - 管理储存空间”中管理您的菜谱云端备份。</span>
+          <span class="lang-en">You can clear cache directly from Settings inside the app, or manage and erase your cloud backups via iOS Settings &gt; [Your Apple ID] &gt; iCloud &gt; Manage Account Storage.</span>
+        </p>
       </section>
 
       <section class="card">
-        <h2>联系我们与意见反馈</h2>
-        <p>如果您在使用过程中遇到任何问题、Bug，或者对新功能有任何建议，欢迎随时与我们取得联系！</p>
+        <h2>
+          <span class="lang-zh">联系我们与意见反馈</span>
+          <span class="lang-en">Contact Us &amp; Feedback</span>
+        </h2>
+        <p>
+          <span class="lang-zh">如果您在使用过程中遇到任何问题、Bug，或者对新功能有任何建议，欢迎随时与我们取得联系！</span>
+          <span class="lang-en">If you encounter any issues, bugs, or have ideas for new features, please don't hesitate to reach out!</span>
+        </p>
 
         <div class="contact-box">
-          <p><strong>📧 技术支持邮箱：</strong><a href="mailto:yebaihan_support@163.com">yebaihan_support@163.com</a></p>
-          <p><strong>🌐 GitHub 官方项目库：</strong><a href="https://github.com/yebaihan-crypto/cookbook" target="_blank">https://github.com/yebaihan-crypto/cookbook</a></p>
-          <p><strong>⏰ 工作时间：</strong>周一至周日 9:00 - 20:00 (通常在 24 小时内回复)</p>
+          <p>
+            <strong><span class="lang-zh">📧 技术支持邮箱：</span><span class="lang-en">📧 Support Email: </span></strong>
+            <a href="mailto:yebaihan_support@163.com">yebaihan_support@163.com</a>
+          </p>
+          <p>
+            <strong><span class="lang-zh">🌐 GitHub 官方项目库：</span><span class="lang-en">🌐 Official GitHub Repo: </span></strong>
+            <a href="https://github.com/yebaihan-crypto/cookbook" target="_blank">https://github.com/yebaihan-crypto/cookbook</a>
+          </p>
+          <p>
+            <strong><span class="lang-zh">⏰ 工作时间：</span><span class="lang-en">⏰ Working Hours: </span></strong>
+            <span class="lang-zh">周一至周日 9:00 - 20:00 (通常在 24 小时内回复)</span>
+            <span class="lang-en">Monday to Sunday 9:00 - 20:00 (Usually replies within 24 hours)</span>
+          </p>
         </div>
       </section>
     </main>
 
     <footer>
-      <p>&copy; 2026 菜谱与点餐助手 Team. All rights reserved. | <a href="privacy.html">隐私政策 (Privacy Policy)</a></p>
+      <p>
+        <span class="lang-zh">&copy; 2026 菜谱与点餐助手 Team. All rights reserved. | <a href="privacy.html">隐私政策 (Privacy Policy)</a></span>
+        <span class="lang-en">&copy; 2026 Cookbook Team. All rights reserved. | <a href="privacy.html">Privacy Policy</a></span>
+      </p>
     </footer>
   </div>
+
+  <script>
+    (function() {
+      const LANG_KEY = 'cookbook_lang';
+
+      function applyLang(lang) {
+        document.documentElement.setAttribute('data-lang', lang);
+        document.documentElement.lang = lang === 'en' ? 'en' : 'zh-CN';
+        try { localStorage.setItem(LANG_KEY, lang); } catch (e) {}
+
+        document.querySelectorAll('[data-lang-set]').forEach(function(btn) {
+          btn.classList.toggle('active', btn.getAttribute('data-lang-set') === lang);
+        });
+
+        const titleEl = document.querySelector('title');
+        if (titleEl) {
+          titleEl.textContent = lang === 'en'
+            ? 'Cookbook & Smart Meal Planner - Support & Help Center'
+            : '家常菜谱与美食点餐记录 - 技术支持与帮助中心';
+        }
+      }
+
+      document.querySelectorAll('[data-lang-set]').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          applyLang(btn.getAttribute('data-lang-set'));
+        });
+      });
+
+      const currentLang = document.documentElement.getAttribute('data-lang') || 'zh';
+      applyLang(currentLang);
+    })();
+  </script>
 </body>
 </html>

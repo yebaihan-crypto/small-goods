@@ -39,6 +39,80 @@
             border: 1px solid var(--border-color);
         }
 
+        /* Top Navigation */
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 28px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+        }
+
+        .nav-link {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        /* Language Switcher */
+        .lang-segmented {
+            display: inline-flex;
+            align-items: center;
+            background: #F0EDE6;
+            border: 1px solid rgba(255, 107, 74, 0.25);
+            border-radius: 20px;
+            padding: 3px;
+            transition: all 0.2s ease;
+        }
+
+        .lang-segmented:hover {
+            border-color: rgba(255, 107, 74, 0.5);
+        }
+
+        .lang-btn {
+            border: none;
+            background: transparent;
+            color: var(--text-muted);
+            font-size: 13px;
+            font-weight: 600;
+            padding: 3px 11px;
+            border-radius: 14px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .lang-btn:hover {
+            color: var(--text-dark);
+        }
+
+        .lang-btn.active {
+            background: var(--primary-color);
+            color: #FFFFFF;
+            box-shadow: 0 2px 8px rgba(255, 107, 74, 0.3);
+        }
+
+        [data-lang="en"] .lang-zh {
+            display: none !important;
+        }
+
+        [data-lang="zh"] .lang-en {
+            display: none !important;
+        }
+
         .header {
             text-align: center;
             padding-bottom: 32px;
@@ -125,48 +199,171 @@
             font-size: 13px;
             color: var(--text-muted);
         }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 28px 18px;
+            }
+            .header h1 {
+                font-size: 24px;
+            }
+            .top-nav {
+                flex-wrap: wrap;
+                gap: 12px;
+            }
+        }
     </style>
+    <script>
+    (function() {
+        try {
+            var saved = localStorage.getItem('pongie_lang') || localStorage.getItem('hub-lang');
+            var urlLang = (new URLSearchParams(window.location.search)).get('lang');
+            var lang = urlLang || saved || ((navigator.language || 'zh').toLowerCase().startsWith('zh') ? 'zh' : 'en');
+            document.documentElement.setAttribute('data-lang', lang);
+            document.documentElement.lang = lang === 'en' ? 'en' : 'zh-CN';
+        } catch (e) {}
+    })();
+    </script>
 </head>
 <body>
     <div class="container">
+        <!-- Top Navigation with Language Switcher -->
+        <div class="top-nav">
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">
+                    <span class="lang-zh">首页</span>
+                    <span class="lang-en">Home</span>
+                </a>
+                <a href="support.html" class="nav-link active">
+                    <span class="lang-zh">技术支持</span>
+                    <span class="lang-en">Support</span>
+                </a>
+                <a href="privacy.html" class="nav-link">
+                    <span class="lang-zh">隐私政策</span>
+                    <span class="lang-en">Privacy</span>
+                </a>
+            </div>
+            <div class="lang-segmented" role="group" aria-label="Language selector">
+                <button type="button" class="lang-btn" data-lang-set="zh">中</button>
+                <button type="button" class="lang-btn" data-lang-set="en">EN</button>
+            </div>
+        </div>
+
         <div class="header">
-            <h1>🏓 Pongie (乒球人) 帮助与技术支持</h1>
-            <p>遇到问题？我们随时为您解答！</p>
+            <h1>
+                <span class="lang-zh">🏓 Pongie (乒球人) 帮助与技术支持</span>
+                <span class="lang-en">🏓 Pongie Support &amp; Help Center</span>
+            </h1>
+            <p>
+                <span class="lang-zh">遇到问题？我们随时为您解答！</span>
+                <span class="lang-en">Have a question? We're always here to help!</span>
+            </p>
         </div>
 
         <div class="faq-section">
-            <h2 style="border-left: 4px solid var(--primary-color); padding-left: 12px; margin-bottom: 20px;">常见问题 (FAQ)</h2>
+            <h2 style="border-left: 4px solid var(--primary-color); padding-left: 12px; margin-bottom: 20px;">
+                <span class="lang-zh">常见问题 (FAQ)</span>
+                <span class="lang-en">Frequently Asked Questions (FAQ)</span>
+            </h2>
 
             <div class="faq-item">
-                <h3>Q1: 物理情绪球池中的球体大小代表什么？</h3>
-                <p>答：大号球代表“🏆大胜比赛”，中号球代表“🏸常规对局/对练”，小号球代表“💦短时间高强度特训”。球体会根据 SpriteKit 物理引擎在球池中发生碰撞与沉降，带给您极富情趣的涂鸦打卡体验。</p>
+                <h3>
+                    <span class="lang-zh">Q1: 物理情绪球池中的球体大小代表什么？</span>
+                    <span class="lang-en">Q1: What do the different ball sizes in the physics mood pool mean?</span>
+                </h3>
+                <p>
+                    <span class="lang-zh">答：大号球代表“🏆大胜比赛”，中号球代表“🏸常规对局/对练”，小号球代表“💦短时间高强度特训”。球体会根据 SpriteKit 物理引擎在球池中发生碰撞与沉降，带给您极富情趣的涂鸦打卡体验。</span>
+                    <span class="lang-en">Answer: Large balls represent "🏆 Major Victories", medium balls represent "🏸 Regular Matches / Rallies", and small balls represent "💦 Quick Intensive Drills". Balls interact dynamically via SpriteKit physics, creating a playful hand-drawn check-in experience.</span>
+                </p>
             </div>
 
             <div class="faq-item">
-                <h3>Q2: 装备日志（底板与胶皮）磨损提醒是如何计算的？</h3>
-                <p>答：乒球人根据您每次记录的使用小时数自动累计，结合胶皮类型（如正手反胶、粘性胶皮、外套等）的平均使用寿命推荐提醒阈值。当磨损度过高时，软件会自动提示您检查胶皮粘性或考虑更换。</p>
+                <h3>
+                    <span class="lang-zh">Q2: 装备日志（底板与胶皮）磨损提醒是如何计算的？</span>
+                    <span class="lang-en">Q2: How are blade and rubber wear reminders calculated?</span>
+                </h3>
+                <p>
+                    <span class="lang-zh">答：乒球人根据您每次记录的使用小时数自动累计，结合胶皮类型（如正手反胶、粘性胶皮、外套等）的平均使用寿命推荐提醒阈值。当磨损度过高时，软件会自动提示您检查胶皮粘性或考虑更换。</span>
+                    <span class="lang-en">Answer: Pongie tracks your accumulated hours of play against recommended lifespan baselines for different rubber types (e.g. tacky inverted, European tension, short pips). When wear exceeds optimal thresholds, the app gently suggests inspecting surface tack or planning a replacement.</span>
+                </p>
             </div>
 
             <div class="faq-item">
-                <h3>Q3: 如何添加 iOS 桌面小组件 (Widget)？</h3>
-                <p>答：长按 iOS 桌面任意空白处 -> 点击左上角“+”加号 -> 搜索“Pongie”或“乒球人” -> 选择适合您桌面的小组件尺寸（中号或小号）并添加即可。</p>
+                <h3>
+                    <span class="lang-zh">Q3: 如何添加 iOS 桌面小组件 (Widget)？</span>
+                    <span class="lang-en">Q3: How do I add iOS home screen widgets?</span>
+                </h3>
+                <p>
+                    <span class="lang-zh">答：长按 iOS 桌面任意空白处 -> 点击左上角“+”加号 -> 搜索“Pongie”或“乒球人” -> 选择适合您桌面的小组件尺寸（中号或小号）并添加即可。</span>
+                    <span class="lang-en">Answer: Long-press any blank area on your Home Screen -> Tap the "+" icon in the top corner -> Search for "Pongie" -> Choose your preferred widget size and tap Add Widget.</span>
+                </p>
             </div>
 
             <div class="faq-item">
-                <h3>Q4: 我的打卡记录如果换手机了怎么办？</h3>
-                <p>答：乒球人使用系统内置的 SwiftData 存储，只要您的系统开启了 iCloud 自动同步与备份，在更换新 iPhone 时登录同一个 Apple ID 即可自动恢复所有数据。</p>
+                <h3>
+                    <span class="lang-zh">Q4: 我的打卡记录如果换手机了怎么办？</span>
+                    <span class="lang-en">Q4: What happens to my data if I switch to a new phone?</span>
+                </h3>
+                <p>
+                    <span class="lang-zh">答：乒球人使用系统内置的 SwiftData 存储，只要您的系统开启了 iCloud 自动同步与备份，在更换新 iPhone 时登录同一个 Apple ID 即可自动恢复所有数据。</span>
+                    <span class="lang-en">Answer: Pongie utilizes native iOS SwiftData. As long as iCloud sync and backup are enabled, logging into your Apple ID on a new iPhone will restore all your logs automatically.</span>
+                </p>
             </div>
         </div>
 
         <div class="contact-box">
-            <h2>需要更多帮助或反馈功能建议？</h2>
-            <p>如果您在使用过程中遇到任何 Bug 或有好的设计建议，欢迎随时联系我们的开发团队！</p>
-            <a href="mailto:support@pongie-app.com?subject=Pongie%20App%20Feedback" class="btn-email">发送邮件反馈 (support@pongie-app.com)</a>
+            <h2>
+                <span class="lang-zh">需要更多帮助或反馈功能建议？</span>
+                <span class="lang-en">Need more help or have feature requests?</span>
+            </h2>
+            <p>
+                <span class="lang-zh">如果您在使用过程中遇到任何 Bug 或有好的设计建议，欢迎随时联系我们的开发团队！</span>
+                <span class="lang-en">If you encounter bugs or have design suggestions, feel free to reach out to our team anytime!</span>
+            </p>
+            <a href="mailto:support@pongie-app.com?subject=Pongie%20App%20Feedback" class="btn-email">
+                <span class="lang-zh">发送邮件反馈 (support@pongie-app.com)</span>
+                <span class="lang-en">Send Email Feedback (support@pongie-app.com)</span>
+            </a>
         </div>
 
         <div class="footer">
-            <p>&copy; 2026 乒球人 (Pongie) Team. All Rights Reserved. | <a href="privacy.html" style="color: var(--text-muted);">隐私政策</a></p>
+            <p>
+                <span class="lang-zh">&copy; 2026 乒球人 (Pongie) Team. All Rights Reserved. | <a href="index.html" style="color: var(--text-muted);">首页</a> | <a href="privacy.html" style="color: var(--text-muted);">隐私政策</a></span>
+                <span class="lang-en">&copy; 2026 Pongie Team. All Rights Reserved. | <a href="index.html" style="color: var(--text-muted);">Home</a> | <a href="privacy.html" style="color: var(--text-muted);">Privacy Policy</a></span>
+            </p>
         </div>
     </div>
+
+    <script>
+    (function() {
+        const LANG_KEY = 'pongie_lang';
+
+        function applyLang(lang) {
+            document.documentElement.setAttribute('data-lang', lang);
+            document.documentElement.lang = lang === 'en' ? 'en' : 'zh-CN';
+            try { localStorage.setItem(LANG_KEY, lang); } catch (e) {}
+
+            document.querySelectorAll('[data-lang-set]').forEach(function(btn) {
+                btn.classList.toggle('active', btn.getAttribute('data-lang-set') === lang);
+            });
+
+            const titleEl = document.querySelector('title');
+            if (titleEl) {
+                titleEl.textContent = lang === 'en'
+                    ? 'Pongie - Support & Help Center'
+                    : 'Pongie (乒球人) - 技术支持与帮助中心 (Support & Help)';
+            }
+        }
+
+        document.querySelectorAll('[data-lang-set]').forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                applyLang(btn.getAttribute('data-lang-set'));
+            });
+        });
+
+        const currentLang = document.documentElement.getAttribute('data-lang') || 'zh';
+        applyLang(currentLang);
+    })();
+    </script>
 </body>
 </html>

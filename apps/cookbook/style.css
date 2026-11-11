@@ -202,3 +202,67 @@ footer a:hover {
     padding: 20px;
   }
 }
+
+/* ==========================================================================
+   Language Switcher & Internationalization
+   ========================================================================== */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.lang-segmented {
+  display: inline-flex;
+  align-items: center;
+  background: rgba(43, 45, 66, 0.05);
+  border: 1px solid rgba(255, 107, 53, 0.25);
+  border-radius: 20px;
+  padding: 3px;
+  transition: all 0.2s ease;
+}
+
+.lang-segmented:hover {
+  border-color: rgba(255, 107, 53, 0.5);
+}
+
+.lang-btn {
+  border: none;
+  background: transparent;
+  color: var(--text-muted);
+  font-size: 13px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.lang-btn:hover {
+  color: var(--text-main);
+}
+
+.lang-btn.active {
+  background: var(--primary-color);
+  color: #ffffff;
+  box-shadow: 0 2px 8px rgba(255, 107, 53, 0.3);
+}
+
+[data-lang="en"] .lang-zh {
+  display: none !important;
+}
+
+[data-lang="zh"] .lang-en {
+  display: none !important;
+}
+
+@media (max-width: 600px) {
+  header {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .header-actions {
+    margin-left: auto;
+  }
+}
