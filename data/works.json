@@ -1016,6 +1016,23 @@
       "meta": null
     },
     {
+      "slug": "cookbook-promo-v9r",
+      "category": "video",
+      "nameZh": "菜谱与点餐助手 · 宣传片",
+      "nameEn": "Cookbook Promo",
+      "taglineZh": "24 秒走完六页步骤、点菜、时间轴与表上查看。1920×1080，逐帧渲染。",
+      "taglineEn": "A 24-second tour of the step guide, meal ordering, timeline and Watch view. 1920×1080, frame by frame.",
+      "status": "live",
+      "chips": [
+        "产品演示",
+        "1920×1080"
+      ],
+      "icon": null,
+      "cover": "assets/covers/cookbook-promo-v9r.jpg",
+      "meta": "0:24",
+      "page": "videos/cookbook-promo/index.html"
+    },
+    {
       "slug": "xiaoshizhe-xiaoxiao",
       "category": "video",
       "nameZh": "小使者笑笑",

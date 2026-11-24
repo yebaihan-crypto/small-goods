@@ -256,6 +256,15 @@ footer a:hover {
   display: none !important;
 }
 
+.promo-video {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: contain;
+  background: #f5f1ea;
+  border-radius: 12px;
+}
+
 @media (max-width: 600px) {
   header {
     flex-direction: row;
